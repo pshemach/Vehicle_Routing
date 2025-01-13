@@ -1,0 +1,8 @@
+pandas
+numpy
+geopy
+matplotlib
+seaborn
+folium
+ortools
+-e .
