@@ -1,0 +1,453 @@
+CODE,LOCATION,ADDRESS,LATITUDE,LONGITUDE,BRAND
+3,Wattala SC,"Wattala, Sri Lanka",6.9906677,79.8931709,Arpico
+4,Borelasgamuwa SS,"Borelasgamuwa, Sri Lanka",6.8409891,79.9017187,Arpico
+5,Hyde Park SC,"Hyde, Sri Lanka",6.9175873,79.8585189,Arpico
+10,Nawinna SC,"Nawinna, Sri Lanka",6.8533309,79.9150724,Arpico
+105,Matara SC,"Matara, Sri Lanka",5.9496309,80.5468529,Arpico
+106,Panadura SC,"Panadura, Sri Lanka",6.7106361,79.9074262,Arpico
+108,Kottawa SS,"Kottawa, Sri Lanka",6.8411652,79.9654324,Arpico
+109,Galle SC,"Galle, Sri Lanka",6.0328948,80.2167912,Arpico
+110,Malabe SS,"Malabe, Sri Lanka",6.9060787,79.9696277,Arpico
+111,Kurunegala SC,"Kurunegala, Sri Lanka",7.4817695,80.3608876,Arpico
+112,Kohuwala SC,"Kohuwala, Sri Lanka",6.8624842,79.8854983,Arpico
+113,Homagama SC,"Homagama, Sri Lanka",6.8432762,80.0031833,Arpico
+114,Yakkala SS,"Yakkala, Sri Lanka",7.0864153,80.0335107,Arpico
+115,Kegalle SC,"Kegalle, Sri Lanka",7.2513317,80.3463754,Arpico
+116,Thalawathugoda SC,"Thalawathugoda, Sri Lanka",6.8758648,79.9391936,Arpico
+117,Wattala-2 ADA,"Wattala-2, Sri Lanka",6.9906677,79.8931709,Arpico
+119,Kochchikade SC,"Kochchikade, Sri Lanka",7.2657063,79.8591235,Arpico
+121,Kundasale SS,"Kundasale, Sri Lanka",7.3096237,80.7103532,Arpico
+122,Katugastota SC,"Katugastota, Sri Lanka",7.3359903,80.6214005,Arpico
+123,Minuwangoda SC,"Minuwangoda, Sri Lanka",7.1842076,79.9500477,Arpico
+127,Katukurunda SC,"Katukurunda, Sri Lanka",6.549971,79.9836108,Arpico
+128,Seeduwa SC,"Seeduwa, Sri Lanka",7.1247085,79.8750028,Arpico
+14,Kiribathgoda SS,"Kiribathgoda, Sri Lanka",6.9778284,79.9271523,Arpico
+150,Ragama Daily,"Ragama, Sri Lanka",7.0280037,79.923,Arpico
+152,Athurugiriya Daily,"Athurugiriya, Sri Lanka",6.8723185,80.0003875,Arpico
+156,Weliweriya Daily,"Weliweriya, Sri Lanka",7.0318781,80.0283415,Arpico
+161,Kuliyapitiya Daily,"Kuliyapitiya, Sri Lanka",7.472123,80.0446221,Arpico
+163,Ambalangoda Daily,"Ambalangoda, Sri Lanka",6.2441521,80.0590804,Arpico
+167,Wennapuwa Daily,"Wennapuwa, Sri Lanka",7.3493037,79.8352767,Arpico
+168,Aththiditya Daily,"Aththiditya, Sri Lanka",6.8261828,79.881483,Arpico
+171,Kandana Daily,"Kandana, Sri Lanka",7.0477897,79.8970348,Arpico
+172,Mulleriyawa Daily,"Mulleriyawa, Sri Lanka",6.92695,79.9307072,Arpico
+174,Chilaw Daily,"Chilaw, Sri Lanka",7.5619894,79.8016569,Arpico
+175,Ambatenna Daily,"Ambatenna, Sri Lanka",7.3529789,80.6132646,Arpico
+181,Watareka Daily,"Watareka, Sri Lanka",6.8472579,80.0674619,Arpico
+188,Rathnapura Main Arpico Daily,"Rathnapura, Sri Lanka",6.7055742,80.3847345,Arpico
+190,Anuradhapura Arpico Daily,"Anuradhapura, Sri Lanka",8.3113518,80.4036508,Arpico
+191,Pelmadulla Arpico Daily,"Pelmadulla, Sri Lanka",6.6235199,80.5430499,Arpico
+22,Battaramulla SC,"Battaramulla, Sri Lanka",6.8979941,79.9222869,Arpico
+23,Dehiwala SC,"Dehiwala, Sri Lanka",6.8559485,79.8629683,Arpico
+24,Gampaha SC,"Gampaha, Sri Lanka",7.0840484,80.0098314,Arpico
+25,Wellawatte SS,"Wellawatte, Sri Lanka",6.8740921,79.8604934,Arpico
+26,Negombo SC,"Negombo, Sri Lanka",7.2055208,79.8512562,Arpico
+27,Kandy SC,"Kandy, Sri Lanka",7.2905715,80.6337262,Arpico
+76,Piliyandala SS,"Piliyandala, Sri Lanka",6.8017575,79.9227313,Arpico
+79,Kalutara SS,"Kalutara, Sri Lanka",6.5853948,79.96074,Arpico
+80,Haloluwa Daily,"Haloluwa, Sri Lanka",7.3018682,80.593833,Arpico
+14001,DELKANDA,"DELKANDA, Sri Lanka",6.8682271,79.8930046,Softlogic
+14003,ASIRI CENTRAL,"ASIRI CENTRAL, Sri Lanka",6.9205009,79.8658211,Softlogic
+14004,ASIRI KANDY,"ASIRI KANDY, Sri Lanka",7.2744094,80.6111499,Softlogic
+14005,KURUNEGALA,"KURUNEGALA, Sri Lanka",7.4817695,80.3608876,Softlogic
+14006,KOTTAWA,"KOTTAWA, Sri Lanka",6.8411652,79.9654324,Softlogic
+14007,NEGOMBO,"NEGOMBO, Sri Lanka",7.2055208,79.8512562,Softlogic
+14008,NAWALA,"NAWALA, Sri Lanka",6.8964191,79.8884819,Softlogic
+14009,MOUNT - LAVINIA,"MOUNT - LAVINIA, Sri Lanka",6.8301185,79.8800832,Softlogic
+14010,MALABE,"MALABE, Sri Lanka",6.9060787,79.9696277,Softlogic
+14011,CR FC,"CR FC, Sri Lanka",6.9009,79.8707,Softlogic
+14012,THALAWATHUGODA,"THALAWATHUGODA, Sri Lanka",6.8758648,79.9391936,Softlogic
+14013,KANDANA,"KANDANA, Sri Lanka",7.0477897,79.8970348,Softlogic
+14014,KANDY - MCC,"KANDY - MCC, Sri Lanka",7.2858881,80.6264778,Softlogic
+14015,WATTALA,"WATTALA, Sri Lanka",6.9906677,79.8931709,Softlogic
+SCA2,Athurugiriya 2,"No. 175/12, Malambe Road, Athurugiriya",6.8723185,80.0003875,Keels
+SCAR,Arangala,"No. 730, Malabe Road, Arangala, Athurugiriya",6.8860799,79.9626354,Keels
+SCBL,Boralasgomuwa,"No. 105/1, Kesbewa Road, Katuwala, Boralasgomuwa",6.8525143,79.8976618,Keels
+SCCC,Crescat,"No. 89, Crescat Boulevard, Galle Road, Colombo 03",6.9171044,79.8481871,Keels
+SCCM,Thalawathugoda,"No. 531, Capital Mall, Madiwela Road, Thalawathugoda",6.8733711,79.9171546,Keels
+SCDE,Dehiwala,"No. 268, Sir D.B. Jayathilake Mawatha, (Hill Street), Dehiwala",6.8501667,79.8725682,Keels
+SCED,Embuldeniya,"No. 303, Old Kottawa Road, Embuldeniya",6.8675496,79.9100845,Keels
+SCGS,Gamsabha,"No.315,High level road,Gangodawila,Nugegoda",6.8693128,79.8894317,Keels
+SCHG,Homagama,"No. 375/10A, Highlevel Road, Makumbura, Pannipitiya",6.838935,79.9784204,Keels
+SCHR,Havelock Road,"No. 228, Havelock Road, Colombo 05",6.8872296,79.8647003,Keels
+SCKE,Kotahena,"No. 01, Bonjeang Road, Colombo 13",6.9481824,79.8615896,Keels
+SCKH,Kohuwala,"No. 135, Dutugemunu Mawatha, Kohuwala",6.8798307,79.9029517,Keels
+SCKL,Kalubowila,"No. 53, Hospital Road , Kalubowila, Dehiwala",6.8660607,79.8753067,Keels
+SCKO,Kotte,"No. 581, Kotte Road , Pitakotte",6.8845527,79.9019512,Keels
+SCM2,Moratuwa Mall,"No. 340, K- Zone, Lakshapathiya, Moratuwa",6.7998133,79.8842826,Keels
+SCM3,Maharagama 2,"No. 184, Dehiwala Road, Maharagama",6.8423416,79.91794,Keels
+SCMD,Marine Drive,"No. 35, Upathissa Road, Bambalapitiya, Colombo 04",6.8896173,79.8553873,Keels
+SCMG,Maharagama,"No. 226, High Level Road, Maharagama",6.8496658,79.9235834,Keels
+SCML,Mount Lavinia,"No. 388/A, Galle Road, Mount Lavinia",6.8647757,79.8632349,Keels
+SCNW,Nawala,"No. 459, Nawala Road, Rajagiriya",6.9059941,79.894945,Keels
+SCPK,Pitakotte,"No. 216 A, Thalawathugoda Road, Pitakotte",6.8802431,79.9475213,Keels
+SCPN,Pannipitiya,"No. 361, Highlevel Road, Pannipitiya",6.8435174,79.9581664,Keels
+SCPT,Pittugala ,"No. 296, Kaduwela Road, Pittugala, Malambe ",6.9087426,79.9436659,Keels
+SCPY,Kohuwala 2,"No. 71, Sunethradevi Road, Kohuwala",6.8638002,79.8875011,Keels
+SCRJ,Rajagiriya 2,"No. 522, Kotte Road, Rajagiriya",6.9103636,79.8936349,Keels
+SCRM,Rathmalana,"No. 413, Galle Road, Rathmalana",6.816062,79.8769278,Keels
+SCRT,Raththanapitiya,"No. 235, Horana Road, Raththanapitya, Boralasgamuwa",6.8414636,79.9014475,Keels
+SCSJ,Rajagiriya,"No. 475, Sri Jayawardenapura Road, Rajagiriya",6.9094108,79.8942538,Keels
+SCTB,Thimbirigasyaya,"No. 407, Thimbirigasyaya Road, Colombo 05",6.8936437,79.8704269,Keels
+SCTH,Thalahena,"No. 427, Kaduwela Road, Thalahena",6.9082532,79.9447799,Keels
+SCUP,Union Place,"No. 199, Union Place, Colombo 2",6.9197379,79.8589027,Keels
+SCWJ,Wijerama,"No. 4 & 6, Soratha Mawatha, Nugegoda",6.8549219,79.9064625,Keels
+SFGL,Galle,"No. 46, Colombo Road, Kaluwella, Galle",6.0328817,80.2152229,Keels
+SGKB,Kiribathgoda,"No. 94, Makola Road, Kiribathgoda",6.9773951,79.9296825,Keels
+SGKY,Kelaniya,"No: 690, Biyagama Road, Pilapitiya, Kelaniya",6.9512173,79.9078132,Keels
+SGMH,Welisara,"No: 812, Negombo Road, Mahabage",7.0243153,79.899739,Keels
+SGWA,Wattala 2,"No. 384, Negombo Road, Wattala",6.9887181,79.8913253,Keels
+SIP2,Panadura 2,"No. 161, Galle Road, Walana, Panadura",6.4190267,80.0024827,Keels
+SKK2,Kandy 2,"No. 489, William Gopallawa Mawatha, Kandy",7.279561,80.6198891,Keels
+SKKA,Kandy,"City Centre Compex, Level 1, L1 -14, Kandy (Pvt) Ltd, Kandy",7.2905715,80.6337262,Keels
+SMMR,Matara,"No. 227, Anagarika Dharmapala Mawatha, Nupe, Matara",5.9478241,80.5344474,Keels
+SCK3,Kottawa 3,"No. 139, Athurugiriya Road, Kottawa",6.8441906,79.9686816,Keels
+SCTG,Thalawathugoda 2,"No. 158, Pannipitiya Road, Thalawathugoda",6.8749467,79.9364678,Keels
+SGKR,Kerawalapitiya,"No. 315, Handala Road, Wattala",6.9906677,79.8931709,Keels
+SRRP,Rathnapura,"No. 09, Panadura Road, Moragahayata, Rathnapura",6.6993724,80.379375,Keels
+SGEM,Enderamulla,"No. 75A, Enderamulla, Wattala",6.9977837,79.9189814,Keels
+SGKG,Kiribathgoda 2,"No. 197, Kandy Road, Kiribathgoda",6.9786855,79.9277,Keels
+SFGA,Galle 2,"No. 465,Wackwella Road, Kalegana, Galle",6.0599745,80.2021933,Keels
+SIKS,Kaluthara,"No. 735, Galle Road, Wettumakada, Kauthara South, Kaluthara",6.5654599,79.9676493,Keels
+SCET,Edmonton,"No. 25, Edmonton Road, Colombo - 5",6.8792387,79.8764553,Keels
+SGTY,Tyre Junction,"No. 498, Kandy Road, Dalugama, Kelaniya",6.9736276,79.9208395,Keels
+SCMW,Moratuwa 3,"No. 16, St Peters Road, Moratuwa",6.7684114,79.8868727,Keels
+SNRU,Kurunegala 02,"No. 41, Bauddhaloka Mawatha, Kurunegala",7.4832133,80.3587461,Keels
+SCKZ,Kesbewa,"No. 220/1, Bandaragama Road, Kasbewa",6.7919378,79.9300883,Keels
+SIBE,Beruwala,"No. 167, Galle road, Beruwala",6.4730375,79.984256,Keels
+SGRA,Ragama,"No. 968, Mahabage Road, Ragama",7.0270252,79.9150162,Keels
+SCGT,Gothatuwa,"No. 215, IDH Road, Gohtatuwa",6.9278516,79.9106324,Keels
+SMMS,Matara 2,"No 361, Welewatta Matara.",5.9471016,80.5625956,Keels
+SCAD,Attidiya 02,"208, Aththidiya Road, Bellanthotha",6.846864,79.8851625,Keels
+SIP4,Panadura 03,"267, Horana Road, Wekada, Panadura",6.7096021,79.9210634,Keels
+SYMT,Matale,"11, Nagolla Road, Mathale",7.452174,80.6133841,Keels
+SGGP,Gampaha 2,"125, Colombo Road, Gampaha",7.0849349,80.0087892,Keels
+SCGO,Godagama,"551, Highlevel Road, Homagama",6.8444164,80.0065919,Keels
+SGKC,Kochchikade,"21, Negembo Road, Kochchikade",7.091585,79.8884605,Keels
+SINL,Nalluruwa,"735, Galle Road, Nalluruwa, Panadura.",6.4190267,80.0024827,Keels
+SIAL,Aluthgama,"Ruwangiri”, Kaluwamodara, Galle Road, Aluthgama.",6.4425457,79.9922648,Keels
+SCWP,Wellampitiya,"230, Avissawella Road, Wellampitiya.",6.9319982,79.907722,Keels
+SCPI,Piliyandala,"242, Colombo Road, Miriswatta, Piliyandala",6.8017575,79.9227313,Keels
+SLKV,Kegall,"No. 461, Kandy road, Kegalle.",7.2532238,80.3454101,Keels
+SGMI,Minuwangoda,"No.28, Veyangoda Road, Minuwangoda.",7.1694282,79.9520782,Keels
+SREP,Embilipitiya,"No 248, Pallegama Embilipitiya.",6.3162324,80.8433145,Keels
+SGJA,Ja Ella," NO: 134 Minuwangoda Road, Kanuwana, Ja-Ela",7.083344,79.8926809,Keels
+SPWN,Wennappuwa,"No: 28A, Chilaw Road, Wennappuwa",7.3439464,79.840831,Keels
+SCMU,Mulleriyawa -Angoda,"No: 42D, Hospital Road, Angoda.",6.9289776,79.9277399,Keels
+SNRN,Kurunegala 03,"192, Puttalam Road, Kurunegala",7.4880602,80.3632963,Keels
+SIGN,Gorakana,"No. 290, Old Galle Road, Gorakana, Panadura",6.7604617,79.8975639,Keels
+SGN2,Negombo 2,"No. 339, Kimbulapitiya Road, Negombo",7.204378,79.876023,Keels
+SKGZ,Gampola,"27/2, Nawalapitiya Road, Gampola",7.1593375,80.5627166,Keels
+SPCH,Chilaw,"No. 110, Puttlam Road, Chilaw",7.5686716,79.7995779,Keels
+SCKJ,Kesbewa 2,"1059, Horana Road, Kesbewa  ",6.7919378,79.9300883,Keels
+SGRD,Delpe,"No. 324, Kadawatha Road, Delpe Junction, Mahara",6.8562078,79.8785357,Keels
+SGND,Dalupotha,"No 555, Chilaw Road, Negombo",7.2154132,79.84165,Keels
+SGEL,Eldeniya,"No. 434, Kandy Road, Ranmuthugala, Kadawatha",7.0147657,79.9690126,Keels
+SCBI,Biyagama,"No. 306, New Kandy Road, Biyagama",6.9084066,79.9446174,Keels
+SREG,Ehaliyagoda,"No. 34, Rathnapura Road, Eheliyagoda",6.8550009,80.2599776,Keels
+SPMV,Maravila,"No. 40, Horagalla South, Colombo Road, Marawila. ",7.4146725,79.828922,Keels
+SYMX,Matale 2,"833A, Aluvihare, Mathale",7.4975346,80.6243663,Keels
+SKKM,Katugasthota,"1416, Jaffna Road, Katugasthota",7.3183255,80.6293876,Keels
+SIHZ,Horana,"No. 233, Rathnapura Road, Horana",6.7188231,79.9930907,Keels
+SPPU,Puttalam,"# 89, Kurunegala Road, Puttalama.",7.7612443,80.1120736,Keels
+SGMP,Miriswatta,"No. 39, Gampaha Road, Miriswattha",7.0754409,80.0143367,Keels
+SCAK,Akuregoda,"No. 244, Pothuarawa Road, Akuregoda",6.8952571,79.9505987,Keels
+SCDR,Darley Road,"No. 460, T.B. Jaya Mawatha, Colombo 10.",6.928269,79.8636961,Keels
+SGTI,Thihariya,"No. 120, Kandy Road, Thihariya",7.1208728,80.0636742,Keels
+SCSL,Shangri-La Mall,"One Galle Face Mall, Colombo.",6.9270786,79.861243,Keels
+SHTA,Tangalle,"No. 281, Matara Road,Tangalle",6.0265276,80.7948493,Keels
+SCPA,Piliyandala 2,"118/1 A, Maharagama road, Mavittara,Piliyandala",6.8054739,79.9263413,Keels
+SCMY,Mattakuliya,"Nos. 854 Aluthmawatha Road, Mattakkuliya.",6.9716722,79.8786833,Keels
+SGNK,Negombo Kurana,"No. 800,2nd Kurana, Colombo Road, Negombo",7.1928611,79.8604831,Keels
+SGJW,JA Ela 3,"236, Negombo Road,Weligampitiya, Ja Ela",7.0673864,79.8934866,Keels
+SGSE,Seeduwa,"No. 253, Negombo Road, Bandarawaththa, Seeduwa",7.1231431,79.8783888,Keels
+SCTL,Thalawathugoda 3,"572/5, Thalawathugoda Road,Madiwela",6.8802431,79.9475213,Keels
+SLMN,Mawanella,"185, New Kandy Road, Mawanella",6.9084066,79.9446174,Keels
+SKKI,Kandy 3,"No. 927, Peradeniya Road, Kandy",7.2816136,80.6209311,Keels
+SGNO,Negombo Telwatta,"250, Colombo Road, Negombo",7.0739735,79.85717,Keels
+SCAV,Avissawella,"No.57, Kiriwandala, Avissawella",6.9409466,80.1963047,Keels
+SGSM,Sinharamulla,"356, Biyagama Road, Gonawela,Kelaniya",6.9482114,79.9386028,Keels
+SFK4,Karapitiya,"No.54, Hirimbura Cross Road, Karapitiya",6.0651597,80.2233789,Keels
+SFAB,Ambalangoda,"No. 435, Galle Road, Ambalangoda",6.242438,80.0492057,Keels
+SCHD,Hokandara,"188, Hokandara Road, Thalawathugoda",6.8796442,79.9458337,Keels
+SCVJ,Vidyala Junction,"No. 4, Hokandara Road, Kalalgoda, Pannipitiya",6.8802431,79.9475213,Keels
+SGMQ,Mawaramandiya,"475, Udupila Road, Mawaramandiya",6.9871489,79.977399,Keels
+SCBT,Battaramulla,"1024 and 1027, Pannipitiya Road, Battharamulla",6.8756534,79.9358023,Keels
+SIWD,Wadduwa,"No. 520, Galle road, Wadduwa",6.4190267,80.0024827,Keels
+SGK5,Kirillawala,"No. 89, Kandy Road, Pahala Imbulgoda, Imbulgoda",7.0371109,79.9917576,Keels
+SMMC,Matara 3,"No. 66, Kumarathunga Mawatha, Matara",5.946619,80.5391642,Keels
+SCK6,katubedda,"No. 78, Bandaranayake Mawatha, Katubedda",6.7962213,79.8964871,Keels
+SCMF,Maharagama 3,"No. 59, Piliyandala road, Maharagama",6.8426283,79.9262647,Keels
+SIWK,Kaluthara 2,"No. 34, Galle Road, Maha Waskaduwa ",6.6099352,79.9527322,Keels
+SCDP,Duplication Road,"No. 5, Lauries Place, Colombo 4 ",6.8943914,79.8570867,Keels
+SAAP,Anuradhapura,"No. 514, Maithripala Senanayake Mawatha, Anuradhapura",8.3259528,80.4053739,Keels
+SCKX,Kaduwela,"131/6, Hewagama, Kaduwela",6.9313808,79.9766195,Keels
+SCPO,Pitakotte 2,"308, Kotte Road, Pitakotte",6.8845527,79.9019512,Keels
+SRRR,Rathnapura 2,"No. 42, Bandaranayake Mawatha, Rathnapura",6.6810724,80.3981326,Keels
+SGYK,Yakkala,"65/5. 1st Lane, Kandy Road, Yakkala.",7.0824867,80.030854,Keels
+SCK7,Kotahena 2,"No. 141, K Cyril C Perera Mawatha, Cololmbo 13.",6.9532197,79.867138,Keels
+SCNG,Nugegoda 2,"No. 14, Nawala Road, Nugegoda",6.8781436,79.8906725,Keels
+SCTU,Thurstan,"No. 32, Kumarathunga Munidasa Mawatha, Cololmbo 3.",6.9019412,79.8590374,Keels
+SGDL,Diuwalapitiya,"Mahagedarawaththa, Minuwangoda Road,  Divulapitiya",7.146577,79.9336968,Keels
+SGGE,Ganemulla,"No 268, Kadawatha Road, Ganemulla",7.0603059,79.9627325,Keels
+SCCR,Kotta Road,"No 103, Dr. N.M. Perera Mawatha, Colombo 08",6.9108052,79.8891173,Keels
+1017,FC STAPLES STREET,"21,  Staples  Street,  Colombo  02",6.9202229,79.855804,Cargills
+1018,FC KANDY,"3 ,  Dalada  Veedia ,  Kandy .",7.2926093,80.6370454,Cargills
+1033,FC MAJESTIC CITY,"Majestic  City  ,  10 , Station Road , Colombo  04",6.8940731,79.8546195,Cargills
+1015,FC BANDARAWELA,"7 , Welimada  Road ,  Bandarawella",6.8311676,80.9887048,Cargills
+1005,FC FORT,"40 , York Street ,  Fort ,  Colombo  01",6.9356673,79.8447204,Cargills
+1076,FC KURUNEGALA,"44 , Negombo  Road , Kurunegala .",7.4884909,80.3606378,Cargills
+1083,FC MATARA,"60 , Anagarika Dharmapala Mw , Matara .",5.9494158,80.5447271,Cargills
+1084,FC WATTALA,"315 , Negombo  Road , Wattala .",7.091585,79.8884605,Cargills
+1106,FC DEHIWALA,"65 A ,  Galle  Road , Dehiwala .",6.8512992,79.865918,Cargills
+1104,FC RATNAPURA,"Municipal Commercial Complex ,Old Bus Stand Site,Nagarasaba Pedesa, Ratnapura",6.7055742,80.3847345,Cargills
+1105,FC COLPETTY,"407 , Galle  Road , Colpetty .",6.9097726,79.8501472,Cargills
+1107,EX THIMBIRIGASYAYA,"90 , Thimbirigasyaya   Road , Colombo 05",6.8936437,79.8704269,Cargills
+1201,EX MATARA,"No. 1,  Bus Stand Site, Matara",5.9496309,80.5468529,Cargills
+1301,EX MALIGAWATTE,"301, Pradeepa Mawatha, Colombo 10",6.9347204,79.8685915,Cargills
+1111,FC KEGALLE,"447 / 2 , Kandy  Road , Kegalla .",7.2532238,80.3454101,Cargills
+1114,FC ALUTHGAMA,"303 , Main  Street , Aluthgama .",6.4345732,80.0003875,Cargills
+1108,FC KOTAHENA,"108 , George R. de Silva  Mw , Kotahena .",6.9486466,79.859476,Cargills
+1117,FC AMBALANGODA,"98 A , New Road , Ambalangoda .",6.2441521,80.0590804,Cargills
+1109,FC PARK ROAD,"213 , Park  Road , Off Elvitigala Mw , Colombo 05",6.8894063,79.8768789,Cargills
+1115,FC BERUWELA,"162 ,  Galle  Road , Beruwela .",6.4730375,79.984256,Cargills
+1113,FC KATUGASTOTA,"271 A , Katugastota  Road , Kandy .",7.3212616,80.6275089,Cargills
+1133,FC WARAKAPOLA,"97 , Kandy  Road , Warakapola",7.2285555,80.200415,Cargills
+1303,EX ALEXANDRA PLACE,"75, C.W.W. Kannangara Mw. Colombo 7",6.9166038,79.8649075,Cargills
+1124,FC MATALE,"99 A , King  Street , Mathale",7.467465,80.6234161,Cargills
+1305,EX HAVELOCK ROAD,"323, Havelock Rd. Coombo 6",6.8824961,79.8696014,Cargills
+1116,FC AVISSAWELLA,"91 ,  Ratnapura  Road , Avissawella .",6.9503517,80.2137488,Cargills
+1121,FC GALLE,"24 & 26 ,  Gamini  Mawatha , Galle .",6.0333366,80.2154182,Cargills
+1130,FC MOUNT LAVINIA STC,"270 , Galle  Road , Mount Lavinia .S.T.C",6.8948227,79.8547493,Cargills
+1138,FC EMBILIPITIYA,"51 , Nonagama   Road , Embilipitiya .",6.3162324,80.8433145,Cargills
+1120,FC ANURADHAPURA,"248 , Main street , Anuradhapura .",8.3316899,80.4091268,Cargills
+1137,FC MUTUWAL,"54 /1 , Centre  Road, Mattakkuliya .",6.9716722,79.8786833,Cargills
+1308,EX BAMBALAPITIYA,"762, Galle Rd. Colombo 4",6.8948227,79.8547493,Cargills
+1139,FC BALANGODA,"157 , Old Road , Balangoda .",6.6478307,80.7002674,Cargills
+1145,FC MARADANA,"585 , Maradana  Road , Maradana .",6.9240228,79.8686059,Cargills
+1125,FC BADULLA,"18 , Dharmadutha Road, Badulla .",6.9880291,81.0599529,Cargills
+1146,FC VAVUNIYA,"137, Kandy Road , Vauniya .",8.7497702,80.4965416,Cargills
+1157,FC PILIMATALAWA,"178, Colombo Road , Pilimathalawa.",7.265568,80.5558208,Cargills
+1158,FC DAMBULLA,"643, Anuradhapura Road,  Dambulla",7.874217,80.6511287,Cargills
+1153,FC DICKWELLA,"52, Mahawela Road , Dickwella.",5.9716762,80.6951041,Cargills
+1159,FC AKURANA,"281, Matale Road , Akurana.",7.3693372,80.6173431,Cargills
+1150,FC HAMBANTOTA,"Thissa Road,  Hambanthota.",6.1283566,81.1258669,Cargills
+1164,FC HATTON,"171, Dimbulla Road  ,  Hatton.",6.8927975,80.5972816,Cargills
+1170,FC KUNDASALE,"Bamunupola Watta,  Kundasale.",7.2802929,80.6740597,Cargills
+1169,FC TANGALLE,"No.4,Mahawela Rd,  Tangalle.",6.0257603,80.758582,Cargills
+1187,FC KARAPITIYA,"Namal Traders, Karapitiya.",6.0705817,80.2251603,Cargills
+1186,FC EHELIYAGODA,"No.44, Main Street , Eheliyagoda",6.8485638,80.26001,Cargills
+1188,FC GAMPOLA,"No.8/8, Nawalapitiya Road, Gampola.",7.0558093,80.5345494,Cargills
+1316,EX TRINCOMALEE,Linganagar Service station (MPCS),8.5768576,81.2098826,Cargills
+1199,FC MAWANELLA,"No.22/C ,Kandy Road   Mawanella.",7.2521971,80.4493629,Cargills
+1162,FC TRINCOMALEE,"No.190, Thirugnanasampanthan Street, Trincomalee.",8.5873638,81.2152121,Cargills
+1278,FC KULIYAPITIYA,"No. 183 , Hettipola Road , Kuliyapitiya",7.472876,80.0443989,Cargills
+1279,FC BANDARAGAMA,"No. 51 , Panadura Road , Bandaragama .",6.6993724,80.379375,Cargills
+1281,FC PANNALA,"No. 33, Kuliyapitiya Road,  Pannala.",7.3323183,80.0278438,Cargills
+1288,FC BATTICALOA,"No. 67, St. Anthonys Street,  Batticaloa",7.7141071,81.6961912,Cargills
+1286,FC DHARGA TOWN,"No. 321/3,  Main Street,  Dhargatown",6.4447452,80.0168602,Cargills
+1289,FC NAWALAPITIYA,"No. 51, Gampola Road,  Nawalapitiya.",7.2622176,80.5929912,Cargills
+1294,FC AMPARA,"Reegal Cinama ,  Nidahas Mawatha , Ampara.",7.3017563,81.6747295,Cargills
+1291,FC DICKMANS ROAD,"No. 15, Dickmans Road , Bambalapitiya.",6.8867474,79.8588715,Cargills
+1292,FC GRANDPASS,"No. 130/C,  Layards Broadway,  Granpass,  Colombo  14.",6.9443444,79.8670732,Cargills
+1297,FC MONERAGALA,"No. 105, Wellawaya Road,  Monaragala",6.8716513,81.3512451,Cargills
+1298,FC IPALOGAMA,"Ranajayapura, Ipalogama.",8.0719177,80.546471,Cargills
+1412,FC PALMADULLA,"No.115, Rathnapura road, Pelmadulla.",6.8791262,80.2429977,Cargills
+1419,FC JAWATTA,"No 60, Jawatta Road, Thimbirigasyaya.",6.8949964,79.8667069,Cargills
+1411,FC DUPLICATION,"No. 450 E, R A De Mel Mawatha, Colombo 03",6.9024028,79.8545389,Cargills
+1422,FC MANIPPAY,"No. 120 Jaffna Road, Manipay.",9.7232349,79.9973669,Cargills
+1320,EX ROYALPARK,"No.115, Lake Drive, Rajagiriya",6.9065768,79.8871277,Cargills
+1432,FC KANNATHTHIDI,"No. 54, Kannathiddy Road, Jaffna",9.6711487,80.0115901,Cargills
+1425,FC AKKARAIPATHTHU,"No.143/B 1, Kalmunai road, Akkaraipattru.",7.2268544,81.8505496,Cargills
+1424,FC KALMUNEI,No. 1034/1 Kalmunai 14,7.4143831,81.8306334,Cargills
+1433,FC NORRIS CANAL,"No. 25,   Norris Canal Road , Colombo 10",6.9223969,79.8659984,Cargills
+1323,EX TRILLIUM RESIDENCE,"No. 153, Elvitigala Mawatha, Colombo 08",6.9038765,79.8781829,Cargills
+1428,FC WARIYAPOLA,"No. 107, Kurunegala Road, Wariyapola.",7.6239144,80.2433145,Cargills
+1321,EX KURUWITA,"No 96, Main Road, Kuruwita,",6.7739916,80.3676071,Cargills
+1322,EX RUWANWELLA,"No.114, Main Street, Ruwanwella.",7.0458735,80.2537063,Cargills
+1319,EX DIGANA,"Methsiripaya, New Town, Rajawella, Digana.",7.2963549,80.7301035,Cargills
+1434,FC KADURUWELLA,"No. 896, Batticaloa Road, Kaduruwela",7.9353523,81.0180545,Cargills
+1431,FC KILINOCHCHI,"No. 7-10 Anthoneypillai Building, Karadibokku, Kilinochchi.",9.4061536,80.4082787,Cargills
+1327,EX SUWARAPOLA,"No. 428, Moratuwa Rd, Suwarapola, Piliyandala.",6.7972669,79.9099368,Cargills
+1326,EX KOTIYAKUBURA,"No. 146, Ruwanwella Road, Kotiyakumbura.",7.1243401,80.2871828,Cargills
+1435,FC WELIMADA,"No. 11 Boralanda Road, Welimada",6.903517,80.91281,Cargills
+1429,FC BATTICALOA 02,"No.03, Gnanasooriyam Square, Trinco Road, Batticaloa.",7.7298995,81.6742784,Cargills
+1331,EX BENTOTA,"No. 118, Pahurumulla, Galle Road, Bentota",6.4255312,79.997709,Cargills
+1430,FC GALEWELA,"No. 210, Kalawewa Junction, Galewala",7.7565045,80.5771737,Cargills
+1443,FC PUTTALUM,"No. 97B, Kurunagala Road, Puttalam.",7.3595985,80.3066891,Cargills
+1439,FC POTHUVIL,"Kaleej Front Building”, Main Street, Pothuvil.",6.8752706,81.8306334,Cargills
+1446,FC WARD PLACE,"No. 48, Ward Place, Colombo-07",6.9160121,79.8701693,Cargills
+1448,FC ERAVUR,"No. 42,44, Main street, Eravur",7.7768972,81.6042028,Cargills
+1341,EX MELSIRIPURA,"Cargills Food City Express, Dambulla Road , Melsiripura",7.6449706,80.5077237,Cargills
+1342,EX NELLIYADI,"No.163, Jaffna Road, Nelliyady.",9.7980091,80.1779516,Cargills
+1453,FC SAMANTHURAI,"No. 32/2, Ampara Road,Viliniyady Junction,Sammanthurai.",7.3633212,81.7977421,Cargills
+1343,EX BELIATTA,"No. 52, Tangalle Road, Beliatta",6.036083,80.744546,Cargills
+1457,FC THISSAMAHARAMA,"No. 142, Hambantota Road, Thissamaharama",6.2791538,81.2876691,Cargills
+1339,EX MIDDENIYA,"Liyanage Building, Weeraketiya Road, Middeniya.",6.2456851,80.7655493,Cargills
+1335,EX GALGAMUWA,"No. 37, Anuradhapura Road, Galgamuwa",7.9864944,80.2878794,Cargills
+1338,EX MALWANA,"No.52/10/A Main Street, Malwana",6.9478313,80.0152972,Cargills
+1455,FC CHUNNAKAM,"No. 91, K. K. S. Road, Chunnakam.",9.7434617,80.0274205,Cargills
+1350,EX MATALE ROSE ST,"No. 1/15, Rose Street,Matale.",7.4709328,80.623242,Cargills
+1324,EX ALAWWA,"No. 151, Giriulla Road,Alawwa.",7.2467402,80.1290871,Cargills
+1352,EX SOUTHERN HIGHWAY A,"Cargills Food City Express A ,Canowin Arcade ,Welipenna Rest area.",6.4683752,80.0795258,Cargills
+1353,EX SOUTHERN HIGHWAY B,"Cargills Food City Express B,Canowin Arcade,Welipenna Rest area.",6.4683752,80.0795258,Cargills
+1464,FC PALLEKELE,"No. 396, Digana Road, Pallekele",7.295006,80.7344557,Cargills
+1155,FC AMBALANTHOTA,"No 129, Jayantha Building, Tangalle Road, Ambalantota.",6.1225999,81.0237594,Cargills
+1444,FC GALLE 02,"No. 10/8, Wakwella Road, Galle",6.035213,80.2171656,Cargills
+1349,EX KARANDENIYA,"No.343, MAHAHENDHANDA, KARANDENIYA",6.2703717,80.0913687,Cargills
+1460,FC KATUGASTOTA2,"No. 452, Katugastota road, kandy",7.3212616,80.6275089,Cargills
+1355,EX ERIYAGAMA,"No.180, Colombo road, Eiryagama.",6.9462153,79.9892034,Cargills
+1466,FC AMBALANGODA2,"No. 37, New Road, Ambalangoda.",6.2441521,80.0590804,Cargills
+1364,EX DEANS ROAD,"No. 153, Deans Road,Colombo 10",6.922196,79.8645896,Cargills
+1375,EX BUTTALA,"No. 36, Monaragala Road,Buttala.",6.7589233,81.2491298,Cargills
+1459,FC AKURESSA,"No.83 Matara Road,Akuressa",6.0968214,80.4770544,Cargills
+1467,FC GATAMBE,"No.496, Gatambe, Peradeniya.",7.2707766,80.6048083,Cargills
+1379,EX GINIGATHHENA,"No.120/1 ,Nawalapitiya Road,Ginigathhena",7.0558093,80.5345494,Cargills
+1357,EX AMPITIYA,"No. 63 Kandy Road,Ampitiya.",7.2690783,80.6648328,Cargills
+1469,FC WELIGAMA,"No. 454,Old Galle Road,Weligama.",5.9773782,80.4288487,Cargills
+1370,EX HIKKADUWA,"No. 162 Galle Road,Hikkaduwa",6.115667,80.1200582,Cargills
+1372,EX DERANIYAGALA,"No. 58, Dehiowita Road,Deraniyagala",6.9349198,80.3380213,Cargills
+1366,EX HABARADUWA,"Dassana Building,Galle Road,Habaraduwa.",5.9936463,80.2688039,Cargills
+1381,EX HABARANA,"No. 72,Trincomalee  Road,Habarana.",8.0322147,80.7519272,Cargills
+1371,EX WATTEGAMA,"No. 31, Matale Road, Wattegama",7.3693372,80.6173431,Cargills
+1148,FC JAFFNA,"No.420, Hospital Road,Jaffna.",9.6652238,80.0137285,Cargills
+1471,FC COTA ROAD,"No. 260, N.M Perera Mawatha, Cota Road, Colombo 08",6.9113889,79.8866667,Cargills
+1377,EX IBBAGAMUWA,"No. 5, Dambulla Road, Ibbagamuwa.",7.5451185,80.445106,Cargills
+1470,FC WELLAWAYA,"No. 32 Hambanthota Road,Wellawaya.",6.731289,81.1019688,Cargills
+1368,EX GODAKAWELA,"Main Street, Godakawela.",6.5041545,80.6528607,Cargills
+1383,EX MADAWACHCHIYA,"No. 102, Jaffna Road,Medawachchiya.",8.5410253,80.4880392,Cargills
+1360,EX GELIOYA,"No,35/D, Peradeniya Road,Gelioya.",7.2816136,80.6209311,Cargills
+1386,EX RAMBUKKANA,"No 57, Mawanella Road,Rambukkana.",7.3300102,80.4111999,Cargills
+1385,EX DENIYAYA,No. 04 Pallegama Road Deniyaya.,6.3159694,80.5171662,Cargills
+1475,FC MATHUGAMA,"No. 93, Kalutara Road,Mathugama",6.5241762,80.0862699,Cargills
+1387,EX KATUGODA,"No. 1/389, Matara Road,Katugoda, Galle",6.0330145,80.2390163,Cargills
+1484,FC MARINE CITY,"No 46, Station Road,Dehiwala.",6.8509933,79.8625996,Cargills
+1481,FC MATALE2,"No. 666,Trincomalee street,Matale",7.467465,80.6234161,Cargills
+1394,EX GALAGEDARA,"No. 200/C Hospital Junction, Galagedara.",7.3727606,80.5244948,Cargills
+1717,EX POOJAPITIYA,"No 6/1/C, Owissa Road, Poojapitiya.",7.3813156,80.5867633,Cargills
+1726,EX ANAMADUWA,"No 106, Puttalama Road, Anamaduwa.",7.8768056,80.0117638,Cargills
+1727,EX MAGGONA,"No. 396/5, Galle Road, Maggona",6.5094589,79.9819466,Cargills
+1728,EX ASCON RESIDENCE,"No. 608-1/35, Dr. Danister de Silva Mawatha, Dematagoda.",6.9379638,79.878569,Cargills
+1724,EX NELUWA,"No. 10, Sawijaya Building, Dellawa Road, Galle.",6.0328948,80.2167912,Cargills
+1490,FC NARAMMALA,"No. 161, Negombo Road,Narammala.",7.427258,80.2140717,Cargills
+1718,EX AHANGAMA,"No.55/A,Galle Road, Piyadigama, Ahangama.",5.97329,80.4103,Cargills
+1735,EX MALKADUWAWA,"FOOD CITY  EXPRESS –MALKADUWAWA,Molawatta, Malkaduwawa,Kurunegala.",7.4778098,80.3383375,Cargills
+1739,EX MAKULUDUWA,"No 16 B,Makuluduwa,Piliyandala.",6.8138371,79.9359634,Cargills
+1736,EX KATARAGAMA,"No 53/1/1/2, Sella Road, Kataragama.",6.4135463,81.3325679,Cargills
+1741,EX MANNAR,"No Road 01 ,Pallimulei Mannar",8.9809743,79.9044149,Cargills
+1738,EX KALMUNAI,"Cargills Food City, Saindhamaruthu, Kalmunai",7.4137924,81.8272433,Cargills
+1743,EX KEKIRAWA,"No 15, Malawa Village,Central Road, Kekirawa",8.042103,80.593833,Cargills
+1745,EX RAHULA JUNCTION,"No. 39,Perera MW,Buthgamuwa Rd,Rajagiriya",6.9235507,79.9136433,Cargills
+1746,EX MALIGAWATTE2,"No.227, Saddharma Mawatha, Maligawatte, Colombo 10",6.9347092,79.8674354,Cargills
+1749,EX ALADENIYA,"No. 418/A, Kurunegala Road,Aladeniya,Werallagama – Kandy.",7.3316371,80.5699329,Cargills
+1550,FC MATARA 02,"No. 28,37 ,Araliya Mawatha ,Kotuwegoda ,Matara.",5.9430934,80.5543934,Cargills
+1559,FC ANURADHAPURA 02,"No.46 Maithreepala Senanayeke Mawathe,Anuradapura",8.3113518,80.4036508,Cargills
+1498,FC KURUNEGALA 03,"Cargills food city No.200/Colombo road,Kurunegala - 03",7.4817695,80.3608876,Cargills
+1571,FC DAMBULLA 02,"No.166, Kurunegala Rd, Dambulla",7.8681306,80.6455959,Cargills
+1567,FC KEGALLE 02,"No: 75/10, Hitinawatta Rd, Nidahas Mw, Kegalle",7.2511422,80.341834,Cargills
+1584,FC MAHIYANGANAYA,"NO.113,TILE FACTORY RD,MAHIYANGANAYA",7.3410759,80.9935897,Cargills
+1576,FC RATHNAPURA 02,"No.111, Inner Circular Road ,Rathnapura",6.6824903,80.4052517,Cargills
+1756,EX BINDUNUWEWA,"Cargill Food City - Express, HILL SIDE, BINDUNUWEWA",6.8431887,81.002301,Cargills
+1579,FC MIRISSA,"Mahawaththa,  Galle Road, Mirissa.",5.948262,80.4715866,Cargills
+1760,EX THALDUUWA,"No. 499/A, Thalduwa, Avissawella",6.9590765,80.2235468,Cargills
+1589,FC ALUTHGAMA 02,"No:107 or 107/3, Galle Rd, Kaluwamodara, Aluthgama",6.4402017,79.9942713,Cargills
+1592,FC PILIMATHALAWA 02,"No. 231 ,Urapola, Pilimathalawa.",7.2640563,80.5389834,Cargills
+1759,EX MARADANA 02,"205 1/1 ,Maradana Road ,Colombo 10.",6.930624,79.8624312,Cargills
+1763,EX URAGASMANHANDIYA,"No. 5 , L.S.Mawatha ,Uragasmanhandiya.",6.349044,80.0978637,Cargills
+1762,EX NAWAGAMUWA,"No. 847 ,Avissawella Road, Nawagamuwa.",6.8413315,80.005132,Cargills
+1597,FC RAMBUKKANA,"No:35,DM Dissanayake Kumarathunga Mawatha, Rambukkana",7.3135237,80.3881333,Cargills
+1768,EX ELPITIYA,"No. 22 A , Pituwala Road, Elpitiya",6.2887341,80.1631349,Cargills
+1902,FC COLOMBO CITY CENTER,"No 137, Sir James Pieris Mawatha, Colombo 02",6.9173305,79.8554352,Cargills
+1766,EX PINNADUWA FAIRWAY,"South Tower , Fairway Residencies , Pinnaduwa ,Galle.",6.0655969,80.268081,Cargills
+1546,FC RATNAPURA 03,"No.496 Colombo Rd, Weralupa, Rathnapura",6.6898851,80.3909164,Cargills
+1594,FC JAYA ROAD,"No.1594, Food City Jaya Road, Colombo 04",6.88653,79.8549241,Cargills
+1770,EX PALAPATHWELA,"R.R.B.BANK BULDING, PALAPATHWALA",7.5300546,80.6260748,Cargills
+1548,FC BIYAGAMA,"No.452, New Kandy Rd, Biyagama",6.9390215,79.9871152,Cargills
+1545,FC GLORIOUS RESIDENCE,"No.167 Bandaranayeka Rd,Colombo 12",6.9381743,79.8604831,Cargills
+1761,EX NARAHENPITA,"No.522,Elvitigala Mawatha, Narahenpita",6.9038765,79.8781829,Cargills
+1600,EX GALAHA ROAD,"No. 24 ,Galaha Road ,Peradeniya.",7.2583458,80.599485,Cargills
+1773,EX UNAWATUNA,"No.134 Matara Rd, Unawatuna",6.0198256,80.2477127,Cargills
+1608,FC KOLLUPITIYA 02,"No. 271/1 ,Galle Road ,Colpetty",6.9097726,79.8501472,Cargills
+1774,EX DEHIWALA,"No.21, Hill Street, Dehiwala.",6.8501667,79.8725682,Cargills
+1616,FC POLONNARUWA,"No.13, f1, Hospital Junction, Polonnaruwa",7.9426827,81.0116445,Cargills
+1776,EX MALIGAWATTE 03,"No. 67, Pradeepa Rd, Maligawatta , Colombo 10",6.9386902,79.8747583,Cargills
+1772,EX LABUDUWA,"No. 52/A Thotagoda, Akmeemana",6.0836306,80.2962385,Cargills
+1777,EX RIKILLAGASKADA,"No.54, Dimbulkumbura Rd, Rikillagaskada",7.1451675,80.7852471,Cargills
+1497,FC DEMATAGODA 02,"DEMATAGODA , Sri Lanka",6.9352993,79.8807831,Cargills
+1549,FC BOMIRIYA,"BOMIRIYA, Sri Lanka",6.9344434,79.9961936,Cargills
+1555,FC BLOEMENDHAL,"BLOEMENDHAL, Sri Lanka",6.9529494,79.8702837,Cargills
+1607,FC GAMPOLA 02,"GAMPOLA , Sri Lanka",7.1635434,80.5702443,Cargills
+1614,FC KOLONNAWA 02,"KOLONNAWA , Sri Lanka",6.9283596,79.8949946,Cargills
+1619,FC KULIYAPITIYA 02,"KULIYAPITIYA , Sri Lanka",7.472123,80.0446221,Cargills
+1650,FC W. A. SILVA MAWATHA,"W. A. SILVA MAWATHA, Sri Lanka",6.8765025,79.8652516,Cargills
+1651,FC KARAPITIYA 02,"KARAPITIYA , Sri Lanka",6.0705817,80.2251603,Cargills
+1655,FC WALGAMA,"WALGAMA, Sri Lanka",5.9463714,80.5132818,Cargills
+1659,FC MATALE 03,"MATALE , Sri Lanka",7.467465,80.6234161,Cargills
+1661,FC GREEN PATH,"GREEN PATH, Sri Lanka",6.9117245,79.8614617,Cargills
+1663,FC KIRIBATHKUMBURA,"KIRIBATHKUMBURA, Sri Lanka",7.2679259,80.5749643,Cargills
+1664,FC THANIPOLGAHA JUNCTION,"THANIPOLGAHA JUNCTION, Sri Lanka",6.0459387,80.2252201,Cargills
+1667,FC AVISSAWELLA 02,"AVISSAWELLA , Sri Lanka",6.9543289,80.2045768,Cargills
+1669,FC BADULLA 02,"BADULLA , Sri Lanka",6.9934009,81.0549815,Cargills
+1670,FC MATHUGAMA 02,"MATHUGAMA , Sri Lanka",6.5219432,80.1136852,Cargills
+1671,FC MAWATHAGAMA,"MAWATHAGAMA, Sri Lanka",7.4321631,80.4437781,Cargills
+1672,FC SLAVE ISLAND,"SLAVE ISLAND, Sri Lanka",6.9257119,79.8503314,Cargills
+1676,FC BAUDDHALOKA MAWATHA,"BAUDDHALOKA MAWATHA, Sri Lanka",6.9018407,79.8692882,Cargills
+1678,FC KOTHALAWALA,"KOTHALAWALA, Sri Lanka",6.9194938,79.9780178,Cargills
+1680,FC KURUNEGALA 04,"KURUNEGALA , Sri Lanka",7.4817695,80.3608876,Cargills
+1695,FC BIBILA,"BIBILA, Sri Lanka",7.162409,81.22159,Cargills
+1697,FC TANGALLE 02,"TANGALLE , Sri Lanka",6.0243383,80.7940726,Cargills
+1779,EX UDAWALAWA,"UDAWALAWA, Sri Lanka",6.4184828,80.823938,Cargills
+1780,EX MORAWAKA,"MORAWAKA, Sri Lanka",6.2652802,80.491047,Cargills
+1781,EX AHUNGALLA,"AHUNGALLA, Sri Lanka",6.3132776,80.0409178,Cargills
+1782,EX KANTHALE,"KANTHALE, Sri Lanka",8.3512634,81.0069928,Cargills
+1783,EX JAYANTHIPURA,"JAYANTHIPURA, Sri Lanka",7.9483156,81.0017827,Cargills
+1784,EX DODANGODA,"DODANGODA, Sri Lanka",6.5417313,80.0433503,Cargills
+1785,EX GALLE FORT,"GALLE FORT, Sri Lanka",6.0304592,80.2150207,Cargills
+1787,EX BADDEGAMA,"BADDEGAMA, Sri Lanka",6.1688292,80.1793976,Cargills
+1788,EX BADULLA,"BADULLA, Sri Lanka",6.9934009,81.0549815,Cargills
+1790,EX HALDUMMULLA,"HALDUMMULLA, Sri Lanka",6.7602835,80.8809283,Cargills
+1791,EX IBBAGAMUWA 02,"IBBAGAMUWA , Sri Lanka",7.5554101,80.456443,Cargills
+1795,EX NOROCHCHOLAI,"NOROCHCHOLAI, Sri Lanka",8.0348657,79.7315747,Cargills
+1796,EX POTHUPITIYA,"POTHUPITIYA, Sri Lanka",6.4631156,80.4307831,Cargills
+1797,EX PITIGALA,"PITIGALA, Sri Lanka",6.3419553,80.2377078,Cargills
+1799,EX AMBANPOLA,"AMBANPOLA, Sri Lanka",7.9181144,80.2404959,Cargills
+1800,EX HAPUGALA,"HAPUGALA, Sri Lanka",6.0765847,80.1958755,Cargills
+1801,EX PALLEBEDDA,"PALLEBEDDA, Sri Lanka",6.4872288,80.6937177,Cargills
+1802,EX BULATHKOHUPITIYA,"BULATHKOHUPITIYA, Sri Lanka",7.1045281,80.336047,Cargills
+1803,EX TANGALLE,"TANGALLE, Sri Lanka",6.0243383,80.7940726,Cargills
+1806,EX THIHAGODA,"THIHAGODA, Sri Lanka",6.0133387,80.5660041,Cargills
+1807,EX WALASMULLA,"WALASMULLA, Sri Lanka",6.1508888,80.6937177,Cargills
+1809,EX ARACHCHIKANDA,"ARACHCHIKANDA, Sri Lanka",6.1382193,80.1344842,Cargills
+1810,EX ALAWWA 02,"ALAWWA , Sri Lanka",7.2954302,80.2366261,Cargills
+1816,EX MADAWALA ULPOTHA,"MADAWALA ULPOTHA, Sri Lanka",7.6155983,80.6354665,Cargills
+1818,EX PORT AUTHORITY,"PORT AUTHORITY, Sri Lanka",6.9407856,79.852666,Cargills
+1825,EX YATIYANTOTA,"YATIYANTOTA, Sri Lanka",7.0288824,80.2955419,Cargills
+1826,EX YMCA,"YMCA, Sri Lanka",6.9138726,79.8525287,Cargills
+1828,EX HIRIPITIYA,"HIRIPITIYA, Sri Lanka",7.6579606,80.3686488,Cargills
+1834,EX VAVUNIYA,"VAVUNIYA, Sri Lanka",8.7542029,80.4982402,Cargills
+1836,EX RAIGAMA,"RAIGAMA, Sri Lanka",6.7266167,80.0164621,Cargills
+1840,EX WATAREKA,"WATAREKA, Sri Lanka",6.8472579,80.0674619,Cargills
+1841,EX URUBOKKA,"URUBOKKA, Sri Lanka",6.3065297,80.6306103,Cargills
+1842,EX KEKANADURA,"KEKANADURA, Sri Lanka",5.9637528,80.6132646,Cargills
+1843,EX THELDENIYA,"THELDENIYA, Sri Lanka",7.3153819,80.7449309,Cargills
+1844,EX YANTHAMPALAWA,"YANTHAMPALAWA, Sri Lanka",7.5008975,80.3477676,Cargills
+1845,EX PIDURUWELLA,"PIDURUWELLA, Sri Lanka",7.4689738,80.302307,Cargills
+1847,EX HIKKADUWA 02,"HIKKADUWA , Sri Lanka",6.1394676,80.1062861,Cargills
+1850,EX NINTAVUR,"NINTAVUR, Sri Lanka",7.3314137,81.8333656,Cargills
+1852,EX RANNA,"RANNA, Sri Lanka",6.0935429,80.8626864,Cargills
+1853,EX WEERAKETIYA,"WEERAKETIYA, Sri Lanka",6.1476081,80.7633743,Cargills
+1854,EX KANNATHTHOTA,"KANNATHTHOTA, Sri Lanka",7.0947226,80.2822811,Cargills
+1858,EX THAMBUTHTHEGAMA,"THAMBUTHTHEGAMA, Sri Lanka",8.1540015,80.3045967,Cargills
+1859,EX WIJERAMA MAWATHA,"WIJERAMA MAWATHA, Sri Lanka",6.9110572,79.8711168,Cargills
+1862,EX PINNADUWA 02,"PINNADUWA , Sri Lanka",6.0641685,80.2617413,Cargills
+1864,EX ARAYAMPATHY,"ARAYAMPATHY, Sri Lanka",7.6569501,81.7404134,Cargills
+1866,EX MUTUR,"MUTUR, Sri Lanka",8.4579065,81.2684019,Cargills
+1867,EX KOPAY,"KOPAY, Sri Lanka",9.7045948,80.0523031,Cargills
+1869,EX DEBARAWEWA,"DEBARAWEWA, Sri Lanka",6.2774947,81.2670255,Cargills
+1872,EX OVAL VIEW RESIDENCE,"OVAL VIEW RESIDENCE, Sri Lanka",6.9180122,79.885249,Cargills
+1885,EX KALUWANCHIKUDI,"KALUWANCHIKUDI, Sri Lanka",7.517478,81.7871336,Cargills
+1887,EX POTHUHERA,"POTHUHERA, Sri Lanka",7.4216724,80.3296664,Cargills
+1888,EX ISIPATHANA MAWATHA,"ISIPATHANA MAWATHA, Sri Lanka",6.8881939,79.8677688,Cargills
+1891,EX VALACHCHENEI,"VALACHCHENEI, Sri Lanka",7.9213276,81.5246705,Cargills
+1892,EX MABULGODA,"MABULGODA, Sri Lanka",6.8281188,79.9738229,Cargills
+1896,EX ORION CITY,"ORION CITY, Sri Lanka",6.9406131,79.8789441,Cargills

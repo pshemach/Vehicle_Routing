@@ -1,0 +1,565 @@
+CODE,LOCATION,ADDRESS,LATITUDE,LONGITUDE
+150,Ragama,"No. 51 Kadawatha road, Ragama",7.028374,79.9226189
+152,Athurugiriya,"No .70 , Malabe Road, Athurugiriya",6.8803239,79.9844337
+154,Kaduwela,"No.503/10,Avissawella Road, Kaduwela.",6.9374389,79.9783936
+156,Weliweriya,"No 386, New Kandy Road, Weliweriya.",5.955217,80.536902
+160,Meegoda,"No. 510/F2, Highlevel Road, Meegoda, ",6.8441085,80.0460308
+161,Kuliyapitiya,"No. 82, Jayanthi Mawatha, Kuliyapitiya",7.4742345,80.0467744
+163,Ambalangoda,"No12, Galle Road, Ambalangoda",6.2421506,80.0496207
+166,Palanwatta,"No. 106/3A Palanwatte, Pannipitiya",6.828044,79.9480638
+167,Wennapuwa,"No 1/56 , Chilaw Road , Wennappuwa ",7.3426407,79.8413079
+168,Attidiya,"No144,Main Road Attidiya. ",7.66539,81.661453
+171,Kandana,"No-88,Negambo Road, Kandana",7.048,79.8937
+172,Mulleriyawa,"No. 348A-3, Hibutana, Mulleriyawa new town.",9.063898,80.498545
+174,Chilaw,"No. 44/A, Kurunagala road, Chillaw",8.3141293,80.239656
+179,Mawaramandiya,"No.529/3F, Udupila Road, Mawaramandiya.",6.9812454,79.9679721
+181,Wateraka,"No.275/A,Watareka,Padukka.",6.8415384,80.0916472
+182,Mattegoda,"193/11/1,Main Street, Mattegoda",6.8121327,79.9746984
+117,Wattala 2 AD ,"No.85, Negombo RD, Wattala.",7.0063561,79.8969779
+188,Rathnapura ,"No-06, Pelmadulla road, Batugedara, Rathnapura.",6.68278,80.39917
+189,Hettipola,"No 14 ,   Chilaw Road, Hettipola",7.4034,80.4993
+190,Anuradhapuraya,"525/26, stage 2, Anuradhapura",8.334985,80.4106096
+191,Pelmadulla,"No.129, Main Street, Pelmadulla",6.623696,80.542552
+192,Piliyandala Road Arpico Daily,"82/2,12 Kottawa Road, Mawiththara, Piliyandala",6.7999,79.9249
+82,"K,KUMBURA","No:431 / Colombo Road ,Kiribathkumbura ",7.2677289,80.5762641
+81,Haloluwa,"No 300/B/1 ,Warathenna ,Halloluwa",7.2860558,80.6025011
+80,GELIOYA,"No53 ,kandy Road ,Gelioya ",7.29387,81.672173
+175,AMBATHENNA ,"No.72 , Mathale Road , Ambathenna ",6.91807,79.848754
+121,Kundasale,"No.85-97, Digana Road, Kundasale",7.291417,80.733302
+122,Katugasthota,"No.323, Katugasthota Road,Kandy",7.3075263,80.6364224
+27,Kandy SC,"No.679, Peradeniya Road, Kandy",7.2809399,80.6206401
+1017,FC STAPLES STREET,"21,  Staples  Street,  Colombo  02",6.935649,79.845775
+1018,FC KANDY,"3 ,  Dalada  Veedia ,  Kandy .",7.296226,80.648898
+1019,EX MOUNT LAVINIA,"360 , Galle  Road , Mount Lavinia .",6.8594061,79.8640469
+1119,FC WELLAWATTE,"No:-256 3-B/1,Moor Road, Wellawatte, Colombo 06.",6.8712759,79.8618688
+1033,FC MAJESTIC CITY,"Majestic  City  ,  10 , Station Road , Colombo  04",6.8937047,79.8545846
+1034,FC MAHARAGAMA,"75 ,  Dehiwala  Road ,  Maharagama .",6.8455645,79.9261234
+1015,FC BANDARAWELA,"7 , Welimada  Road ,  Bandarawella",6.415518,80.851091
+1020,FC NUWARA ELIYA,"90 , Kandy  Road ,  Nuwaraeliya .",6.411189,80.846002
+1039,FC NUGEGODA,"240 , High  Level  Road , Nugegoda",6.8682939,79.8920467
+1005,FC FORT,"40 , York Street ,  Fort ,  Colombo  01",6.9363463,79.8451648
+1063,FC MALABE,"766 , Kaduwela  Road , Malabe",6.9040723,79.9546189
+1068,FC NEGOMBO,"355 , Main  Street  , Negombo .",7.2108702,79.8400712
+1074,FC BORALESGAMUWA,"231 , Dehiwala Road , Boralasgamuwa .",6.843037,79.9223026
+1069,EX RAJAGIRIYA,"349, Cotta  Road , Rajagiriya",6.9107518,79.8925
+1038,FC PITAKOTTE,"407 , Pitta Kotte Road , Pita Kotte .",6.8905,79.9015
+1075,FC PANADURA,"163 , Galle  Road , Panadura .",6.7093586,79.9079479
+1076,FC KURUNEGALA,"44 , Negombo  Road , Kurunegala .",7.4846002,80.3549741
+1083,FC MATARA,"60 , Anagarika Dharmapala Mw , Matara .",5.947822,80.5482919
+1084,FC WATTALA,"315 , Negombo  Road , Wattala .",6.984836,79.888517
+1086,FC GAMPAHA,"45 , Bauddhaloka  Mawatha , Gampaha .",7.0925595,79.9951396
+1087,FC JAELA,"49 , Negombo Road , Ja-Ela",7.078096,79.890508
+1102,FC CHILAW,"1 , Jetty  Street , Chilaw .",7.5790038,79.7930198
+1101,FC PILIYANDALA,"122/A, Kesbewa  Road , Piliyandala .",6.7999,79.9249
+1106,FC DEHIWALA,"65 A ,  Galle  Road , Dehiwala .",6.8340506,79.8673709
+1104,FC RATNAPURA,"Municipal Commercial Complex ,Old Bus Stand Site,Nagarasaba Pedesa, Ratnapura",7.167865,79.947151
+1105,FC COLPETTY,"407 , Galle  Road , Colpetty .",6.93407,80.135575
+1107,EX THIMBIRIGASYAYA,"90 , Thimbirigasyaya   Road , Colombo 05",6.411189,80.846002
+1103,FC NAWALA,"264 , Nawala  Road , Nawala .",6.8855909,79.8871159
+1201,EX MATARA,"No. 1,  Bus Stand Site, Matara",8.669216,81.206152
+1112,FC KADAWATHA,"831 , Kandy  Road , Kadawatha .",7.0031894,79.9561294
+1301,EX MALIGAWATTE,"301, Pradeepa Mawatha, Colombo 10",6.934791,79.869408
+1111,FC KEGALLE,"447 / 2 , Kandy  Road , Kegalla .",7.2523,80.3436
+1114,FC ALUTHGAMA,"303 , Main  Street , Aluthgama .",6.43333,79.99972
+1108,FC KOTAHENA,"108 , George R. de Silva  Mw , Kotahena .",6.9480164,79.8598246
+1117,FC AMBALANGODA,"98 A , New Road , Ambalangoda .",6.2355,80.0538
+1109,FC PARK ROAD,"213 , Park  Road , Off Elvitigala Mw , Colombo 05",7.565013,79.802067
+1115,FC BERUWELA,"162 ,  Galle  Road , Beruwela .",6.4859894,79.9832676
+1113,FC KATUGASTOTA,"271 A , Katugastota  Road , Kandy .",7.2728825,80.6040777
+1133,FC WARAKAPOLA,"97 , Kandy  Road , Warakapola",7.222439,80.191608
+1303,EX ALEXANDRA PLACE,"75, C.W.W. Kannangara Mw. Colombo 7",6.8910338,79.8484293
+1134,FC KARAGAMPITIYA,"176 , Hill  Street , Karagampitiya , Dehiwala",6.8506047,79.867792
+1124,FC MATALE,"99 A , King  Street , Mathale",7.249969,80.592953
+1136,FC PELIYAGODA,"304 , Negombo  Road , Peliyagoda",6.9650494,79.8819826
+1305,EX HAVELOCK ROAD,"323, Havelock Rd. Coombo 6",6.8814334,79.8695965
+1122,FC KELANIYA,"878 , Kandy  Road , Kelaniya",6.95606,79.883368
+1116,FC AVISSAWELLA,"91 ,  Ratnapura  Road , Avissawella .",6.9529643,80.212406
+1129,FC DEMATAGODA,"297/7 , Baseline  Road , Dematagoda , Colombo 09",6.917668,79.85513
+1121,FC GALLE,"24 & 26 ,  Gamini  Mawatha , Galle .",6.0686329,80.2181013
+1132,FC HOMAGAMA,"96 , High  Level  Road , Homagama .",6.8395437,79.9896826
+1118,FC KOHUWALA,"89, S.D.S. Jayasinghe Mawatha , Kohuwala, Nugegoda .",6.8684,79.8816
+1128,FC KOLONNAWA,"Urban  Council  Premises ,  Kolonnawa , Wellampitiya .",6.93311,79.891545
+1130,FC MOUNT LAVINIA STC,"270 , Galle  Road , Mount Lavinia .S.T.C",6.9098375,79.8501529
+1138,FC EMBILIPITIYA,"51 , Nonagama   Road , Embilipitiya .",6.2934953,80.884298
+1123,FC KOTTAWA,"87 , High level  Road , Kottawa .",6.8394272,79.9712634
+1120,FC ANURADHAPURA,"248 , Main street , Anuradhapura .",8.3353681,80.4109817
+1131,FC WENNAPPUWA,"25/2  ,  Chilaw  Road , Wennapuwa .",6.131082,80.104173
+1137,FC MUTUWAL,"54 /1 , Centre  Road, Mattakkuliya .",6.9733929,79.8755033
+1144,FC SEEDUWA,"673 , Negambo Road, Liyanagemulla  Seeduwa .",7.1305,79.8871
+1308,EX BAMBALAPITIYA,"762, Galle Rd. Colombo 4",6.894858,79.85481
+1139,FC BALANGODA,"157 , Old Road , Balangoda .",6.651389,80.697868
+1141,FC KADUWELA,"125 A, Colombo - Avissawella Rd , Kaduwela .",6.9339,79.982
+1145,FC MARADANA,"585 , Maradana  Road , Maradana .",6.926472,79.8640039
+1125,FC BADULLA,"18 , Dharmadutha Road, Badulla .",6.9879886,81.0595402
+1142,FC KANDANA,"39 A  Negambo Road , Kandana .",7.048,79.8937
+1146,FC VAVUNIYA,"137, Kandy Road , Vauniya .",6.976602,80.763936
+1312,EX PANADURA,"205, Galle Road, Panadura.",6.7105538,79.9075212
+1157,FC PILIMATALAWA,"178, Colombo Road , Pilimathalawa.",7.263315,80.5470324
+1143,BC KATUBEDDA,"241, Galle Road ,  Katubedda. ( Big  City )",6.7932807,79.8871845
+1160,FC ATTIDIYA,"251, Main Road ,  Attidiya .",7.481132,81.691431
+1158,FC DAMBULLA,"643, Anuradhapura Road,  Dambulla",7.88005,80.650647
+1153,FC DICKWELLA,"52, Mahawela Road , Dickwella.",5.940403,80.532569
+1159,FC AKURANA,"281, Matale Road , Akurana.",7.36032,80.60062
+1150,FC HAMBANTOTA,"Thissa Road,  Hambanthota.",6.326357,81.307648
+1147,FC MINUWANGODA,"40, Colombo Road,  Minuwangoda.",7.1663,79.9533
+1154,FC DELKANDA,"352 B, Gamsaba Junsion , Delkanda.",6.8630854,79.9014222
+1036,FC KIRIBATHGODA,"222 ,  Kandy  Road ,   Kiribathgoda .",6.9704282,79.9198954
+1164,FC HATTON,"171, Dimbulla Road  ,  Hatton.",6.8916333,80.5984591
+1317,EX KATUNAYAKE SLAF,SLAF Base Katunayaka,7.1852222,79.8768381
+1166,FC KATUKURUNDA,"919, Galle Road,  Katukurunda.",6.5931613,79.9591597
+1165,FC KOSWATTE,"290,  Kaduwela Road  ,  Koswatta.",7.3659684,79.8925803
+1173,FC KOHUWALA 2,"No.106/3, Dutugemunu Street,   Kohuwala",6.8671664,79.8845638
+1178,FC MAHARAGAMA 2,"No.147,High Level Rd,  Maharagama.",6.848,79.9265
+1176,FC MIRIHANA,"No.108,Jubilie Post,  Mirihana , Nugegoda.",6.8751656,79.8983616
+1177,FC NUGEGODA 2,"No.79,Stanley Thilakarathna Mawatha,  Nugegoda",6.8699688,79.8882835
+1180,FC RATMALANA,"No.143,Mount City,Galle Rd,  Rathmalana.",6.826776,79.877007
+1168,FC WIJERAMA,"No.533,High Level Rd,  Wijerama  , Nugegoda.",6.8556095,79.9123739
+1170,FC KUNDASALE,"Bamunupola Watta,  Kundasale.",7.36667,80.6
+1182,FC PANADURA 2,"No.518,Galle Rd,  Panadura ( 02 ).",6.704791,79.909546
+1169,FC TANGALLE,"No.4,Mahawela Rd,  Tangalle.",6.0219509,80.7959935
+1172,FC KOCHCHIKADE,"No.37, Negombo Road,  Kochchikade.",7.2657,79.8603
+1191,FC PEPILIYANA,"No.473/A.Colombo Road ,  Pepiliyana ,  Boralasgamuwa",6.8564851,79.8906015
+1187,FC KARAPITIYA,"Namal Traders, Karapitiya.",6.0670789,80.2257615
+1186,FC EHELIYAGODA,"No.44, Main Street , Eheliyagoda",6.844027,80.270705
+1188,FC GAMPOLA,"No.8/8, Nawalapitiya Road, Gampola.",7.1593404,80.5650356
+1140,FC HORANA,"No.142, Panadura Road ,  Horana.",6.7191705,80.0574859
+1184,FC RAGAMA,"No.33, Kadawatha Road, Ragama",7.028374,79.9226189
+1192,FC NITTAMBUWA,"No.89, Kandy  Road, Nittambuwa.",7.1372076,80.0923231
+1316,EX TRINCOMALEE,Linganagar Service station (MPCS),8.5764408,81.2317384
+1149,FC KALUTARA,"No.272,Galle Road,  Kalutara  South",6.704791,79.909546
+1194,EX BIA KATUNAYAKE,"CFC.Depatur concord, B.I.A. Katunayake",6.855323,79.865709
+1196,FC KADAWATHA 2,"No.317, Kanday Road, Kadawatha.",7.0009,79.95012
+1189,FC KURUNEGALA 2,"No.103, Dambulla Road, Kurunegala.",7.4975533,80.3833327
+1198,FC MIRIGAMA,"No.93, Giriulla  Road ,   Merigama",7.247844,80.129836
+1197,FC ATHURUGIRIYA,"No.100, Main Road,     Athurugiriya.",6.8687,79.9998
+1199,FC MAWANELLA,"No.22/C ,Kandy Road   Mawanella.",7.251092,80.450221
+1162,FC TRINCOMALEE,"No.190, Thirugnanasampanthan Street, Trincomalee.",8.579493,81.22364
+1278,FC KULIYAPITIYA,"No. 183 , Hettipola Road , Kuliyapitiya",7.4734938,80.0446206
+1279,FC BANDARAGAMA,"No. 51 , Panadura Road , Bandaragama .",6.7063806,79.9745219
+1280,FC KALUTARA NORTH,"No. 264 , Galle Road,  Kaluthara North",6.926343,79.844474
+1281,FC PANNALA,"No. 33, Kuliyapitiya Road,  Pannala.",7.3285371,80.0243502
+1283,FC WELIWERIYA,"No. 28, New Kandy Road,  Weliweriya",7.0324549,80.0281104
+1282,FC DELGODA,"No. 348, New Kandy Road,  Delgoda .",6.9799234,80.0089071
+1288,FC BATTICALOA,"No. 67, St. Anthonys Street,  Batticaloa",7.7356027,81.6941956
+1285,FC PANNIPITIYA,"No.1499/A, Vidyala Junction, Hokandara Rd,  Pannipitiya",6.8462,79.9448
+1287,FC BOKUNDARA,"No. 201/1A,  Bokundara  , Piliyandala",6.7999,79.9249
+1286,FC DHARGA TOWN,"No. 321/3,  Main Street,  Dhargatown",7.713777,81.692428
+1289,FC NAWALAPITIYA,"No. 51, Gampola Road,  Nawalapitiya.",7.0554719,80.5346006
+1294,FC AMPARA,"Reegal Cinama ,  Nidahas Mawatha , Ampara.",7.2978118,81.6790194
+1291,FC DICKMANS ROAD,"No. 15, Dickmans Road , Bambalapitiya.",6.9023114,79.85464016
+1292,FC GRANDPASS,"No. 130/C,  Layards Broadway,  Granpass,  Colombo  14.",6.9442201,79.8645632
+1293,FC KESBEWA,"No. 130A,  Horana Road,   Kesbewa.",6.7870882,79.9641446
+1295,FC MALABE 2,"No 162/7, Ratna Building New Kandy rd ,Weliwita Junction,  Malabe",6.9040723,79.9546189
+1297,FC MONERAGALA,"No. 105, Wellawaya Road,  Monaragala",6.897752,81.3413428
+1296,FC NEGOMBO 2,"No 266, Colombo Road,   Negambo.",6.101683,80.126999
+1290,FC BATTARAMULLA,"No. 103, Athul Kotte road,  Battaramulla.",6.8964,79.9181
+1403,FC WELISARA,"No. 768, Negombo road,   Welisara , Ragama.",7.0263493,79.9236484
+1298,FC IPALOGAMA,"Ranajayapura, Ipalogama.",8.0719714,80.544784
+1284,FC RAJAGIRIYA 2,"No.385/01,Sri Jayawardanapura Mw,Welikada, Rajagiriya.",6.9081,79.8871
+1406,FC KOTIKAWATTA,"No.250, IDH Rd, Kotikawatta.",6.883994,79.878658
+1412,FC PALMADULLA,"No.115, Rathnapura road, Pelmadulla.",6.6234343,80.5431464
+1405,FC WADDUWA,"No. 527, Galle Road, Wadduwa.",6.6686,79.9253
+1416,FC ETHULKOTTE,"No.906, Kotte Road, Ethul Kotte, Kotte",6.9051574,79.9055503
+1417,FC JAELA 02,"No. 417, Negombo Road, Jaela",7.0744,79.8919
+1414,FC YAKKALA,"No. 99, Yakkala Park, Kandy Road, Yakkala.",7.0859203,80.0335639
+1415,FC MAKOLA,"No. 99 Makola South, Makola",6.9749497,79.9499272
+1419,FC JAWATTA,"No 60, Jawatta Road, Thimbirigasyaya.",6.8938722,79.8670038
+1411,FC DUPLICATION,"No. 450 E, R A De Mel Mawatha, Colombo 03",7.314605,81.582305
+1422,FC MANIPPAY,"No. 120 Jaffna Road, Manipay.",9.7211058,80.0235894
+1421,FC THIHARIYA,"No.122/1 Parakumbamahal, Thihariya, Kalagedihena",7.1264859,80.0705602
+1320,EX ROYALPARK,"No.115, Lake Drive, Rajagiriya",6.9054246,79.8850576
+1432,FC KANNATHTHIDI,"No. 54, Kannathiddy Road, Jaffna",9.6713549,80.0115791
+1418,FC KALAPALUWAWA,"No. 21/8 Buthgamuwa Road, Kalapaluwawa, Rajagiriya",6.9162003,79.9097094
+1423,FC BANDARAWATTE,"No. 160/9A, New Kandy Road, Bandarawatte, Biyagama.",6.965946,79.976701
+1425,FC AKKARAIPATHTHU,"No.143/B 1, Kalmunai road, Akkaraipattru.",6.942199,80.775818
+1424,FC KALMUNEI,No. 1034/1 Kalmunai 14,7.4187031,81.8124103
+1433,FC NORRIS CANAL,"No. 25,   Norris Canal Road , Colombo 10",6.921012,79.866131
+1323,EX TRILLIUM RESIDENCE,"No. 153, Elvitigala Mawatha, Colombo 08",6.821061,79.961815
+1428,FC WARIYAPOLA,"No. 107, Kurunegala Road, Wariyapola.",7.591524,80.2721784
+1426,FC DANKOTUWA,"No. 35\37, Natthandiya Road, Dankotuwa.",7.2974892,79.8821873
+1321,EX KURUWITA,"No 96, Main Road, Kuruwita,",6.7761011,80.3668957
+1322,EX RUWANWELLA,"No.114, Main Street, Ruwanwella.",7.0458636,80.2537792
+1319,EX DIGANA,"Methsiripaya, New Town, Rajawella, Digana.",7.2968144,80.7308585
+1434,FC KADURUWELLA,"No. 896, Batticaloa Road, Kaduruwela",7.93333,81.03333
+1431,FC KILINOCHCHI,"No. 7-10 Anthoneypillai Building, Karadibokku, Kilinochchi.",9.3770186,80.3354047
+1327,EX SUWARAPOLA,"No. 428, Moratuwa Rd, Suwarapola, Piliyandala.",6.7978132,79.9114488
+1328,EX HABARAKADA,"No. 575/14 Borella Road, Habarakada, Homagama.",6.8656803,80.0134781
+1326,EX KOTIYAKUBURA,"No. 146, Ruwanwella Road, Kotiyakumbura.",7.1310747,80.2860286
+1329,EX NEDIMALA,"No. 65 C, Pepiliyana Road, Nedimala, Dehiwala.",6.852087,79.881942
+1420,FC MANCHANTHODUWAI,"No. 488 New Kalmunai Road, Manchanthoduwaii",7.705535,81.714182
+1435,FC WELIMADA,"No. 11 Boralanda Road, Welimada",6.865889,80.882922
+1427,FC ELAKANDA,"No. 132 Canal Road, Elakanda",7.025844,79.865896
+1429,FC BATTICALOA 02,"No.03, Gnanasooriyam Square, Trinco Road, Batticaloa.",7.7102,81.6924
+1331,EX BENTOTA,"No. 118, Pahurumulla, Galle Road, Bentota",6.4254,79.9948
+1333,EX MORATUWELLA,"No. 487, new Galle Road, Motuwella",6.770839,79.883239
+1430,FC GALEWELA,"No. 210, Kalawewa Junction, Galewala",7.7592885,80.5684242
+1443,FC PUTTALUM,"No. 97B, Kurunagala Road, Puttalam.",8.0301856,79.8286583
+1439,FC POTHUVIL,"Kaleej Front Building”, Main Street, Pothuvil.",7.831524,81.552949
+1446,FC WARD PLACE,"No. 48, Ward Place, Colombo-07",6.9162548,79.8699029
+1334,EX PASYALA,"No. 174 2/4, Kandy Road, Pasyala",7.155695,80.1112398
+1448,FC ERAVUR,"No. 42,44, Main street, Eravur",7.7782,81.6038
+1442,FC MARAWILA,"No. 65, Chilaw Road, Marawila",8.4919374,79.91959052
+1337,EX KANDANA,"No. 76 Station Road,Kandana",7.053165,79.9193674
+1341,EX MELSIRIPURA,"Cargills Food City Express, Dambulla Road , Melsiripura",7.639175,80.5066115
+1340,EX POLGAHAWELA,"No.23, Kurunagala Road, Polgahawela.",7.3352583,80.3002463
+1325,EX KIRIDIWELLA,"No.111, Radawana Road, Kirindiwela.",7.0417,80.1282
+1342,EX NELLIYADI,"No.163, Jaffna Road, Nelliyady.",9.7992119,80.1997538
+1332,FC MATTEGODA,"No. 146/83, Salmal Pedesa, Mattegoda",6.8190183,79.9710195
+1452,FC THALAWATHUGODA,"No. 205/S, Pannipitiya Road, Thalawathugoda",6.866174,79.8796
+1453,FC SAMANTHURAI,"No. 32/2, Ampara Road,Viliniyady Junction,Sammanthurai.",6.033033,80.798802
+1343,EX BELIATTA,"No. 52, Tangalle Road, Beliatta",6.0424456,80.7639441
+1457,FC THISSAMAHARAMA,"No. 142, Hambantota Road, Thissamaharama",6.2770724,81.2892814
+1339,EX MIDDENIYA,"Liyanage Building, Weeraketiya Road, Middeniya.",6.2273879,80.7677577
+1454,FC MORATUWA OLD RD,"No. 151, Main street, Moratuwa",6.797208,79.900936
+1335,EX GALGAMUWA,"No. 37, Anuradhapura Road, Galgamuwa",7.9956851,80.2706908
+1338,EX MALWANA,"No.52/10/A Main Street, Malwana",6.9534168,80.0090131
+1455,FC CHUNNAKAM,"No. 91, K. K. S. Road, Chunnakam.",9.7456,80.0271
+1330,EX MORATUMULLA,"No. 46, Main Street,Moratumulla.",6.291523,80.163099
+1344,EX DEPANAMA,"No. 205, Borella Road,Depanama,",6.856603,79.945244
+1350,EX MATALE ROSE ST,"No. 1/15, Rose Street,Matale.",7.4708262,80.6242126
+1456,FC RATMALANA 02,"No. 417, Galle Road, Rathmalana",6.837607,79.867514
+1348,EX PUGODA,"Cargills Food City, Hanwella Road,Kospitiyana,Pugoda.",6.926942,80.069513
+1324,EX ALAWWA,"No. 151, Giriulla Road,Alawwa.",7.2938087,80.2393427
+1345,EX BALAPITIYA,"No 79, Galle Road,Balapitiya",6.2639008,80.0366744
+1351,EX SEEDUWA PALLIYAWATTA,"No. 344, Kotugoda Road,Palliya Junction,Raddolugama",7.130979,79.886749
+1352,EX SOUTHERN HIGHWAY A,"Cargills Food City Express A ,Canowin Arcade ,Welipenna Rest area.",6.469516,80.077822
+1353,EX SOUTHERN HIGHWAY B,"Cargills Food City Express B,Canowin Arcade,Welipenna Rest area.",6.995219,80.406192
+1463,FC HANWELLA,"No. 138/2B, Main Street, Hanwella",6.9086,80.0796
+1464,FC PALLEKELE,"No. 396, Digana Road, Pallekele",7.2945,80.7225
+1354,EX CTG PILIYANDALA,"No. 120, CT Gardens,Gangarama Road,Thumbowila,Piliyandala.",6.8117272,79.9124112
+1155,FC AMBALANTHOTA,"No 129, Jayantha Building, Tangalle Road, Ambalantota.",6.119513,81.016088
+1444,FC GALLE 02,"No. 10/8, Wakwella Road, Galle",6.0656332,80.1985511
+1346,EX MAWARAMANDIYA,"No. 470,Delgoda Road,Mawaramandiya.",6.9856,79.9745
+1465,FC DALUGAMA,"No.334/ Dalugama, Kelaniya",6.9745876,79.918335
+1349,EX KARANDENIYA,"No.343, MAHAHENDHANDA, KARANDENIYA",6.2708131,80.0793223
+1460,FC KATUGASTOTA2,"No. 452, Katugastota road, kandy",7.2728825,80.6040777
+1355,EX ERIYAGAMA,"No.180, Colombo road, Eiryagama.",7.091106,79.99707
+1466,FC AMBALANGODA2,"No. 37, New Road, Ambalangoda.",6.2328919,80.0544604
+1362,EX PITIPANA,No. 254/ F - Avissavella rd. Homagama.,6.8412384,80.0034457
+1347,EX MULLERIYAWA,"No. 378 / Avissawella Rd, mulleriyawa, angoda.",6.9386407,79.9585745
+1363,EX SIDDAMULLA,"No: 77, Sangarama Road,Siddamulla,Piliyandala.",6.8232,79.9586
+1356,EX DIVULAPITIYA,"No.37, Bomugammana,Divulapitiya",7.256563,80.00489
+1364,EX DEANS ROAD,"No. 153, Deans Road,Colombo 10",6.921109,79.864399
+1375,EX BUTTALA,"No. 36, Monaragala Road,Buttala.",6.7570967,81.2402218
+1361,EX MANIKHINNA,"No. 31, Kandy Road,Manikhinna.",7.8558721,80.6529939
+1365,EX KATUNERIYA,"St. Anthonies Building, Chilaw Road, Katuneriya",7.3893081,79.8319885
+1459,FC AKURESSA,"No.83 Matara Road,Akuressa",6.057924,80.4902331
+1467,FC GATAMBE,"No.496, Gatambe, Peradeniya.",7.26291,80.5908561
+1473,FC STANLY TMW,"No. 143/5A, Stanly Thilakarathna Mawatha, Nugegoda.",6.8699688,79.8882835
+1367,EX NALLURUWA,"No.830 Galle Road,Nalluruwa",6.837607,79.867514
+1379,EX GINIGATHHENA,"No.120/1 ,Nawalapitiya Road,Ginigathhena",7.0024045,80.4903814
+1472,FC PETHIYAGODA,"No. 16  Biyagama Road,Pethiyagoda,Kelaniya",6.9553,79.922
+1373,EX ALUBOMULLA,"No. 256, Kurusa Handiya,Alubomulla,Panadura.",6.739325,79.907792
+1358,EX BOPITIYA,"No. 1, Pamunugama Road,Bopitiya",7.07,79.855
+1357,EX AMPITIYA,"No. 63 Kandy Road,Ampitiya.",7.2763351,80.6559644
+1378,EX RUKMALGAMA,"No. 33A,107/108,Rukmalgama,Pannipitiya.",9.792227,80.075284
+1369,EX PIRIVENA JUNCTION,"No. 567,Pirivena Junction,Maharagama Road,Boralasgamuwa.",6.8419428,79.9076505
+1469,FC WELIGAMA,"No. 454,Old Galle Road,Weligama.",5.97501,80.42968
+1370,EX HIKKADUWA,"No. 162 Galle Road,Hikkaduwa",6.1202915,80.1156869
+1372,EX DERANIYAGALA,"No. 58, Dehiowita Road,Deraniyagala",6.9363556,80.3343443
+1366,EX HABARADUWA,"Dassana Building,Galle Road,Habaraduwa.",6.837607,79.867514
+1381,EX HABARANA,"No. 72,Trincomalee  Road,Habarana.",8.0398876,80.7554997
+1371,EX WATTEGAMA,"No. 31, Matale Road, Wattegama",6.7989,81.4808
+1474,FC GANEMULLA,"No. 367, Kadawatha Road, Ganemulla",7.0603137,79.9626773
+1148,FC JAFFNA,"No.420, Hospital Road,Jaffna.",9.666103,80.012594
+1376,EX VEYANGODA,"No. 14, Good Shed Road, Veyangoda.",7.1534492,80.0602466
+1468,FC EKALA,"No. 100, Sanasa Building,Minuwangoda Road,Ekala.",7.1043562,79.9103677
+1471,FC COTA ROAD,"No. 260, N.M Perera Mawatha, Cota Road, Colombo 08",6.934744,79.842725
+1374,EX AMBEPUSSA,"No. 365, Colombo Road,Ambepussa.",7.2413572,80.2111758
+1377,EX IBBAGAMUWA,"No. 5, Dambulla Road, Ibbagamuwa.",7.5393521,80.4405948
+1380,EX POKUNUWITA,"No.07, Colombo Road, Pokunuwita",6.7265578,80.033746
+1447,FC KOTTAWA 02,"No. 867, High level Road,Kottawa.",6.8409162,79.96593
+1477,FC MARINE DRIVE,"No. 27,  17th Lane,Marine Drive,Colombo 03.",7.294566,80.560479
+1382,EX ARANGALA,"No. 462/2, Arangala Junction,Hokandara",6.8911631,79.9619738
+1470,FC WELLAWAYA,"No. 32 Hambanthota Road,Wellawaya.",6.7317804,81.1018359
+1368,EX GODAKAWELA,"Main Street, Godakawela.",6.5063,80.6434
+1384,EX DANDUGAMA,"No. 366, Colombo Road,Dandugama,Ja-Ela.",7.0744,79.8919
+1478,FC KESELWATTE,"No.29, Colombo Road,Keselwatta",7.091332,79.996565
+1383,EX MADAWACHCHIYA,"No. 102, Jaffna Road,Medawachchiya.",8.5536287,80.485686
+1360,EX GELIOYA,"No,35/D, Peradeniya Road,Gelioya.",7.542915,81.374525
+1476,FC HORANA2,"No 135, Anguruwathota Road,Horana",6.7062169,80.0689143
+1386,EX RAMBUKKANA,"No 57, Mawanella Road,Rambukkana.",7.3266342,80.4025509
+1385,EX DENIYAYA,No. 04 Pallegama Road Deniyaya.,6.345632,80.5491829
+1475,FC MATHUGAMA,"No. 93, Kalutara Road,Mathugama",6.489959,80.095032
+1387,EX KATUGODA,"No. 1/389, Matara Road,Katugoda, Galle",6.033562,80.236867
+1479,FC THALAHENA,"No. 723, Thalangama North,Thalahena",6.9060361,79.9263326
+1484,FC MARINE CITY,"No 46, Station Road,Dehiwala.",6.8316101,79.8635
+1480,FC CHILLAW2,"No. 98, Colombo Road,Chillaw.",7.256149,79.855753
+1388,EX KALUTARA CENTRAL,"No 235,Central Junction,Nagoda, Kalutara South.",6.561679,79.981573
+1481,FC MATALE2,"No. 666,Trincomalee street,Matale",7.4698,80.6217
+1392,EX GONAPOLA,"No 105, Horana Road, Gonapola",6.7571552,80.0141006
+1389,EX GREEN ROAD,"No.138/140 Greens Road, Negombo.",7.208614,79.840144
+1391,EX NATTANDIYA,"Kuliyapitiya Road, Naththandiya",7.397316,80.037741
+1390,EX PUWAKPITIYA,"No. 402,404,392/E ,  Colombo Road, Puwakpitiya, Awissawella.",6.9321,80.1874
+1395,EX MADAMPE,"No. 33, Station Road,Madampe",7.5216,79.8687
+1394,EX GALAGEDARA,"No. 200/C Hospital Junction, Galagedara.",7.3727659,80.5219199
+1393,EX MULLAITTIVE,"No 197, P.W.D.Road , Mullathiv",6.889804,79.916192
+1396,EX HAVELOCK CITY,"Club House Building, No. 324 ,Havelock city , Wellawatta.",6.882749,79.866915
+1487,FC PELAWATTA 02,"No.470,  PANNIPITIYA ROAD, PELAWATTA",6.0875,80.1985
+1397,EX WATHUPITIWALA,"No.392,ATHTHANAGALLA ROAD, WATHUPITIWALA.",7.1231,80.11
+1716,EX DELPE JUNCTION,"No 295, Kadawatha Rd, Ragama.",7.0292,79.917
+1717,EX POOJAPITIYA,"No 6/1/C, Owissa Road, Poojapitiya.",7.3784973,80.586694
+1723,EX HOKANDARA,"No 404/1, Thalawathugoda Road,Hokandara south, Hokandara.",6.8804849,79.9599002
+1726,EX ANAMADUWA,"No 106, Puttalama Road, Anamaduwa.",7.8776367,80.0109366
+1720,EX GODIGAMUWA,"No 263, Piliyandala Road, Godigamuwa North, Maharagama.",6.848,79.9265
+1721,EX LEWIS PLACE NEGOMBO,"No.132/A Poruthota Road ,Eththukala, Negombo.",7.2083,79.8358
+1727,EX MAGGONA,"No. 396/5, Galle Road, Maggona",6.4859894,79.9832676
+1398,EX MARADAGAHAMULLA,"No. 89, Negombo Road,Maradagahamula.",7.018267,79.899187
+1728,EX ASCON RESIDENCE,"No. 608-1/35, Dr. Danister de Silva Mawatha, Dematagoda.",6.9327474,79.8803715
+1729,EX NEGOMBO Y JUNCTION,"No. 297/1, Meerigama Road,Mahahunupitiya,Negombo.",7.2083,79.8358
+1722,EX ANDIAMBALAMA,"No. No. 223 D, Minuwangoda Road Andiambalama",9.792227,80.075284
+1724,EX NELUWA,"No. 10, Sawijaya Building, Dellawa Road, Galle.",7.70706035,80.65340183
+1490,FC NARAMMALA,"No. 161, Negombo Road,Narammala.",7.4283006,80.2144459
+1718,EX AHANGAMA,"No.55/A,Galle Road, Piyadigama, Ahangama.",6.8388379,79.8669957
+1489,FC UDAHAMULLA,"NO. 465& 481. OLD KOTTAWA ROAD,Udahamulla",6.8643,79.9095
+1732,EX WARAGODA,"No 390, Waragoda Road, Kelaniya.",6.9580677,79.9155285
+1731,EX RANMUTHUGALA,"No 571/4, Ranmuthugala, Kadawatha.",7.0019661,79.9512673
+1719,EX DALUPOTHA,"Ex Dalupotha,No 594, Chilaw Road, Negombo.",7.2194812,79.8453009
+1733,EX RATAMALANA STATION ROAD,"No 24, Sri Gnanendra Road, Ratmalana.",6.8197463,79.8682643
+1730,EX PANNIPITIYA OLD ROAD,"No 257, Old Road, Moraketiya,  Pannipitiya.",6.8462,79.9448
+1734,EX HUNUPITIYA,"No 58, Diulapitiya Road, Hunupitiya, Wattala.",6.9779,79.8898
+1491,FC WERAHERA,"NO.202,PLILIYANDALA RD,WERAHERA,BORALESGAMUWA.",6.8382,79.9104
+1740,EX PINNAWALA,"Cargill Food City - Express,No -563, Rambukkana Road, Pinnawala.",6.7087,80.6789
+1735,EX MALKADUWAWA,"FOOD CITY  EXPRESS –MALKADUWAWA,Molawatta, Malkaduwawa,Kurunegala.",7.244102,80.59864
+1739,EX MAKULUDUWA,"No 16 B,Makuluduwa,Piliyandala.",6.8153272,79.9349491
+1736,EX KATARAGAMA,"No 53/1/1/2, Sella Road, Kataragama.",6.968444,80.770424
+1737,EX KELANIYA,"No,15,Vihara MW,Cross Rd,Kelaniya",6.9553,79.922
+1742,EX ELAPITIWALA,"No 121,Elpitiwala Ragama",6.889804,79.9161922
+1741,EX MANNAR,"No Road 01 ,Pallimulei Mannar",8.9772444,79.9137786
+1738,EX KALMUNAI,"Cargills Food City, Saindhamaruthu, Kalmunai",7.3983722,81.8327841
+1743,EX KEKIRAWA,"No 15, Malawa Village,Central Road, Kekirawa",8.0405114,80.5941622
+1494,FC PAGODA,"No 41, Pagoda Rd , Nugegoda.",6.8755611,79.8922402
+1747,EX ICONIC RESIDENCE,"Iconic Residance , No 110, Parliament Rd , Rajagiriya",6.9032625,79.9107411
+1744,EX RAJAGIRIYA FAIRWAY,"No39, Perera Mawatha , Kotuwegoda",6.0240512,80.7976573
+1496,FC KAWDANA,"No.10 Attidiya Rd,Kawdana",6.8445317,79.8747511
+1745,EX RAHULA JUNCTION,"No. 39,Perera MW,Buthgamuwa Rd,Rajagiriya",6.9093966,79.8985781
+1746,EX MALIGAWATTE2,"No.227, Saddharma Mawatha, Maligawatte, Colombo 10",6.938669,79.874888
+1749,EX ALADENIYA,"No. 418/A, Kurunegala Road,Aladeniya,Werallagama – Kandy.",7.3272275,80.5932034
+1748,EX KOTUGODA,"No.80/H/7 .MINUWANGODA RD, KOTUGODA.",7.1231,79.9263
+1499,FC ENDERAMULLA,"No. 63 ,64 ,Dalupitiya Road, Enderamulla",6.9963743,79.9162626
+1486,FC GAMPAHA2,"No. 257 ,Colombo Road ,Gampaha.",7.0911057,79.997071
+1751,EX ON 320,"No. 320 ,Union Place ,Colombo 2.",6.919438,79.859861
+1750,EX MAGAMMANA,"No. 342/1 , Kahathuduwa Road ,Magammana ,Homagama",7.0103848,80.2620885
+1550,FC MATARA 02,"No. 28,37 ,Araliya Mawatha ,Kotuwegoda ,Matara.",6.0240512,80.7976573
+1566,FC WADDUWA 02,"No.685,Galle Rd,Wadduwa",6.6686,79.9253
+1559,FC ANURADHAPURA 02,"No.46 Maithreepala Senanayeke Mawathe,Anuradapura",6.9413418,80.1894709
+1551,FC PILIYANDALA 02,"No.134,Moratuwa Rd,Piliyandala",6.7999,79.9249
+1493,FC HOMAGAMA 02,"NO.100, HIGHLEVEL ROAD, HOMAGAMA",6.844,80.0024
+1498,FC KURUNEGALA 03,"Cargills food city No.200/Colombo road,Kurunegala - 03",6.714712,80.063782
+1557,FC THALAPATHPITIYA,"270/D, Thalapathpitiya Rd, Thalapathpitiya",6.8674092,79.9158906
+1565,FC MORATUMULLA,"No.411/1/2 ,De Zoisa Rd, Molte, Moratuwa",6.7746821,79.8826095
+1752,EX KALUBOWILA,"No.2/A, Peris Rd, Kalubovila, Dehiwala",6.8512785,79.8659769
+1553,FC SEEDUWA 02,"No.245, Colombo Rd, Seduwa",7.091332,79.996565
+1753,EX PADUKKA,"No.49/A, Hanwella Rd, Padukka",6.8438311,80.0903874
+1568,FC MILLENNIUM CITY,"No.383,Millennium City,Oruwala,Athurugiriya",6.8772464,79.9899292
+1571,FC DAMBULLA 02,"No.166, Kurunegala Rd, Dambulla",7.86,80.65167
+1561,FC WELLAMPITIYA,"No.214, Colombo Road, Wellampitiya.",6.9372438,79.8962142
+1569,FC ARAWWALA,"No: 675/1, Arawwala,Pannipitiya",6.8450609,79.9525626
+1567,FC KEGALLE 02,"No: 75/10, Hitinawatta Rd, Nidahas Mw, Kegalle",7.2532006,80.3454132
+1755,EX DOMPE,"No: 217 J, Main Street, Dompe",9.750686,80.230401
+1754,EX NAIWALA,"Cargill Food City - Express, Reality pl. Building, Naiwala",7.1593736,80.0309
+1575,FC HOKANDARA,"No: 450, Pannipitiya Rd, Hokandara",6.8804849,79.9599002
+1563,FC WIJERAMA 02,"No: 562, Gangodawila, Nugegoda",6.8630437,79.8951453
+1564,FC KOLAMUNNA,"No: 78/E, Madapatha Rd, Kolomunna",5.97179,80.364592
+1581,FC NITTAMBUWA 02,"Unit 2, Veyangoda Rd, Nittambuwa",7.1426,80.0938
+1584,FC MAHIYANGANAYA,"NO.113,TILE FACTORY RD,MAHIYANGANAYA",7.31667,80.98333
+1580,FC KATTIYA JUNCTION,"No.30,Old kesbewa road ,Gangodawila,Nugegoda.",6.8713669,79.8945204
+1582,FC GODAGAMA,"No. 179/1 ,Borella Road ,Godagama",6.8506,80.033
+1558,FC KOSWATTE 02,"No. 07&7/3 ,Denzil Kobbekaduwa Mawatha ,Koswatta",7.3659684,79.8925803
+1586,FC GAMPAHA 03,"No. 27 ,Oruthota Road ,Gampaha.",7.077059,79.985504
+1576,FC RATHNAPURA 02,"No.111, Inner Circular Road ,Rathnapura",6.682384,80.402886
+1756,EX BINDUNUWEWA,"Cargill Food City - Express, HILL SIDE, BINDUNUWEWA",6.911341,79.865033
+1757,EX KIRILLAWALA,"NO 538 KANDY ROAD ,KIRILLAWALA, KADAWATHA",7.0346833,79.9902341
+1588,FC HOMAGAMA 03,"192,ATHURUGIRIYA RD, HOMAGAMA",6.8591332,80.0029533
+1572,FC KURANA,"3701 M 1 L 1 677 ,Negombo Road ,Kurana , Katunayaka.",6.984836,79.888517
+1579,FC MIRISSA,"Mahawaththa,  Galle Road, Mirissa.",5.9493634,80.4558128
+1760,EX THALDUUWA,"No. 499/A, Thalduwa, Avissawella",6.9522325,80.2125947
+1589,FC ALUTHGAMA 02,"No:107 or 107/3, Galle Rd, Kaluwamodara, Aluthgama",6.43333,79.99972
+1592,FC PILIMATHALAWA 02,"No. 231 ,Urapola, Pilimathalawa.",7.2682337,80.5412865
+1759,EX MARADANA 02,"205 1/1 ,Maradana Road ,Colombo 10.",6.99903,79.877956
+1758,EX INGIRIYA,"No.50,Ratnapura Road,Ingiriya.",6.7438103,80.1720896
+1595,FC BANDARAGAMA 02,"No. 84 ,Panadura Road ,Bandaragama.",6.7063806,79.9745219
+1577,FC KADAWATHA 03,"No.467/11,Circular Road,Kadawatha",7.0009,79.95012
+1578,FC KELANIYA 02,"No.284, Old Kandy Road,Kelaniya",6.9553,79.922
+1570,FC BORUPANA,"1. NO: 69/1 , BORUPANA ROAD , RATHMALANA",7.708939,81.689314
+1587,FC PALLIMULLA,"No. 170 , Old Galle ,Pallimulla ,Panadura.",6.7429608,79.9024666
+1906,FC RAWATHAWATTA,"No. 491 ,Galle Road ,Rawathawatte ,Moratuwa.",6.773,79.8816
+1763,EX URAGASMANHANDIYA,"No. 5 , L.S.Mawatha ,Uragasmanhandiya.",6.981862,80.655775
+1762,EX NAWAGAMUWA,"No. 847 ,Avissawella Road, Nawagamuwa.",6.9051,80.0131
+1593,FC WELIPILLAWA,"No: 408/B/1, Welipillewa, Ganemulla.",7.0448687,79.9500936
+1585,FC BANDARAWELA 02,"No:393,BADULLA RD,BANDARAWELA",6.8334,80.9853
+1583,FC SARANANKARA ROAD,"No :23 Sri Saranankara Rd, Kalubovila, Dehiwala",6.8512785,79.8659769
+1599,FC WELISARA 02,"No.607, Negombo Rd,Maththumagala",6.984836,79.888517
+1904,FC RAGAMA 02,"No.15, Peralanda Rd,Ragama",7.03881,79.910512
+1590,FC ATHURUGIRIYA 02,"No.91, Godagama Rd, Athurugiriya",6.8727391,79.9958756
+1597,FC RAMBUKKANA,"No:35,DM Dissanayake Kumarathunga Mawatha, Rambukkana",7.3239273,80.3957479
+1765,EX DIYAGAMA NDT,"Cargill Food City - Express, DIYAGAMA.INSTITUTE OF THECHANOLOGY.DIYAGAMA",6.911341,79.865033
+1767,EX URAPOLA,"121/F, Ruwanwella Rd, Deenadamunuwa, Urapola",7.2723,80.5381
+1542,FC KADUWELA 02,"No: 134 Colombo Rd,Kaduwela",6.9374389,79.9783936
+1768,EX ELPITIYA,"No. 22 A , Pituwala Road, Elpitiya",6.233142,80.19275
+1902,FC COLOMBO CITY CENTER,"No 137, Sir James Pieris Mawatha, Colombo 02",6.934744,79.842725
+1541,FC HIMBUTANA,"No. 174 ,Himbutana Road ,Mulleriyawa.",6.9264634,79.9338846
+1766,EX PINNADUWA FAIRWAY,"South Tower , Fairway Residencies , Pinnaduwa ,Galle.",7.596745,81.724271
+1546,FC RATNAPURA 03,"No.496 Colombo Rd, Weralupa, Rathnapura",6.68610125,80.40792433
+1495,FC KIRIBATHGODA 02,"No.153, Makola Rd, Kiribathgoda",6.9780598,79.9273908
+1594,FC JAYA ROAD,"No.1594, Food City Jaya Road, Colombo 04",6.934744,79.842725
+1769,EX MORAGAHAHENA,"No.437 S1,Moragahahena,Millewa.",6.349277,81.217459
+1770,EX PALAPATHWELA,"R.R.B.BANK BULDING, PALAPATHWALA",8.927492,80.512242
+1548,FC BIYAGAMA,"No.452, New Kandy Rd, Biyagama",6.9526193,79.9940302
+1596,FC MALABE 03,"No. 412/2  A-B ,Athurugiriya Road, Malabe.",6.903836,79.955196
+1552,FC RADDOLUGAMA,"No.362 C1A NHS Road,Raddolugama",7.102881,79.889244
+1545,FC GLORIOUS RESIDENCE,"No.167 Bandaranayeka Rd,Colombo 12",6.934744,79.842725
+1761,EX NARAHENPITA,"No.522,Elvitigala Mawatha, Narahenpita",6.8928,79.8757
+1764,EX KOSGAMA,"No.33, High Level Road,Kosgama",6.939891,80.1275171
+1600,EX GALAHA ROAD,"No. 24 ,Galaha Road ,Peradeniya.",7.2621872,80.599196
+1773,EX UNAWATUNA,"No.134 Matara Rd, Unawatuna",6.0212,80.2503
+1608,FC KOLLUPITIYA 02,"No. 271/1 ,Galle Road ,Colpetty",6.786499,79.884319
+1903,FC KOTIKAWATTA 02,"No.161 kudabothgamuwa, Angoda",7.2467,80.4836
+1774,EX DEHIWALA,"No.21, Hill Street, Dehiwala.",6.851319,79.86656
+1905,FC NEGOMBO 03,"No. 28, Colombo Road ,Negombo",7.246668,79.850296
+1610,FC WENNAPPUWA 02,"No. 354 ,Colombo Road, Wennappuwa.",7.295095,79.85156
+1609,FC AWARIWATTA,"No.436,Baseline  Road, Awariwatta, Katunayeke",6.921324,79.877723
+1771,EX JAYA MAWATHA,"No.1794, Jaya Mawatha, Dedigamuwa",7.061057,79.925973
+1617,FC KATUKURUNDA 02,"No.669 Galle Rd,Wettumakada, Katukurunda",6.5573,79.9715
+1616,FC POLONNARUWA,"No.13, f1, Hospital Junction, Polonnaruwa",6.8397967,79.9940385
+1776,EX MALIGAWATTE 03,"No. 67, Pradeepa Rd, Maligawatta , Colombo 10",6.9349043,79.8695578
+1775,EX KURUDUGAHAHETHEKMA,"No.52 kurundugahahatlma ,Elpitiya",6.2918848,80.1619048
+1772,EX LABUDUWA,"No. 52/A Thotagoda, Akmeemana",6.3567576,79.7803792
+1777,EX RIKILLAGASKADA,"No.54, Dimbulkumbura Rd, Rikillagaskada",7.1515836,80.8098041
+1778,EX DEVINUWARA,"No.144G/144H Tangalle Rd, Devinuwara",5.961752,80.6868
+1613,FC WATTALA 02,"No.79, Negombo Road,Wattala",7.0063561,79.8969779
+S2HK,Kottawa 2,"No. 191, Horan Road, Kottawa.",6.094,80.303
+SCA2,Athurugiriya 2,"No. 175/12, Malambe Road, Athurugiriya",6.8772464,79.9899292
+SCAR,Arangala,"No. 730, Malabe Road, Arangala, Athurugiriya",6.887206,79.9675255
+SCBL,Boralasgomuwa,"No. 105/1, Kesbewa Road, Katuwala, Boralasgomuwa",6.83314,79.907294
+SCCC,Crescat,"No. 89, Crescat Boulevard, Galle Road, Colombo 03",6.917003,79.848217
+SCCM,Thalawathugoda,"No. 531, Capital Mall, Madiwela Road, Thalawathugoda",6.874709,79.934338
+SCDE,Dehiwala,"No. 268, Sir D.B. Jayathilake Mawatha, (Hill Street), Dehiwala",6.8512785,79.8659769
+SCED,Embuldeniya,"No. 303, Old Kottawa Road, Embuldeniya",6.8692513,79.9080518
+SCGS,Gamsabha,"No.315,High level road,Gangodawila,Nugegoda",6.8682939,79.8920467
+SCHG,Homagama,"No. 375/10A, Highlevel Road, Makumbura, Pannipitiya",6.8392272,79.9726949
+SCHR,Havelock Road,"No. 228, Havelock Road, Colombo 05",6.8802141,79.869512
+SCKE,Kotahena,"No. 01, Bonjeang Road, Colombo 13",6.726436,80.033863
+SCKH,Kohuwala,"No. 135, Dutugemunu Mawatha, Kohuwala",6.8684,79.8816
+SCKL,Kalubowila,"No. 53, Hospital Road , Kalubowila, Dehiwala",6.8637484,79.8685126
+SCKO,Kotte,"No. 581, Kotte Road , Pitakotte",6.8900532,79.9032684
+SCM2,Moratuwa Mall,"No. 340, K- Zone, Lakshapathiya, Moratuwa",6.7746821,79.8826095
+SCM3,Maharagama 2,"No. 184, Dehiwala Road, Maharagama",6.8469837,79.9265554
+SCMD,Marine Drive,"No. 35, Upathissa Road, Bambalapitiya, Colombo 04",6.8893104,79.8543553
+SCMG,Maharagama,"No. 226, High Level Road, Maharagama",6.8469973,79.9268651
+SCML,Mount Lavinia,"No. 388/A, Galle Road, Mount Lavinia",6.83389,79.86444
+SCNW,Nawala,"No. 459, Nawala Road, Rajagiriya",6.9174,79.8896
+SCPK,Pitakotte,"No. 216 A, Thalawathugoda Road, Pitakotte",6.87692,79.9272328
+SCPN,Pannipitiya,"No. 361, Highlevel Road, Pannipitiya",6.8462,79.9448
+SCPT,Pittugala ,"No. 296, Kaduwela Road, Pittugala, Malambe ",6.909663,79.9711355
+SCPY,Kohuwala 2,"No. 71, Sunethradevi Road, Kohuwala",6.8670544,79.8847353
+SCRJ,Rajagiriya 2,"No. 522, Kotte Road, Rajagiriya",6.9174,79.8896
+SCRM,Rathmalana,"No. 413, Galle Road, Rathmalana",6.837607,79.867514
+SCRT,Raththanapitiya,"No. 235, Horana Road, Raththanapitya, Boralasgamuwa",6.669219,79.991486
+SCSJ,Rajagiriya,"No. 475, Sri Jayawardenapura Road, Rajagiriya",6.9174,79.8896
+SCTB,Thimbirigasyaya,"No. 407, Thimbirigasyaya Road, Colombo 05",6.8959423,79.8732777
+SCTH,Thalahena,"No. 427, Kaduwela Road, Thalahena",6.9144935,79.9507612
+SCUP,Union Place,"No. 199, Union Place, Colombo 2",6.919438,79.859861
+SCWJ,Wijerama,"No. 4 & 6, Soratha Mawatha, Nugegoda",6.857649,79.908165
+SFGL,Galle,"No. 46, Colombo Road, Kaluwella, Galle",6.0328687,80.2147822
+SGKB,Kiribathgoda,"No. 94, Makola Road, Kiribathgoda",6.976833,79.929
+SGKY,Kelaniya,"No: 690, Biyagama Road, Pilapitiya, Kelaniya",6.9518701,79.9173819
+SGMH,Welisara,"No: 812, Negombo Road, Mahabage",7.02,79.8913
+SGWA,Wattala 2,"No. 384, Negombo Road, Wattala",6.9779,79.8898
+SIP2,Panadura 2,"No. 161, Galle Road, Walana, Panadura",6.7198096,79.9075006
+SKK2,Kandy 2,"No. 489, William Gopallawa Mawatha, Kandy",7.2923803,80.6339666
+SKKA,Kandy,"City Centre Compex, Level 1, L1 -14, Kandy (Pvt) Ltd, Kandy",7.2922234,80.6370835
+SMMR,Matara,"No. 227, Anagarika Dharmapala Mawatha, Nupe, Matara",5.94899,80.534952
+SCK3,Kottawa 3,"No. 139, Athurugiriya Road, Kottawa",6.8418687,79.9643923
+SCTG,Thalawathugoda 2,"No. 158, Pannipitiya Road, Thalawathugoda",6.8795875,79.9346861
+SGKR,Kerawalapitiya,"No. 315, Handala Road, Wattala",6.9779,79.8898
+SRRP,Rathnapura,"No. 09, Panadura Road, Moragahayata, Rathnapura",6.68278,80.39917
+SGEM,Enderamulla,"No. 75A, Enderamulla, Wattala",7.294566,80.560479
+SGKG,Kiribathgoda 2,"No. 197, Kandy Road, Kiribathgoda",6.9689794,79.911636
+SFGA,Galle 2,"No. 465,Wackwella Road, Kalegana, Galle",7.249624,80.453606
+SIKS,Kaluthara,"No. 735, Galle Road, Wettumakada, Kauthara South, Kaluthara",6.637392,79.96395
+SCET,Edmonton,"No. 25, Edmonton Road, Colombo - 5",6.8812862,79.8756536
+SGTY,Tyre Junction,"No. 498, Kandy Road, Dalugama, Kelaniya",6.9745876,79.918335
+SCMW,Moratuwa 3,"No. 16, St Peters Road, Moratuwa",6.7746821,79.8826095
+SNRU,Kurunegala 02,"No. 41, Bauddhaloka Mawatha, Kurunegala",7.4819039,80.3606205
+SCKZ,Kesbewa,"No. 220/1, Bandaragama Road, Kasbewa",6.736522,79.973667
+SIBE,Beruwala,"No. 167, Galle road, Beruwala",6.427337,79.9982066
+SGRA,Ragama,"No. 968, Mahabage Road, Ragama",7.0292,79.917
+SCGT,Gothatuwa,"No. 215, IDH Road, Gohtatuwa",6.930591,79.862641
+SMMS,Matara 2,"No 361, Welewatta Matara.",5.9645809,80.703268
+SGMk,Makola,"No. 106, Makola North, Makola",6.9749497,79.9499272
+SCAD,Attidiya 02,"208, Aththidiya Road, Bellanthotha",6.8399552,79.8822694
+SIP4,Panadura 03,"267, Horana Road, Wekada, Panadura",6.7132,79.9026
+SYMT,Matale,"11, Nagolla Road, Mathale",8.330443,80.414068
+SGGP,Gampaha 2,"125, Colombo Road, Gampaha",7.0028467,79.9539103
+SCGO,Godagama,"551, Highlevel Road, Homagama",6.8412384,80.0034457
+SGKC,Kochchikade,"21, Negembo Road, Kochchikade",7.2657,79.8603
+SINL,Nalluruwa,"735, Galle Road, Nalluruwa, Panadura.",6.7132,79.9026
+SIAL,Aluthgama,"Ruwangiri”, Kaluwamodara, Galle Road, Aluthgama.",6.4394,79.9895
+SCWP,Wellampitiya,"230, Avissawella Road, Wellampitiya.",6.9372438,79.8962142
+SCPI,Piliyandala,"242, Colombo Road, Miriswatta, Piliyandala",6.0157315,80.7189695
+SLKV,Kegall,"No. 461, Kandy road, Kegalle.",7.253298,80.346275
+SGMI,Minuwangoda,"No.28, Veyangoda Road, Minuwangoda.",7.1696959,79.9458028
+SREP,Embilipitiya,"No 248, Pallegama Embilipitiya.",6.889804,79.916192
+SGJA,Ja Ella," NO: 134 Minuwangoda Road, Kanuwana, Ja-Ela",7.0793775,79.8907632
+SPWN,Wennappuwa,"No: 28A, Chilaw Road, Wennappuwa",7.3893081,79.8319885
+SCMU,Mulleriyawa -Angoda,"No: 42D, Hospital Road, Angoda.",6.9869051,79.9291197
+SNRN,Kurunegala 03,"192, Puttalam Road, Kurunegala",7.6195581,80.246429
+SIGN,Gorakana,"No. 290, Old Galle Road, Gorakana, Panadura",6.7665598,79.8942365
+SIBM,Bandaragama,"No. 50, Panadura Road, Bandaragama",6.7063806,79.9745219
+SGN2,Negombo 2,"No. 339, Kimbulapitiya Road, Negombo",7.2051806,79.8532912
+SKGZ,Gampola,"27/2, Nawalapitiya Road, Gampola",7.1593404,80.5650356
+SPCH,Chilaw,"No. 110, Puttlam Road, Chilaw",7.57583,79.79528
+SCKJ,Kesbewa 2,"1059, Horana Road, Kesbewa  ",6.7928137,79.9461733
+SGRD,Delpe,"No. 324, Kadawatha Road, Delpe Junction, Mahara",7.1602,80.5724
+SGND,Dalupotha,"No 555, Chilaw Road, Negombo",7.2194812,79.8453009
+SGEL,Eldeniya,"No. 434, Kandy Road, Ranmuthugala, Kadawatha",7.0047,79.96
+SCBI,Biyagama,"No. 306, New Kandy Road, Biyagama",6.9526193,79.9940302
+SREG,Ehaliyagoda,"No. 34, Rathnapura Road, Eheliyagoda",6.844854,80.273006
+SPMV,Maravila,"No. 40, Horagalla South, Colombo Road, Marawila. ",7.3893081,79.8319885
+SYMX,Matale 2,"833A, Aluvihare, Mathale",7.4888621,80.6208562
+SKKM,Katugasthota,"1416, Jaffna Road, Katugasthota",7.3443912,80.6178312
+SIHZ,Horana,"No. 233, Rathnapura Road, Horana",6.7159,80.0626
+SPPU,Puttalam,"# 89, Kurunegala Road, Puttalama.",8.031019,79.828838
+SGMP,Miriswatta,"No. 39, Gampaha Road, Miriswattha",7.0733989,80.01588013
+SCAK,Akuregoda,"No. 244, Pothuarawa Road, Akuregoda",6.8945264,79.9522318
+SCDR,Darley Road,"No. 460, T.B. Jaya Mawatha, Colombo 10.",6.922769,79.862045
+SGTI,Thihariya,"No. 120, Kandy Road, Thihariya",7.1198819,80.0619791
+SCSL,Shangri-La Mall,"One Galle Face Mall, Colombo.",6.92762985,79.84493183
+SHTA,Tangalle,"No. 281, Matara Road,Tangalle",6.024,80.7911
+SCPA,Piliyandala 2,"118/1 A, Maharagama road, Mavittara,Piliyandala",6.7999,79.9249
+SCMY,Mattakuliya,"Nos. 854 Aluthmawatha Road, Mattakkuliya.",6.956636,79.8614756
+SGNK,Negombo Kurana,"No. 800,2nd Kurana, Colombo Road, Negombo",7.2083,79.8358
+SGJW,JA Ela 3,"236, Negombo Road,Weligampitiya, Ja Ela",7.0793775,79.8907632
+SGSE,Seeduwa,"No. 253, Negombo Road, Bandarawaththa, Seeduwa",7.1311776,79.8762627
+SCTL,Thalawathugoda 3,"572/5, Thalawathugoda Road,Madiwela",6.8760624,79.9289737
+SLMN,Mawanella,"185, New Kandy Road, Mawanella",7.2523113,80.4468038
+SKKI,Kandy 3,"No. 927, Peradeniya Road, Kandy",7.2444242,80.5797695
+SGNO,Negombo Telwatta,"250, Colombo Road, Negombo",7.2166704,79.8460345
+SCAV,Avissawella,"No.57, Kiriwandala, Avissawella",6.9413365,80.1920458
+SGSM,Sinharamulla,"356, Biyagama Road, Gonawela,Kelaniya",6.9553,79.922
+SFK4,Karapitiya,"No.54, Hirimbura Cross Road, Karapitiya",7.948676,81.497107
+SFAB,Ambalangoda,"No. 435, Galle Road, Ambalangoda",6.2355,80.0538
+SCHD,Hokandara,"188, Hokandara Road, Thalawathugoda",6.8799359,79.9465858
+SIMZ,Mathugama,"185, Kaluthara Road, Mathugama",6.489959,80.095032
+SCVJ,Vidyala Junction,"No. 4, Hokandara Road, Kalalgoda, Pannipitiya",6.8683248,79.9417996
+SGMQ,Mawaramandiya,"475, Udupila Road, Mawaramandiya",6.9847695,79.9715641
+SCBT,Battaramulla,"1024 and 1027, Pannipitiya Road, Battharamulla",6.8835532,79.9331755
+SIWD,Wadduwa,"No. 520, Galle road, Wadduwa",6.6944617,79.9146098
+SGK5,Kirillawala,"No. 89, Kandy Road, Pahala Imbulgoda, Imbulgoda",7.0376,79.9913
+SMMC,Matara 3,"No. 66, Kumarathunga Mawatha, Matara",5.948977,80.542773
+SCK6,katubedda,"No. 78, Bandaranayake Mawatha, Katubedda",6.7974474,79.8885193
+SCMF,Maharagama 3,"No. 59, Piliyandala road, Maharagama",6.848,79.9265
+SIWK,Kaluthara 2,"No. 34, Galle Road, Maha Waskaduwa ",6.6459201,79.9370807
+SCDP,Duplication Road,"No. 5, Lauries Place, Colombo 4 ",6.934744,79.842725
+SAAP,Anuradhapura,"No. 514, Maithripala Senanayake Mawatha, Anuradhapura",8.3231774,80.403114
+SCKX,Kaduwela,"131/6, Hewagama, Kaduwela",6.9210961,79.9748073
+SCPO,Pitakotte 2,"308, Kotte Road, Pitakotte",6.8900532,79.9032684
+SRRR,Rathnapura 2,"No. 42, Bandaranayake Mawatha, Rathnapura",6.6816822,80.3973131
+SGYK,Yakkala,"65/5. 1st Lane, Kandy Road, Yakkala.",7.0869,80.0271
+SCK7,Kotahena 2,"No. 141, K Cyril C Perera Mawatha, Cololmbo 13.",6.953332,79.867075
+SCNG,Nugegoda 2,"No. 14, Nawala Road, Nugegoda",6.8787282,79.8908299
+SCTU,Thurstan,"No. 32, Kumarathunga Munidasa Mawatha, Cololmbo 3.",7.25677,80.350931
+SGDL,Diuwalapitiya,"Mahagedarawaththa, Minuwangoda Road,  Divulapitiya",7.256563,80.00489
+SGGE,Ganemulla,"No 268, Kadawatha Road, Ganemulla",7.0603137,79.9626773
+SCCR,Kotta Road,"No 103, Dr. N.M. Perera Mawatha, Colombo 08",6.934744,79.842725
