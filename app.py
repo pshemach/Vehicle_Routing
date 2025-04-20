@@ -134,11 +134,8 @@ def upload_file():
     with open(os.path.join(job_folder, 'job_info.json'), 'w') as f:
         json.dump(job_info, f)
 
-    return jsonify({
-        'job_id': current_job_id,
-        'message': 'File uploaded successfully',
-        'next': url_for('solve', job_id=current_job_id)
-    })
+    # Redirect directly to the solve page instead of returning JSON
+    return redirect(url_for('solve', job_id=current_job_id))
 
 @app.route('/solve/<job_id>', methods=['GET'])
 def solve(job_id):
