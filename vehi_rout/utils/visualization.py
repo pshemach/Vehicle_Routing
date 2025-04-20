@@ -1,7 +1,14 @@
+"""
+Visualization module for the Vehicle Routing Problem.
+Provides functions to visualize routes on a map.
+"""
+
 import pandas as pd
 import csv
-from collections import defaultdict
 import os
+import random
+import ast
+from collections import defaultdict
 from functools import reduce
 from vehi_rout.utils.helper_utils import get_osrm_data
 import folium
@@ -18,15 +25,26 @@ if os.path.exists(cache_file):
         df = pd.read_csv(cache_file)
         for _, row in df.iterrows():
             origin_code, dest_code = row['origin_code'], row['dest_code']
-            # Reconstruct the path from the string (assuming it's stored as a JSON string)
+            # Reconstruct the path from the string (using ast.literal_eval for safety)
             path_str = row['path_coordinates']
-            path_coords = eval(path_str)  # Use eval carefully; better to use ast.literal_eval for safety
-            route_cache[tuple(sorted([origin_code, dest_code]))] = path_coords
+            try:
+                path_coords = ast.literal_eval(path_str)
+                route_cache[tuple(sorted([origin_code, dest_code]))] = path_coords
+            except (ValueError, SyntaxError) as e:
+                print(f"Warning: Could not parse path coordinates for {origin_code} to {dest_code}: {e}")
         print(f"Loaded {len(route_cache)} cached routes from {cache_file}")
     except Exception as e:
         print(f"Warning: Failed to load cache file {cache_file}: {e}")
 else:
     print(f"No cache file found at {cache_file}, starting fresh")
+
+
+def generate_random_color():
+    """Generate a random color in hexadecimal format."""
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return f'#{r:02x}{g:02x}{b:02x}'
 
 def visualize_routes_per_vehicle(master_df, route_dict, day):
     """
@@ -59,7 +77,7 @@ def visualize_routes_per_vehicle(master_df, route_dict, day):
         for i in range(len(route_nodes) - 1):
             origin_code = route_nodes[i]
             dest_code = route_nodes[i + 1]
-            
+
             # Check if path is in cache
             cache_key = tuple(sorted([origin_code, dest_code]))  # Use sorted tuple for bidirectional caching
             if cache_key in route_cache and route_cache[cache_key]:
@@ -70,10 +88,10 @@ def visualize_routes_per_vehicle(master_df, route_dict, day):
                 if origin_code not in code_to_coords or dest_code not in code_to_coords:
                     print(f"Warning: Node {origin_code} or {dest_code} not found in master_df for vehicle {vehicle_id}")
                     continue
-                
+
                 origin = (code_to_coords[origin_code][0], code_to_coords[origin_code][1])
                 destination = (code_to_coords[dest_code][0], code_to_coords[dest_code][1])
-                
+
                 print(f"Fetching path from {origin_code} ({origin}) to {dest_code} ({destination})")
                 path_cords, _, _ = get_osrm_data(origin, destination)
                 if path_cords:
@@ -82,8 +100,13 @@ def visualize_routes_per_vehicle(master_df, route_dict, day):
                 else:
                     print(f"Warning: No path found between {origin_code} and {dest_code} for vehicle {vehicle_id}")
                     continue
-            
-            path_coordinates.extend(path_cords)
+
+            # 🔥 Check if path has enough points
+            if path_cords and len(path_cords) > 2:
+                path_coordinates.extend(path_cords)
+                print(f"Added path from {origin_code} to {dest_code} with {len(path_cords)} points")
+            else:
+                print(f"Skipping path from {origin_code} to {dest_code} — insufficient points ({len(path_cords)} points)")
 
         # Create a new map centered at the first location of the route
         if route_nodes and route_nodes[0] in code_to_coords:
@@ -145,3 +168,106 @@ def visualize_routes_per_vehicle(master_df, route_dict, day):
         print(f"Warning: Failed to save cache file {cache_file}: {e}")
 
     return maps_dict
+
+
+def print_route_summary(route_dict, use_distance=False, file_path=None):
+    """
+    Print a summary of the routes and optionally save to a file.
+
+    Args:
+        route_dict: Dictionary containing route information for each vehicle
+        use_distance: Boolean indicating whether to use distance or time
+        file_path: Path to save the summary to (optional)
+
+    Returns:
+        tuple: (total_metric, total_visits)
+    """
+    metric_name = "distance" if use_distance else "time"
+    unit = "km" if use_distance else "mins"
+
+    total_metric = 0
+    total_visits = 0
+
+    # Create summary lines
+    summary_lines = []
+    summary_lines.append(f"Route Summary:")
+    summary_lines.append(f"{'':<3} {'Vehicle':<10} {'Stops':<10} {metric_name.capitalize():<15} {'Within Limit':<15}")
+    summary_lines.append("-" * 55)
+
+    for vehicle_id, route_info in route_dict.items():
+        route_metric = route_info.get(f"route_{metric_name}", 0)
+        num_visits = route_info.get("num_visits", 0)
+        max_metric = route_info.get(f"max_{metric_name}_limit", 0)
+        within_limit = route_info.get("within_limit", False)
+
+        summary_lines.append(f"{'':<3} {vehicle_id:<10} {num_visits:<10} {route_metric:<10} {unit:<4} {'Yes' if within_limit else 'No':<15}")
+
+        total_metric += route_metric
+        total_visits += num_visits
+
+    summary_lines.append("-" * 55)
+    summary_lines.append(f"{'':<3} {'Total':<10} {total_visits:<10} {total_metric:<10} {unit:<4}")
+
+    # Print summary
+    for line in summary_lines:
+        print(line)
+
+    # Save to file if path is provided
+    if file_path:
+        with open(file_path, 'w') as f:
+            for line in summary_lines:
+                f.write(line + '\n')
+            print(f"Summary saved to {file_path}")
+
+    return total_metric, total_visits
+
+
+def save_route_details_to_csv(route_dict, day, use_distance=False, file_path=None):
+    """
+    Save detailed route information to a CSV file.
+
+    Args:
+        route_dict: Dictionary containing route information for each vehicle
+        day: Day index (0-based)
+        use_distance: Boolean indicating whether to use distance or time
+        file_path: Path to save the CSV file (optional)
+
+    Returns:
+        str: Path to the saved file or None if not saved
+    """
+    import csv
+    import os
+
+    if file_path is None:
+        os.makedirs("output/csv", exist_ok=True)
+        file_path = f"output/csv/day_{day+1}_routes.csv"
+
+    metric_name = "distance" if use_distance else "time"
+    unit = "km" if use_distance else "mins"
+
+    with open(file_path, 'w', newline='') as csvfile:
+        fieldnames = ['Day', 'Vehicle', 'Stops', f'{metric_name.capitalize()} ({unit})',
+                     f'Max {metric_name.capitalize()} ({unit})', 'Within Limit', 'Route']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+
+        for vehicle_id, route_info in route_dict.items():
+            route_metric = route_info.get(f"route_{metric_name}", 0)
+            num_visits = route_info.get("num_visits", 0)
+            max_metric = route_info.get(f"max_{metric_name}_limit", 0)
+            within_limit = route_info.get("within_limit", False)
+            route_nodes = ' -> '.join(map(str, route_info.get("route_nodes", [])))
+
+            writer.writerow({
+                'Day': day + 1,
+                'Vehicle': vehicle_id,
+                'Stops': num_visits,
+                f'{metric_name.capitalize()} ({unit})': route_metric,
+                f'Max {metric_name.capitalize()} ({unit})': max_metric,
+                'Within Limit': 'Yes' if within_limit else 'No',
+                'Route': route_nodes
+            })
+
+    print(f"Route details saved to {file_path}")
+    return file_path

@@ -1,0 +1,127 @@
+/* Custom styles for the Vehicle Routing Solution */
+
+.route-summary {
+    font-family: monospace;
+    white-space: pre-wrap;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 3rem;
+    height: 3rem;
+}
+
+.vehicle-badge {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.route-stats {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.route-stats table {
+    width: 100%;
+}
+
+.route-stats th {
+    text-align: left;
+    padding: 5px;
+}
+
+.route-stats td {
+    padding: 5px;
+}
+
+.summary-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.unvisited-nodes {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff3cd;
+    border-radius: 5px;
+    border: 1px solid #ffeeba;
+}
+
+.node-chip {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px;
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    font-size: 0.85rem;
+}
+
+.day-selector {
+    margin-bottom: 15px;
+}
+
+.day-selector .btn {
+    margin-right: 5px;
+}
+
+.file-icon {
+    margin-right: 5px;
+}
+
+.job-card {
+    transition: transform 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.status-completed {
+    background-color: #28a745;
+}
+
+.status-running {
+    background-color: #007bff;
+}
+
+.status-failed {
+    background-color: #dc3545;
+}
+
+.status-initialized {
+    background-color: #6c757d;
+}

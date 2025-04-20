@@ -1,10 +1,6 @@
 from datetime import datetime
 import pandas as pd
 import numpy as np
-import folium
-import json
-from collections import defaultdict
-import os
 
 
 def get_date_difference(date_str1, date_str2, format1='%Y-%m-%d', format2='%Y-%m-%d'):
@@ -26,7 +22,7 @@ def get_date_difference(date_str1, date_str2, format1='%Y-%m-%d', format2='%Y-%m
             date1 = date_str1.date()
         else:
             date1 = datetime.strptime(date_str1, format1).date()
-            
+
 
         if isinstance(date_str2, pd.Timestamp): #Added this check
             date2 = date_str2.date()
@@ -46,7 +42,7 @@ def get_str_key(df):
         df['CODE'] = df['CODE'].astype(str)
         print('Converting to Object')
     return df
-    
+
 import requests
 def get_osrm_data(origin, destination):
     """
@@ -68,7 +64,7 @@ def get_osrm_data(origin, destination):
             distance = data["routes"][0]["distance"] / 1000
             duration = data["routes"][0]["duration"] / 60
             return path_cords, distance, duration
-    
+
     return None, np.inf, np.inf
 
 def get_values_not_in_second_list(list1, list2):
@@ -82,9 +78,70 @@ def get_values_not_in_second_list(list1, list2):
     Returns:
         list: A list containing values from list1 that are not in list2.
     """
-    return [item for item in list1 if item not in list2] 
+    return [item for item in list1 if item not in list2]
 
 
 
 def sigmoid(x):
     return x / (x + np.exp(-x))
+
+
+def get_penalty_list(demand_dict, base_penalty, total_days, current_date=None):
+    """
+    Calculate penalties for not visiting nodes based on days remaining and demand.
+
+    Args:
+        demand_dict (dict): Dictionary containing demand information
+        base_penalty (int): Base penalty value
+        total_days (int): Total number of days for planning
+        current_date (str, optional): Current date in format 'YYYY-MM-DD'
+
+    Returns:
+        list: List of penalties for each node
+    """
+    # Define base penalty weights for different days remaining
+    base_penalty_dict = {
+        7: 500,
+        6: 500,
+        5: 500,
+        4: 500,
+        3: 500,
+        2: 500,
+        1: 400
+    }
+
+    penalties = []
+
+    # If current_date is not provided, use today's date
+    if current_date is None:
+        current_date = datetime.now().strftime('%Y-%m-%d')
+
+    # Calculate penalties based on days remaining and demand
+    for i, key in enumerate(demand_dict['key']):
+        if key == '0':
+            # Depot has no penalty
+            penalties.append(0)
+            continue
+
+        # Get the PO date for this demand
+        po_date = demand_dict['po_date'][i]
+
+        # Calculate days remaining
+        days_remaining = total_days - (get_date_difference(current_date, po_date) + 1)
+
+        if days_remaining is None or days_remaining < 1 or days_remaining > 7:
+            # If days_remaining is invalid, use a default penalty
+            penalties.append(base_penalty)
+            continue
+
+        # Get the weight for this number of days remaining
+        weight = base_penalty_dict.get(days_remaining, 100)
+
+        # Calculate penalty based on days remaining and demand
+        demand = demand_dict.get(key, 1)
+        penalty = weight * demand
+        print(f"Penalty for {key}: {penalty}")
+
+        penalties.append(penalty)
+
+    return penalties

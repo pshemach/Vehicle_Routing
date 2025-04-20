@@ -1,8 +1,12 @@
-pandas
-numpy
-geopy
-matplotlib
-seaborn
-folium
-ortools
+flask==2.3.3
+werkzeug==2.3.7
+pandas==2.0.3
+numpy==1.24.3
+geopy==2.3.0
+matplotlib==3.7.2
+seaborn==0.12.2
+folium==0.14.0
+ortools==9.6.2534
+gunicorn==21.2.0
+python-dotenv==1.0.0
 -e .

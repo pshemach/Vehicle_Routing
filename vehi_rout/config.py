@@ -1,0 +1,41 @@
+"""
+Configuration module for the Vehicle Routing Problem.
+Contains all the parameters used in the solution.
+"""
+
+# Number of days to plan ahead
+TOTAL_DAYS = 6
+
+# Maximum number of visits per vehicle
+# 8 vehicles with different capacities
+MAX_VISITS_PER_VEHICLE = [15, 15, 15, 15, 15, 15, 15, 15]
+
+# Maximum time (in minutes) per vehicle
+MAX_TIME_PER_VEHICLE = [1200, 1200, 600, 600, 600, 600, 600, 600]
+
+# Maximum distance (in km) per vehicle
+MAX_DISTANCE_PER_VEHICLE = [100, 100, 100, 100, 100, 100, 100, 150]
+
+# Base penalty for not visiting a node (used in time-based routing)
+TIME_BASE_PENALTY = 100000
+
+# Base penalty for not visiting a node (used in distance-based routing)
+DISTANCE_BASE_PENALTY = 1000
+
+# Depot node ID
+DEPOT = 0
+
+# Solver parameters
+SOLVER_TIME_LIMIT_SECONDS = 30
+
+# Penalty weights for different days remaining
+# The closer to the deadline, the higher the penalty
+PENALTY_WEIGHTS = {
+    1: 40,   # 1 day remaining
+    2: 50,   # 2 days remaining
+    3: 100,  # 3 days remaining
+    4: 100,  # 4 days remaining
+    5: 100,  # 5 days remaining
+    6: 1000, # 6 days remaining
+    7: 100   # 7 days remaining
+}
