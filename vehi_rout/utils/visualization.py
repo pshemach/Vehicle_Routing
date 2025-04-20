@@ -12,6 +12,7 @@ from collections import defaultdict
 from functools import reduce
 from vehi_rout.utils.helper_utils import get_osrm_data
 import folium
+import folium.plugins
 
 # Global cache to store route paths (key: tuple of (origin_code, dest_code), value: path_coordinates)
 route_cache = defaultdict(list)
@@ -46,12 +47,13 @@ def generate_random_color():
     b = random.randint(0, 255)
     return f'#{r:02x}{g:02x}{b:02x}'
 
-def visualize_routes_per_vehicle(master_df, route_dict, day):
+def visualize_routes_per_vehicle(master_df, route_dict, day, use_distance=False):
     """
     Visualize the route for each vehicle on a separate map using folium, with cached route paths.
     :param master_df: DataFrame containing master GPS data (CODE, LATITUDE, LONGITUDE, etc.)
     :param route_dict: Dictionary containing route details for each vehicle
     :param day: Day number for the map title
+    :param use_distance: Boolean indicating whether to use distance or time for route metrics
     :return: Dictionary of folium.Map objects keyed by vehicle_id
     """
     if not isinstance(route_dict, dict) or not route_dict:
@@ -116,25 +118,64 @@ def visualize_routes_per_vehicle(master_df, route_dict, day):
             m = folium.Map(location=[master_df['LATITUDE'].mean(), master_df['LONGITUDE'].mean()], zoom_start=10)
             print(f"Warning: No valid start coordinates for vehicle {vehicle_id}, using map center")
 
-        # Add markers for each node in the route
-        for node in route_nodes:
+        # Add markers for each node in the route with sequence numbers
+        for i, node in enumerate(route_nodes):
             if node in code_to_coords:
                 coords = [code_to_coords[node][0], code_to_coords[node][1]]
-                folium.Marker(
-                    location=coords,
-                    popup=f"{node}: {master_df[master_df['CODE'] == node]['LOCATION'].values[0] if not master_df[master_df['CODE'] == node].empty else 'Unknown'}",
-                    icon=folium.Icon(color='blue', icon='info-sign')
-                ).add_to(m)
+                # Special marker for depot (first and last node)
+                if node == '0' or (i == 0 or i == len(route_nodes) - 1):
+                    # Create a custom icon for the depot with '0' as the label
+                    depot_icon = folium.DivIcon(
+                        icon_size=(50, 50),
+                        icon_anchor=(25, 25),
+                        html=f'<div style="font-size: 16pt; font-weight: bold; color: white; background-color: red; border-radius: 50%; width: 50px; height: 50px; text-align: center; line-height: 50px;">0</div>',
+                    )
+
+                    folium.Marker(
+                        location=coords,
+                        popup=f"DEPOT (SMAK_KADAWATHA)",
+                        icon=depot_icon
+                    ).add_to(m)
+                else:
+                    # Create a custom icon with the sequence number
+                    icon = folium.DivIcon(
+                        icon_size=(30, 30),
+                        icon_anchor=(15, 15),
+                        html=f'<div style="font-size: 12pt; color: white; background-color: blue; border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 30px;">{i}</div>',
+                    )
+
+                    folium.Marker(
+                        location=coords,
+                        popup=f"Stop {i}: {node} - {master_df[master_df['CODE'] == node]['LOCATION'].values[0] if not master_df[master_df['CODE'] == node].empty else 'Unknown'}",
+                        icon=icon
+                    ).add_to(m)
 
         # Add the route path if coordinates are available
         if path_coordinates:
+            # Generate a unique color for this vehicle's route
+            route_color = generate_random_color()
+
+            # Add route path with arrows to show direction
             folium.PolyLine(
                 locations=path_coordinates,
-                color='red',  # Highlighted red color for the path
+                color=route_color,
                 weight=5,     # Increased weight for better visibility
                 opacity=0.9,
-                popup=f"Vehicle {vehicle_id} Route (Time: {route_info.get('route_time', 0)} mins)"
+                popup=f"Vehicle {vehicle_id} Route",
+                tooltip=f"Vehicle {vehicle_id}: {route_info.get('num_visits', 0)} stops, {route_info.get('route_distance' if use_distance else 'route_time', 0)} {'km' if use_distance else 'mins'}"
             ).add_to(m)
+
+            # Add arrows to indicate direction
+            folium.plugins.AntPath(
+                locations=path_coordinates,
+                color=route_color,
+                weight=5,
+                opacity=0.8,
+                delay=1000,  # Animation delay
+                dash_array=[10, 20],  # Pattern of the dash
+                pulse_color='#FFFFFF'
+            ).add_to(m)
+
             print(f"Plotted path for vehicle {vehicle_id} with {len(path_coordinates)} coordinates")
         else:
             print(f"No path coordinates available for vehicle {vehicle_id}. Route not plotted.")

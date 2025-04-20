@@ -1,190 +1,358 @@
-{% extends "base.html" %}
-
-{% block title %}Vehicle Routing Solution - Results{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Vehicle Routing Solution - Results{%
+endblock %} {% block content %}
 <div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h2 class="mb-0">Routing Results</h2>
-                <a href="/" class="btn btn-primary btn-sm">
-                    <i class="fas fa-upload me-1"></i>New Upload
-                </a>
-            </div>
-            <div class="card-body">
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle me-2"></i>Routing completed successfully!
-                </div>
-
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <h5>Job Information</h5>
-                        <table class="table table-bordered">
-                            <tr>
-                                <th>Job ID</th>
-                                <td>{{ job_id }}</td>
-                            </tr>
-                            <tr>
-                                <th>PO File</th>
-                                <td>{{ job_info.po_file }}</td>
-                            </tr>
-                            <tr>
-                                <th>Planning Type</th>
-                                <td>{{ "Multi-Day" if job_info.multi_day else "Single-Day" }}</td>
-                            </tr>
-                            {% if job_info.multi_day %}
-                            <tr>
-                                <th>Number of Days</th>
-                                <td>{{ job_info.days }}</td>
-                            </tr>
-                            {% endif %}
-                            <tr>
-                                <th>Max Nodes</th>
-                                <td>{{ job_info.max_nodes }}</td>
-                            </tr>
-                            <tr>
-                                <th>Matrix Type</th>
-                                <td>{{ "Time" if job_info.use_time else "Distance" }}</td>
-                            </tr>
-                            <tr>
-                                <th>Timestamp</th>
-                                <td>{{ job_info.timestamp }}</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Summary Files</h5>
-                        <div class="list-group file-list">
-                            {% for file in summary_files %}
-                            <a href="/file/{{ job_id }}/summaries/{{ file }}" class="list-group-item list-group-item-action" target="_blank">
-                                <i class="fas fa-file-alt me-2"></i>{{ file }}
-                            </a>
-                            {% endfor %}
-                        </div>
-                        
-                        <h5 class="mt-3">CSV Files</h5>
-                        <div class="list-group file-list">
-                            {% for file in csv_files %}
-                            <a href="/file/{{ job_id }}/csv/{{ file }}" class="list-group-item list-group-item-action" target="_blank">
-                                <i class="fas fa-file-csv me-2"></i>{{ file }}
-                            </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tabs for different days -->
-                <h4>Route Maps</h4>
-                <ul class="nav nav-tabs" id="routeTabs" role="tablist">
-                    {% if job_info.multi_day %}
-                        {% for day in range(1, job_info.days + 1) %}
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link {% if day == 1 %}active{% endif %}" id="day{{ day }}-tab" data-bs-toggle="tab" data-bs-target="#day{{ day }}" type="button" role="tab" aria-controls="day{{ day }}" aria-selected="{{ 'true' if day == 1 else 'false' }}">Day {{ day }}</button>
-                        </li>
-                        {% endfor %}
-                    {% else %}
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="day1-tab" data-bs-toggle="tab" data-bs-target="#day1" type="button" role="tab" aria-controls="day1" aria-selected="true">Day 1</button>
-                        </li>
-                    {% endif %}
-                </ul>
-                
-                <div class="tab-content" id="routeTabsContent">
-                    {% if job_info.multi_day %}
-                        {% for day in range(1, job_info.days + 1) %}
-                        <div class="tab-pane fade {% if day == 1 %}show active{% endif %}" id="day{{ day }}" role="tabpanel" aria-labelledby="day{{ day }}-tab">
-                            <div class="row mt-3">
-                                <div class="col-md-3">
-                                    <h5>Vehicle Routes - Day {{ day }}</h5>
-                                    <div class="list-group file-list">
-                                        {% for file in map_files %}
-                                            {% if 'day_' + day|string + '_vehicle_' in file %}
-                                            <a href="#" class="list-group-item list-group-item-action route-link" data-file="/file/{{ job_id }}/maps/{{ file }}">
-                                                <i class="fas fa-route me-2"></i>{{ file.replace('day_' + day|string + '_vehicle_', 'Vehicle ').replace('_route.html', '') }}
-                                            </a>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="map-container">
-                                        <iframe id="map-iframe-day{{ day }}" class="map-iframe" src="about:blank"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class="tab-pane fade show active" id="day1" role="tabpanel" aria-labelledby="day1-tab">
-                            <div class="row mt-3">
-                                <div class="col-md-3">
-                                    <h5>Vehicle Routes - Day 1</h5>
-                                    <div class="list-group file-list">
-                                        {% for file in map_files %}
-                                            {% if 'day_1_vehicle_' in file %}
-                                            <a href="#" class="list-group-item list-group-item-action route-link" data-file="/file/{{ job_id }}/maps/{{ file }}">
-                                                <i class="fas fa-route me-2"></i>{{ file.replace('day_1_vehicle_', 'Vehicle ').replace('_route.html', '') }}
-                                            </a>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="map-container">
-                                        <iframe id="map-iframe-day1" class="map-iframe" src="about:blank"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
+  <div class="col-md-12">
+    <div class="card">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h2 class="mb-0">Routing Results</h2>
+        <a href="/" class="btn btn-primary btn-sm">
+          <i class="fas fa-upload me-1"></i>New Upload
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-success">
+          <i class="fas fa-check-circle me-2"></i>Routing completed
+          successfully!
         </div>
+
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <h5>Job Information</h5>
+            <table class="table table-bordered">
+              <tr>
+                <th>Job ID</th>
+                <td>{{ job_id }}</td>
+              </tr>
+              <tr>
+                <th>PO File</th>
+                <td>{{ job_info.po_file }}</td>
+              </tr>
+              <tr>
+                <th>Planning Type</th>
+                <td>
+                  {{ "Multi-Day" if job_info.multi_day else "Single-Day" }}
+                </td>
+              </tr>
+              {% if job_info.multi_day %}
+              <tr>
+                <th>Number of Days</th>
+                <td>{{ job_info.days }}</td>
+              </tr>
+              {% endif %}
+              <tr>
+                <th>Max Nodes</th>
+                <td>{{ job_info.max_nodes }}</td>
+              </tr>
+              <tr>
+                <th>Matrix Type</th>
+                <td>{{ "Time" if job_info.use_time else "Distance" }}</td>
+              </tr>
+              <tr>
+                <th>Number of Vehicles</th>
+                <td>{{ job_info.num_vehicles }}</td>
+              </tr>
+              <tr>
+                <th>Timestamp</th>
+                <td>{{ job_info.timestamp }}</td>
+              </tr>
+            </table>
+
+            <h5 class="mt-4">Vehicle Configuration</h5>
+            <div class="table-responsive">
+              <table class="table table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th>Vehicle</th>
+                    <th>Max Visits</th>
+                    <th>Max Distance (km)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in range(job_info.num_vehicles) %}
+                  <tr>
+                    <td>Vehicle {{ i + 1 }}</td>
+                    <td>{{ job_info.max_visits[i] }}</td>
+                    <td>{{ job_info.max_distance[i] }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5>Summary Files</h5>
+            <div class="list-group file-list">
+              {% for file in summary_files %}
+              <a
+                href="/file/{{ job_id }}/summaries/{{ file }}"
+                class="list-group-item list-group-item-action"
+                target="_blank"
+              >
+                <i class="fas fa-file-alt me-2"></i>{{ file }}
+              </a>
+              {% endfor %}
+            </div>
+
+            <h5 class="mt-3">CSV Files</h5>
+            <div class="list-group file-list">
+              {% for file in csv_files %}
+              <a
+                href="/file/{{ job_id }}/csv/{{ file }}"
+                class="list-group-item list-group-item-action"
+                target="_blank"
+              >
+                <i class="fas fa-file-csv me-2"></i>{{ file }} {% if file ==
+                'next_day_demand.csv' %}
+                <span class="badge bg-info float-end">Next Day Demand</span>
+                {% endif %}
+              </a>
+              {% endfor %}
+            </div>
+
+            {% if 'next_day_demand.csv' in csv_files %}
+            <div class="alert alert-info mt-3">
+              <i class="fas fa-info-circle me-2"></i>
+              <strong>Next Day Demand:</strong> The
+              <code>next_day_demand.csv</code> file contains all unvisited
+              locations that can be used for planning the next day's routes.
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Tabs for different days -->
+        <h4>Route Maps</h4>
+        <ul class="nav nav-tabs" id="routeTabs" role="tablist">
+          {% if job_info.multi_day %} {% for day in range(1, job_info.days + 1)
+          %}
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link {% if day == 1 %}active{% endif %}"
+              id="day{{ day }}-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#day{{ day }}"
+              type="button"
+              role="tab"
+              aria-controls="day{{ day }}"
+              aria-selected="{{ 'true' if day == 1 else 'false' }}"
+            >
+              Day {{ day }}
+            </button>
+          </li>
+          {% endfor %} {% else %}
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="day1-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#day1"
+              type="button"
+              role="tab"
+              aria-controls="day1"
+              aria-selected="true"
+            >
+              Day 1
+            </button>
+          </li>
+          {% endif %}
+        </ul>
+
+        <div class="tab-content" id="routeTabsContent">
+          {% if job_info.multi_day %} {% for day in range(1, job_info.days + 1)
+          %}
+          <div
+            class="tab-pane fade {% if day == 1 %}show active{% endif %}"
+            id="day{{ day }}"
+            role="tabpanel"
+            aria-labelledby="day{{ day }}-tab"
+          >
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <h5>Vehicle Routes - Day {{ day }}</h5>
+                <div class="list-group file-list">
+                  {% for file in map_files %} {% if 'day_' + day|string +
+                  '_vehicle_' in file %}
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action route-link d-flex justify-content-between align-items-center"
+                    data-file="/file/{{ job_id }}/maps/{{ file }}"
+                  >
+                    <span>
+                      <i class="fas fa-route me-2"></i>{{ file.replace('day_' +
+                      day|string + '_vehicle_', 'Vehicle
+                      ').replace('_route.html', '') }}
+                    </span>
+                    <!-- External link button will be added by JavaScript -->
+                  </a>
+                  {% endif %} {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="map-container">
+                  <iframe
+                    id="map-iframe-day{{ day }}"
+                    class="map-iframe"
+                    src="about:blank"
+                  ></iframe>
+                </div>
+
+                <!-- Route Summary Section -->
+                <div class="route-summary mt-3">
+                  <h5>Route Summary - Day {{ day }}</h5>
+                  <div
+                    id="summary-content-day{{ day }}"
+                    class="summary-content p-3 bg-light border rounded"
+                  >
+                    <div class="text-center">
+                      <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                      <p>Loading summary...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %} {% else %}
+          <div
+            class="tab-pane fade show active"
+            id="day1"
+            role="tabpanel"
+            aria-labelledby="day1-tab"
+          >
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <h5>Vehicle Routes - Day 1</h5>
+                <div class="list-group file-list">
+                  {% for file in map_files %} {% if 'day_1_vehicle_' in file %}
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action route-link d-flex justify-content-between align-items-center"
+                    data-file="/file/{{ job_id }}/maps/{{ file }}"
+                  >
+                    <span>
+                      <i class="fas fa-route me-2"></i>{{
+                      file.replace('day_1_vehicle_', 'Vehicle
+                      ').replace('_route.html', '') }}
+                    </span>
+                    <!-- External link button will be added by JavaScript -->
+                  </a>
+                  {% endif %} {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="map-container">
+                  <iframe
+                    id="map-iframe-day1"
+                    class="map-iframe"
+                    src="about:blank"
+                  ></iframe>
+                </div>
+
+                <!-- Route Summary Section -->
+                <div class="route-summary mt-3">
+                  <h5>Route Summary - Day 1</h5>
+                  <div
+                    id="summary-content-day1"
+                    class="summary-content p-3 bg-light border rounded"
+                  >
+                    <div class="text-center">
+                      <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                      <p>Loading summary...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-{% endblock %}
-
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <script>
-    $(document).ready(function() {
-        // Load the first route map for each day
-        {% if job_info.multi_day %}
-            {% for day in range(1, job_info.days + 1) %}
-                var firstRouteDay{{ day }} = $('#day{{ day }} .route-link').first();
-                if (firstRouteDay{{ day }}.length > 0) {
-                    var fileUrl = firstRouteDay{{ day }}.data('file');
-                    $('#map-iframe-day{{ day }}').attr('src', fileUrl);
-                    firstRouteDay{{ day }}.addClass('active');
-                }
-            {% endfor %}
-        {% else %}
-            var firstRoute = $('#day1 .route-link').first();
-            if (firstRoute.length > 0) {
-                var fileUrl = firstRoute.data('file');
-                $('#map-iframe-day1').attr('src', fileUrl);
-                firstRoute.addClass('active');
-            }
-        {% endif %}
+  $(document).ready(function() {
+      // Add external link button to each route link
+      $('.route-link').each(function() {
+          var $link = $(this);
+          var fileUrl = $link.data('file');
+          var $directLink = $('<a class="btn btn-sm btn-outline-primary ms-2 external-link" title="Open in new tab"><i class="fas fa-external-link-alt"></i></a>');
+          $link.append($directLink);
 
-        // Handle route link clicks
-        $('.route-link').click(function(e) {
-            e.preventDefault();
-            
-            // Get the day tab that's currently active
-            var activeTab = $('.tab-pane.active').attr('id');
-            var dayNumber = activeTab.replace('day', '');
-            
-            // Remove active class from all route links in this tab
-            $('#' + activeTab + ' .route-link').removeClass('active');
-            
-            // Add active class to clicked link
-            $(this).addClass('active');
-            
-            // Update iframe src
-            var fileUrl = $(this).data('file');
-            $('#map-iframe-' + activeTab).attr('src', fileUrl);
-        });
-    });
+          // Set up the external link button to open the map in a new tab
+          $directLink.on('click', function(e) {
+              e.stopPropagation(); // Prevent triggering the parent link's click event
+              window.open(fileUrl, '_blank'); // Open in new tab
+          });
+      });
+
+      // Load the first route map for each day
+      {% if job_info.multi_day %}
+          {% for day in range(1, job_info.days + 1) %}
+              var firstRouteDay{{ day }} = $('#day{{ day }} .route-link').first();
+              if (firstRouteDay{{ day }}.length > 0) {
+                  var fileUrl = firstRouteDay{{ day }}.data('file');
+                  $('#map-iframe-day{{ day }}').attr('src', fileUrl);
+                  firstRouteDay{{ day }}.addClass('active');
+              }
+          {% endfor %}
+      {% else %}
+          var firstRoute = $('#day1 .route-link').first();
+          if (firstRoute.length > 0) {
+              var fileUrl = firstRoute.data('file');
+              $('#map-iframe-day1').attr('src', fileUrl);
+              firstRoute.addClass('active');
+          }
+      {% endif %}
+
+      // Handle route link clicks
+      $('.route-link').click(function(e) {
+          e.preventDefault();
+
+          // Get the day tab that's currently active
+          var activeTab = $('.tab-pane.active').attr('id');
+          var dayNumber = activeTab.replace('day', '');
+
+          // Remove active class from all route links in this tab
+          $('#' + activeTab + ' .route-link').removeClass('active');
+
+          // Add active class to clicked link
+          $(this).addClass('active');
+
+          // Update iframe src
+          var fileUrl = $(this).data('file');
+          $('#map-iframe-' + activeTab).attr('src', fileUrl);
+      });
+
+      // Load summary files for each day
+      {% if job_info.multi_day %}
+          {% for day in range(1, job_info.days + 1) %}
+              loadSummary({{ day }});
+          {% endfor %}
+      {% else %}
+          loadSummary(1);
+      {% endif %}
+
+      // Function to load summary content
+      function loadSummary(day) {
+          $.ajax({
+              url: '/file/{{ job_id }}/summaries/day_' + day + '_summary.txt',
+              type: 'GET',
+              success: function(data) {
+                  $('#summary-content-day' + day).html('<pre class="mb-0">' + data + '</pre>');
+              },
+              error: function() {
+                  $('#summary-content-day' + day).html('<div class="alert alert-warning">Summary not available</div>');
+              }
+          });
+      }
+  });
 </script>
 {% endblock %}

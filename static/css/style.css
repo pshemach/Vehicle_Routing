@@ -1,0 +1,126 @@
+/* Main styles for Vehicle Routing UI */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+/* Map container styles */
+.map-container {
+    position: relative;
+    height: 600px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Route link styles */
+.route-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+}
+
+.route-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.route-link.active i {
+    color: white;
+}
+
+/* Vehicle list styles */
+.file-list {
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+/* Tab styles */
+.nav-tabs .nav-link {
+    color: #495057;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Summary styles */
+.summary-container, .summary-content {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-container pre, .summary-content pre {
+    white-space: pre-wrap;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.route-summary {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+/* Form styles */
+.form-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+/* External link icon */
+.fa-external-link-alt {
+    font-size: 0.8rem;
+}
+
+/* External link button */
+.external-link {
+    padding: 2px 6px;
+    margin-left: 8px;
+}
+
+.route-link:hover .external-link {
+    background-color: #007bff;
+    color: white;
+}
+
+.route-link.active .external-link {
+    background-color: white;
+    color: #007bff;
+}

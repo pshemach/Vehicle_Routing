@@ -78,6 +78,27 @@ def upload_file():
     days = int(request.form.get('days', 1))
     max_nodes = int(request.form.get('max_nodes', 300))
 
+    # Get vehicle configuration
+    num_vehicles = int(request.form.get('num_vehicles', 8))
+
+    # Get max visits per vehicle
+    max_visits = []
+    for i in range(num_vehicles):
+        visit_key = f'max_visits[{i}]'
+        if visit_key in request.form:
+            max_visits.append(int(request.form[visit_key]))
+        else:
+            max_visits.append(15)  # Default value
+
+    # Get max distance per vehicle
+    max_distance = []
+    for i in range(num_vehicles):
+        distance_key = f'max_distance[{i}]'
+        if distance_key in request.form:
+            max_distance.append(int(request.form[distance_key]))
+        else:
+            max_distance.append(100)  # Default value
+
     # Initialize controller
     controller = VRPController(use_distance=not use_time)
 
@@ -102,6 +123,9 @@ def upload_file():
         'multi_day': multi_day,
         'days': days,
         'max_nodes': max_nodes,
+        'num_vehicles': num_vehicles,
+        'max_visits': max_visits,
+        'max_distance': max_distance,
         'status': 'initialized',
         'timestamp': datetime.now().isoformat()
     }
@@ -140,6 +164,12 @@ def solve(job_id):
     os.makedirs(output_folder, exist_ok=True)
 
     try:
+        # Update controller configuration with vehicle parameters
+        controller.update_vehicle_config(
+            num_vehicles=job_info['num_vehicles'],
+            max_visits=job_info['max_visits'],
+            max_distance=job_info['max_distance']
+        )
         # Run the solver
         if job_info['multi_day']:
             all_visited_nodes, all_route_dicts = controller.solve_multi_day(
@@ -153,13 +183,23 @@ def solve(job_id):
                 'job_id': job_id,
                 'multi_day': True,
                 'days': job_info['days'],
+                'num_vehicles': job_info['num_vehicles'],
+                'max_visits': job_info['max_visits'],
+                'max_distance': job_info['max_distance'],
                 'all_visited_nodes': [list(nodes) for nodes in all_visited_nodes],
                 'all_route_dicts': all_route_dicts,
                 'timestamp': datetime.now().isoformat()
             }
 
+            # Create subdirectories in the job output folder
+            os.makedirs(os.path.join(output_folder, 'summaries'), exist_ok=True)
+            os.makedirs(os.path.join(output_folder, 'csv'), exist_ok=True)
+            os.makedirs(os.path.join(output_folder, 'maps'), exist_ok=True)
+
             # Copy output files to job output folder
-            os.system(f'xcopy /E /I /Y output\\* {output_folder}')
+            os.system(f'xcopy /E /I /Y output\\summaries\\* {output_folder}\\summaries\\')
+            os.system(f'xcopy /E /I /Y output\\csv\\* {output_folder}\\csv\\')
+            os.system(f'xcopy /E /I /Y output\\maps\\* {output_folder}\\maps\\')
 
         else:
             visited_nodes, route_dict = controller.solve_single_day(
@@ -172,13 +212,23 @@ def solve(job_id):
             current_results = {
                 'job_id': job_id,
                 'multi_day': False,
+                'num_vehicles': job_info['num_vehicles'],
+                'max_visits': job_info['max_visits'],
+                'max_distance': job_info['max_distance'],
                 'visited_nodes': list(visited_nodes),
                 'route_dict': route_dict,
                 'timestamp': datetime.now().isoformat()
             }
 
+            # Create subdirectories in the job output folder
+            os.makedirs(os.path.join(output_folder, 'summaries'), exist_ok=True)
+            os.makedirs(os.path.join(output_folder, 'csv'), exist_ok=True)
+            os.makedirs(os.path.join(output_folder, 'maps'), exist_ok=True)
+
             # Copy output files to job output folder
-            os.system(f'xcopy /E /I /Y output\\* {output_folder}')
+            os.system(f'xcopy /E /I /Y output\\summaries\\* {output_folder}\\summaries\\')
+            os.system(f'xcopy /E /I /Y output\\csv\\* {output_folder}\\csv\\')
+            os.system(f'xcopy /E /I /Y output\\maps\\* {output_folder}\\maps\\')
 
         # Update job status
         job_info['status'] = 'completed'

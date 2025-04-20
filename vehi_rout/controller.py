@@ -75,6 +75,33 @@ class VRPController:
         # Load GPS coordinates
         self.master_gps_df = load_df(path=gps_path)
 
+        # Add depot (SMAK_KADAWATHA) to the GPS data
+        SMAK_KADAWATHA = (7.0038321, 79.9394804)
+        smak_data = {
+            "CODE": '0',
+            "LOCATION": "SMAK",
+            "ADDRESS": "Smak, Kadawatha, Western Province, Sri Lanka",
+            "LATITUDE": SMAK_KADAWATHA[0],
+            "LONGITUDE": SMAK_KADAWATHA[1]
+        }
+
+        # Always ensure the depot is in the master_gps_df
+        import pandas as pd
+
+        # Remove any existing depot entries
+        if '0' in self.master_gps_df['CODE'].values:
+            self.master_gps_df = self.master_gps_df[self.master_gps_df['CODE'] != '0']
+
+        # Add depot to the GPS data at the beginning
+        self.master_gps_df = pd.concat(
+            [
+                pd.DataFrame([smak_data]),
+                self.master_gps_df
+            ],
+            ignore_index=True
+        )
+        print("Added depot (SMAK_KADAWATHA) to GPS data")
+
         # Create demand dictionary
         self.demand_dict = update_demand_dic(self.demand_df)
 
@@ -137,12 +164,22 @@ class VRPController:
 
         # Visualize routes
         if save_visualization:
-            maps_dict = visualize_routes_per_vehicle(self.master_gps_df, route_dict, day)
+            maps_dict = visualize_routes_per_vehicle(
+                self.master_gps_df,
+                route_dict,
+                day,
+                use_distance=self.use_distance
+            )
 
             # Save maps to files
             os.makedirs("output/maps", exist_ok=True)
             for vehicle_id, m in maps_dict.items():
                 m.save(f"output/maps/day_{day + 1}_vehicle_{vehicle_id}_route.html")
+
+        # Save unvisited nodes for next-day processing
+        all_po_nodes = self.get_po_node_indices()
+        unvisited = all_po_nodes - visited_nodes
+        self._save_unvisited_nodes_to_csv(unvisited)
 
         return visited_nodes, route_dict
 
@@ -208,7 +245,12 @@ class VRPController:
 
             # Visualize routes
             if save_visualization:
-                maps_dict = visualize_routes_per_vehicle(self.master_gps_df, route_dict, day)
+                maps_dict = visualize_routes_per_vehicle(
+                    self.master_gps_df,
+                    route_dict,
+                    day,
+                    use_distance=self.use_distance
+                )
 
                 # Save maps to files
                 for vehicle_id, m in maps_dict.items():
@@ -257,7 +299,7 @@ class VRPController:
 
     def _save_multi_day_summary(self, all_route_dicts, all_visited_nodes):
         """
-        Save a summary of the multi-day routing.
+        Save a summary of the multi-day routing and create a next-day demand file.
 
         Args:
             all_route_dicts: List of dictionaries containing route information for each day
@@ -315,6 +357,9 @@ class VRPController:
 
         print(f"Multi-day summary saved to {summary_file}")
 
+        # Save unvisited nodes to a CSV file for next-day processing
+        self._save_unvisited_nodes_to_csv(unvisited)
+
     def _create_output_directories(self):
         """
         Create output directories for saving results.
@@ -338,3 +383,65 @@ class VRPController:
                 po_node_indices.append(idx)
 
         return set(po_node_indices)
+
+    def _save_unvisited_nodes_to_csv(self, unvisited):
+        """
+        Save unvisited nodes to a CSV file for next-day processing.
+
+        Args:
+            unvisited: Set of unvisited node indices
+        """
+        import pandas as pd
+
+        # Get the unvisited node codes
+        unvisited_codes = [self.master_mat_df.index[i] for i in unvisited if i < len(self.master_mat_df.index)]
+
+        if not unvisited_codes:
+            print("No unvisited nodes to save for next day.")
+            return
+
+        # Create a DataFrame with the unvisited nodes
+        next_day_df = pd.DataFrame()
+
+        # Filter the demand DataFrame to include only unvisited nodes
+        if self.demand_df is not None:
+            # Convert unvisited_codes to the same type as demand_df['CODE']
+            unvisited_codes_set = set(str(code) for code in unvisited_codes)
+            next_day_df = self.demand_df[self.demand_df['CODE'].astype(str).isin(unvisited_codes_set)].copy()
+
+        if next_day_df.empty:
+            print("Warning: Could not find demand data for unvisited nodes.")
+            # Create a simple DataFrame with just the codes
+            next_day_df = pd.DataFrame({'CODE': unvisited_codes})
+
+        # Save to CSV
+        next_day_file = "output/csv/next_day_demand.csv"
+        next_day_df.to_csv(next_day_file, index=False)
+        print(f"Saved {len(next_day_df)} unvisited nodes to {next_day_file} for next-day processing.")
+
+    def update_vehicle_config(self, num_vehicles, max_visits, max_distance):
+        """
+        Update the vehicle configuration parameters.
+
+        Args:
+            num_vehicles: Number of vehicles
+            max_visits: List of maximum visits per vehicle
+            max_distance: List of maximum distance per vehicle
+        """
+        # Validate inputs
+        if len(max_visits) != num_vehicles or len(max_distance) != num_vehicles:
+            raise ValueError("Length of max_visits and max_distance must match num_vehicles")
+
+        # Create new lists with the correct length
+        new_max_visits = max_visits.copy()
+        new_max_distance = max_distance.copy()
+
+        # Update the configuration in the config module
+        import vehi_rout.config as config
+        config.MAX_VISITS_PER_VEHICLE = new_max_visits
+        config.MAX_DISTANCE_PER_VEHICLE = new_max_distance
+
+        print(f"Updated vehicle configuration:")
+        print(f"Number of vehicles: {num_vehicles}")
+        print(f"Max visits per vehicle: {new_max_visits}")
+        print(f"Max distance per vehicle: {new_max_distance}")
