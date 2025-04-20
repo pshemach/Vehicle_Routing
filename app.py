@@ -6,6 +6,8 @@ Provides a web interface for uploading PO files and visualizing routes.
 import os
 import json
 import uuid
+import shutil
+from glob import glob
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template, send_from_directory, redirect, url_for
 from werkzeug.utils import secure_filename
@@ -29,6 +31,34 @@ os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
 controller = None
 current_job_id = None
 current_results = {}
+
+def create_output_directories(output_folder):
+    """Create output directories for the job.
+
+    Args:
+        output_folder: Path to the job output folder
+    """
+    os.makedirs(os.path.join(output_folder, 'summaries'), exist_ok=True)
+    os.makedirs(os.path.join(output_folder, 'csv'), exist_ok=True)
+    os.makedirs(os.path.join(output_folder, 'maps'), exist_ok=True)
+
+def copy_output_files(output_folder):
+    """Copy output files to the job output folder using platform-independent code.
+
+    Args:
+        output_folder: Path to the job output folder
+    """
+    # Copy summaries
+    for file in glob('output/summaries/*'):
+        shutil.copy2(file, os.path.join(output_folder, 'summaries', os.path.basename(file)))
+
+    # Copy CSV files
+    for file in glob('output/csv/*'):
+        shutil.copy2(file, os.path.join(output_folder, 'csv', os.path.basename(file)))
+
+    # Copy map files
+    for file in glob('output/maps/*'):
+        shutil.copy2(file, os.path.join(output_folder, 'maps', os.path.basename(file)))
 
 def allowed_file(filename):
     """Check if the file extension is allowed."""
@@ -188,16 +218,6 @@ def solve(job_id):
                 'timestamp': datetime.now().isoformat()
             }
 
-            # Create subdirectories in the job output folder
-            os.makedirs(os.path.join(output_folder, 'summaries'), exist_ok=True)
-            os.makedirs(os.path.join(output_folder, 'csv'), exist_ok=True)
-            os.makedirs(os.path.join(output_folder, 'maps'), exist_ok=True)
-
-            # Copy output files to job output folder
-            os.system(f'xcopy /E /I /Y output\\summaries\\* {output_folder}\\summaries\\')
-            os.system(f'xcopy /E /I /Y output\\csv\\* {output_folder}\\csv\\')
-            os.system(f'xcopy /E /I /Y output\\maps\\* {output_folder}\\maps\\')
-
         else:
             visited_nodes, route_dict = controller.solve_single_day(
                 day=0,
@@ -217,15 +237,11 @@ def solve(job_id):
                 'timestamp': datetime.now().isoformat()
             }
 
-            # Create subdirectories in the job output folder
-            os.makedirs(os.path.join(output_folder, 'summaries'), exist_ok=True)
-            os.makedirs(os.path.join(output_folder, 'csv'), exist_ok=True)
-            os.makedirs(os.path.join(output_folder, 'maps'), exist_ok=True)
+        # Create subdirectories in the job output folder
+        create_output_directories(output_folder)
 
-            # Copy output files to job output folder
-            os.system(f'xcopy /E /I /Y output\\summaries\\* {output_folder}\\summaries\\')
-            os.system(f'xcopy /E /I /Y output\\csv\\* {output_folder}\\csv\\')
-            os.system(f'xcopy /E /I /Y output\\maps\\* {output_folder}\\maps\\')
+        # Copy output files to job output folder
+        copy_output_files(output_folder)
 
         # Update job status
         job_info['status'] = 'completed'
