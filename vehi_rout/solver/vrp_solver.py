@@ -178,7 +178,7 @@ def print_solution(manager, routing, solution, data, day, use_distance=False):
             f"route_{metric_name}": route_metric,
             f"max_{metric_name}_limit": max_metric,
             "within_limit": route_metric <= max_metric,
-            "num_visits": num_visits,
+            "num_visits": num_visits-1,
             "max_visits_limit": data["max_visits_per_vehicle"][vehicle_id]
         }
 

@@ -31,11 +31,11 @@ SOLVER_TIME_LIMIT_SECONDS = 30
 # Penalty weights for different days remaining
 # The closer to the deadline, the higher the penalty
 PENALTY_WEIGHTS = {
-    1: 40,   # 1 day remaining
-    2: 50,   # 2 days remaining
-    3: 100,  # 3 days remaining
-    4: 100,  # 4 days remaining
-    5: 100,  # 5 days remaining
+    1: 400,   # 1 day remaining
+    2: 500,   # 2 days remaining
+    3: 1000,  # 3 days remaining
+    4: 1000,  # 4 days remaining
+    5: 1000,  # 5 days remaining
     6: 1000, # 6 days remaining
-    7: 100   # 7 days remaining
+    7: 1000   # 7 days remaining
 }
