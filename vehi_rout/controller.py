@@ -178,7 +178,12 @@ class VRPController:
 
         # Save unvisited nodes for next-day processing
         all_po_nodes = self.get_po_node_indices()
+        # print(all_po_nodes)
+        # print(self.demand_dict['key'])
+        print(len(visited_nodes))
+        print(len(all_po_nodes))
         unvisited = all_po_nodes - visited_nodes
+        print(len(unvisited))
         self._save_unvisited_nodes_to_csv(unvisited)
 
         return visited_nodes, route_dict
@@ -380,7 +385,7 @@ class VRPController:
         for code in self.demand_dict['key']:
             if code in self.master_mat_df.index:
                 idx = self.master_mat_df.index.get_loc(code)
-                po_node_indices.append(idx)
+                po_node_indices.append(str(code))
 
         return set(po_node_indices)
 
@@ -394,7 +399,8 @@ class VRPController:
         import pandas as pd
 
         # Get the unvisited node codes
-        unvisited_codes = [self.master_mat_df.index[i] for i in unvisited if i < len(self.master_mat_df.index)]
+        # unvisited_codes = [self.master_mat_df.index[i] for i in unvisited if i < len(self.master_mat_df.index)]
+        unvisited_codes = list(unvisited)
 
         if not unvisited_codes:
             print("No unvisited nodes to save for next day.")
