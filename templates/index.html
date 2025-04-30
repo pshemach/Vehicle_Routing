@@ -208,33 +208,36 @@ endblock %} {% block content %}
       $("#days").prop("disabled", true);
     }
 
-    // Generate vehicle configuration fields
     function generateVehicleFields() {
       const numVehicles = parseInt($("#num_vehicles").val());
       let html = "";
 
       for (let i = 0; i < numVehicles; i++) {
+        // Try to get previous values if fields already exist
+        const existingVisits = $(`#max_visits_${i}`).val() || 12;
+        const existingDistance = $(`#max_distance_${i}`).val() || 500;
+
         html += `
-                <div class="vehicle-config card mb-2">
-                    <div class="card-header bg-light">
-                        <h6 class="mb-0">Vehicle ${i + 1}</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="max_visits_${i}" class="form-label">Max Visits</label>
-                                <input type="number" class="form-control" id="max_visits_${i}" name="max_visits[${i}]" value="15" min="1">
-                                <div class="form-text">Maximum number of visits for this vehicle.</div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="max_distance_${i}" class="form-label">Max Distance (km)</label>
-                                <input type="number" class="form-control" id="max_distance_${i}" name="max_distance[${i}]" value="100" min="1">
-                                <div class="form-text">Maximum distance for this vehicle in kilometers.</div>
-                            </div>
-                        </div>
-                    </div>
+          <div class="vehicle-config card mb-2">
+            <div class="card-header bg-light">
+              <h6 class="mb-0">Vehicle ${i + 1}</h6>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="max_visits_${i}" class="form-label">Max Visits</label>
+                  <input type="number" class="form-control" id="max_visits_${i}" name="max_visits[${i}]" value="${existingVisits}" min="1">
+                  <div class="form-text">Maximum number of visits for this vehicle.</div>
                 </div>
-                `;
+                <div class="col-md-6">
+                  <label for="max_distance_${i}" class="form-label">Max Distance (km)</label>
+                  <input type="number" class="form-control" id="max_distance_${i}" name="max_distance[${i}]" value="${existingDistance}" min="1">
+                  <div class="form-text">Maximum distance for this vehicle in kilometers.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
       }
 
       $("#vehicle-config-container").html(html);

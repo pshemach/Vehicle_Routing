@@ -135,16 +135,7 @@ def upload_file():
     # Load data
     matrix_path = request.form.get('matrix_path', 'data/master/osrm_distance_matrix.csv')
     gps_path = request.form.get('gps_path', 'data/master/master_gps.csv')
-
-    try:
-        controller.load_data(
-            demand_path=po_path,
-            matrix_path=matrix_path,
-            gps_path=gps_path
-        )
-    except Exception as e:
-        return jsonify({'error': f'Error loading data: {str(e)}'}), 500
-
+    
     # Create job info
     job_info = {
         'job_id': current_job_id,
@@ -159,6 +150,36 @@ def upload_file():
         'status': 'initialized',
         'timestamp': datetime.now().isoformat()
     }
+
+    try:
+        controller.update_vehicle_config(
+            num_vehicles=job_info['num_vehicles'],
+            max_visits=job_info['max_visits'],
+            max_distance=job_info['max_distance']
+        )
+        controller.load_data(
+            demand_path=po_path,
+            matrix_path=matrix_path,
+            gps_path=gps_path
+        )
+    except Exception as e:
+        return jsonify({'error': f'Error loading data: {str(e)}'}), 500
+    
+
+    # # Create job info
+    # job_info = {
+    #     'job_id': current_job_id,
+    #     'po_file': po_filename,
+    #     'use_time': use_time,
+    #     'multi_day': multi_day,
+    #     'days': days,
+    #     'max_nodes': max_nodes,
+    #     'num_vehicles': num_vehicles,
+    #     'max_visits': max_visits,
+    #     'max_distance': max_distance,
+    #     'status': 'initialized',
+    #     'timestamp': datetime.now().isoformat()
+    # }
 
     # Save job info
     with open(os.path.join(job_folder, 'job_info.json'), 'w') as f:
@@ -192,11 +213,16 @@ def solve(job_id):
 
     try:
         # Update controller configuration with vehicle parameters
-        controller.update_vehicle_config(
-            num_vehicles=job_info['num_vehicles'],
-            max_visits=job_info['max_visits'],
-            max_distance=job_info['max_distance']
-        )
+        # controller.update_vehicle_config(
+        #     num_vehicles=job_info['num_vehicles'],
+        #     max_visits=job_info['max_visits'],
+        #     max_distance=job_info['max_distance']
+        # )
+        
+        print(job_info['num_vehicles'])
+        print(job_info['max_visits'])
+        print(job_info['max_distance'])
+
         # Run the solver
         if job_info['multi_day']:
             all_visited_nodes, all_route_dicts = controller.solve_multi_day(

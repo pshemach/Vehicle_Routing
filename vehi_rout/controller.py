@@ -113,6 +113,7 @@ class VRPController:
         print(f"Loaded {len(self.master_mat_df)} locations in distance/time matrix")
         print(f"Loaded {len(self.master_gps_df)} locations with GPS coordinates")
 
+
     def solve_single_day(self, day=0, max_nodes=None, save_visualization=False):
         """
         Solve the VRP for a single day.
@@ -178,12 +179,7 @@ class VRPController:
 
         # Save unvisited nodes for next-day processing
         all_po_nodes = self.get_po_node_indices()
-        # print(all_po_nodes)
-        # print(self.demand_dict['key'])
-        print(len(visited_nodes))
-        print(len(all_po_nodes))
         unvisited = all_po_nodes - visited_nodes
-        print(len(unvisited))
         self._save_unvisited_nodes_to_csv(unvisited)
 
         return visited_nodes, route_dict
@@ -419,6 +415,9 @@ class VRPController:
             print("Warning: Could not find demand data for unvisited nodes.")
             # Create a simple DataFrame with just the codes
             next_day_df = pd.DataFrame({'CODE': unvisited_codes})
+            
+        if 'DEMAND' in next_day_df.columns:
+            next_day_df.drop(columns=['DEMAND'], inplace=True)
 
         # Save to CSV
         next_day_file = "output/csv/next_day_demand.csv"
@@ -437,10 +436,15 @@ class VRPController:
         # Validate inputs
         if len(max_visits) != num_vehicles or len(max_distance) != num_vehicles:
             raise ValueError("Length of max_visits and max_distance must match num_vehicles")
+    
+
 
         # Create new lists with the correct length
         new_max_visits = max_visits.copy()
         new_max_distance = max_distance.copy()
+        
+        self.max_distance = new_max_distance
+        self.max_visits = new_max_visits
 
         # Update the configuration in the config module
         import vehi_rout.config as config

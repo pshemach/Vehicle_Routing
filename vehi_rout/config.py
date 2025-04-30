@@ -14,13 +14,13 @@ MAX_VISITS_PER_VEHICLE = [15, 15, 15, 15, 15, 15, 15, 15]
 MAX_TIME_PER_VEHICLE = [1200, 1200, 600, 600, 600, 600, 600, 600]
 
 # Maximum distance (in km) per vehicle
-MAX_DISTANCE_PER_VEHICLE = [100, 100, 100, 100, 100, 100, 100, 150]
+MAX_DISTANCE_PER_VEHICLE = [500, 500, 500, 500, 500, 500, 500, 500]
 
 # Base penalty for not visiting a node (used in time-based routing)
 TIME_BASE_PENALTY = 100000
 
 # Base penalty for not visiting a node (used in distance-based routing)
-DISTANCE_BASE_PENALTY = 1000
+DISTANCE_BASE_PENALTY = 100000
 
 # Depot node ID
 DEPOT = 0
