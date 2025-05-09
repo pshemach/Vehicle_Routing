@@ -263,7 +263,7 @@ def print_route_summary(route_dict, use_distance=False, file_path=None):
     return total_metric, total_visits
 
 
-def save_route_details_to_csv(route_dict, day, use_distance=False, file_path=None):
+def save_route_details_to_csv(demand_df, route_dict, day, use_distance=False, file_path=None):
     """
     Save detailed route information to a CSV file.
 
@@ -288,7 +288,7 @@ def save_route_details_to_csv(route_dict, day, use_distance=False, file_path=Non
 
     with open(file_path, 'w', newline='') as csvfile:
         fieldnames = ['Day', 'Vehicle', 'Stops', f'{metric_name.capitalize()} ({unit})',
-                     f'Max {metric_name.capitalize()} ({unit})', 'Within Limit', 'Route']
+                     f'Max {metric_name.capitalize()} ({unit})', 'Within Limit','PO Value', 'Route']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
@@ -298,7 +298,13 @@ def save_route_details_to_csv(route_dict, day, use_distance=False, file_path=Non
             num_visits = route_info.get("num_visits", 0)
             max_metric = route_info.get(f"max_{metric_name}_limit", 0)
             within_limit = route_info.get("within_limit", False)
-            route_nodes = ' -> '.join(map(str, route_info.get("route_nodes", [])))
+            route_nodes = route_info.get("route_nodes", [])
+            po_value = demand_df[demand_df['CODE'].isin(route_nodes)]['SALE'].sum()
+            route_str = ' -> '.join(
+                        f"{code} ({demand_df.loc[demand_df['CODE'] == code, 'LOCATION'].values[0]})"
+                        if code in demand_df['CODE'].values else str(code)
+                        for code in route_nodes
+                    )
 
             writer.writerow({
                 'Day': day + 1,
@@ -307,7 +313,8 @@ def save_route_details_to_csv(route_dict, day, use_distance=False, file_path=Non
                 f'{metric_name.capitalize()} ({unit})': route_metric,
                 f'Max {metric_name.capitalize()} ({unit})': max_metric,
                 'Within Limit': 'Yes' if within_limit else 'No',
-                'Route': route_nodes
+                'PO Value':po_value,
+                'Route': route_str
             })
 
     print(f"Route details saved to {file_path}")

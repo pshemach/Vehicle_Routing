@@ -161,7 +161,7 @@ class VRPController:
 
         # Save detailed route information to CSV
         csv_file = f"output/csv/day_{day + 1}_routes.csv"
-        save_route_details_to_csv(route_dict, day, self.use_distance, file_path=csv_file)
+        save_route_details_to_csv(self.demand_df, route_dict, day, self.use_distance, file_path=csv_file)
 
         # Visualize routes
         if save_visualization:
