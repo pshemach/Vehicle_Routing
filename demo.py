@@ -168,25 +168,6 @@ def solve(job_id):
     logger.debug(f"Created output folder: {output_folder}")
 
     try:
-        # if job_info['multi_day']:
-        #     all_visited_nodes, all_route_dicts = controller.solve_multi_day(
-        #         total_days=job_info['days'],
-        #         max_nodes=job_info['max_nodes'],
-        #         save_visualization=True
-        #     )
-        #     logger.debug(f"Solver returned: {len(all_visited_nodes)} days, {len(all_route_dicts)} routes")
-        #     current_results = {
-        #         'job_id': job_id,
-        #         'multi_day': True,
-        #         'days': job_info['days'],
-        #         'num_vehicles': job_info['num_vehicles'],
-        #         'max_visits': job_info['max_visits'],
-        #         'max_distance': job_info['max_distance'],
-        #         'all_visited_nodes': [list(nodes) for nodes in all_visited_nodes],
-        #         'all_route_dicts': all_route_dicts,
-        #         'timestamp': datetime.now().isoformat()
-        #     }
-        # else:
         visited_nodes, route_dict = controller.solve_single_day(
                 day=0,
                 max_nodes=job_info['max_nodes'],
@@ -203,22 +184,6 @@ def solve(job_id):
                 'route_dict': route_dict,
                 'timestamp': datetime.now().isoformat()
             }
-
-        # # Ensure all data is string type before saving
-        # if not job_info['multi_day']:
-        #     for vehicle_id, route in route_dict.items():
-        #         if isinstance(route, pd.DataFrame):
-        #             route_dict[vehicle_id] = route.astype(str)
-        #     current_results['route_dict'] = {k: v.astype(str) if isinstance(v, pd.DataFrame) else v for k, v in route_dict.items()}
-        # else:
-        #     for day, routes in all_route_dicts.items():
-        #         for vehicle_id, route in routes.items():
-        #             if isinstance(route, pd.DataFrame):
-        #                 routes[vehicle_id] = route.astype(str)
-        #     current_results['all_route_dicts'] = {
-        #         day: {k: v.astype(str) if isinstance(v, pd.DataFrame) else v for k, v in routes.items()}
-        #         for day, routes in all_route_dicts.items()
-        #     }
 
         copy_output_files(output_folder)
         logger.debug(f"Copied output files to: {output_folder}")
