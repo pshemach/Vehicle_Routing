@@ -11,6 +11,7 @@ from glob import glob
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template, send_from_directory, redirect, url_for
 from werkzeug.utils import secure_filename
+import pandas as pd
 
 from vehi_rout.controller import VRPController
 
@@ -359,6 +360,127 @@ def get_job(job_id):
         job_info = json.load(f)
 
     return jsonify(job_info)
+
+@app.route('/api/route-orders', methods=['GET'])
+def get_route_orders():
+    """Get current and available orders for a specific route, and the shop list (CODE, LOCATION) in route order."""
+    day = request.args.get('day')
+    vehicle = request.args.get('vehicle')
+    job_id = request.args.get('job_id') or current_job_id
+    
+    if not day or not vehicle or not job_id:
+        return jsonify({'error': 'Day, vehicle, and job_id parameters are required'}), 400
+        
+    try:
+        day = int(day)
+        vehicle = int(vehicle)
+        # Get current route orders (just CODEs)
+        current_orders = controller.get_route_orders(day, vehicle)
+        current_codes = [order['id'] for order in current_orders]
+        # Load full order details from orders.csv in the job folder
+        job_folder = os.path.join(app.config['UPLOAD_FOLDER'], job_id)
+        job_info_path = os.path.join(job_folder, 'job_info.json')
+        with open(job_info_path, 'r') as f:
+            job_info = json.load(f)
+        po_file = job_info['po_file']
+        orders_path = os.path.join(job_folder, po_file)
+        orders_df = pd.read_csv(orders_path)
+        # --- Get the shop list in route order ---
+        route_dict = controller.all_route_dicts[day] if hasattr(controller, 'all_route_dicts') and job_info.get('multi_day') else controller.route_dict
+        if job_info.get('multi_day'):
+            route_info = route_dict.get(vehicle, {})
+        else:
+            route_info = route_dict.get(vehicle, {})
+        route_nodes = route_info.get('route_nodes') if 'route_nodes' in route_info else route_info.get('route', [])
+        # route_nodes may include depot (0), filter out if needed
+        shop_list = []
+        for code in route_nodes:
+            if str(code) == '0':
+                continue
+            row = orders_df[orders_df['CODE'].astype(str) == str(code)]
+            if not row.empty:
+                shop_list.append({
+                    'CODE': str(code),
+                    'LOCATION': row.iloc[0]['LOCATION']
+                })
+        # ---
+        # Filter for current route orders
+        current_orders_full = orders_df[orders_df['CODE'].astype(str).isin(current_codes)]
+        current_orders_list = current_orders_full.to_dict(orient='records')
+        available_orders = controller.get_available_orders(day)
+        return jsonify({
+            'currentOrders': current_orders_list,
+            'availableOrders': available_orders,
+            'shopList': shop_list
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/add-order', methods=['POST'])
+def add_order():
+    """Add an order to a specific route."""
+    data = request.json
+    
+    if not data or 'orderId' not in data or 'day' not in data or 'vehicle' not in data:
+        return jsonify({'error': 'Order ID, day, and vehicle are required'}), 400
+        
+    try:
+        # Add order to route using the controller
+        controller.add_order_to_route(
+            order_id=data['orderId'],
+            day=int(data['day']),
+            vehicle=int(data['vehicle'])
+        )
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/remove-order', methods=['POST'])
+def remove_order():
+    """Remove an order from a specific route."""
+    data = request.json
+    
+    if not data or 'orderId' not in data or 'day' not in data or 'vehicle' not in data:
+        return jsonify({'error': 'Order ID, day, and vehicle are required'}), 400
+        
+    try:
+        # Remove order from route using the controller
+        controller.remove_order_from_route(
+            order_id=data['orderId'],
+            day=int(data['day']),
+            vehicle=int(data['vehicle'])
+        )
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/save-route-orders', methods=['POST'])
+def save_route_orders():
+    """Save the updated route orders and regenerate the route."""
+    data = request.json
+    
+    if not data or 'orders' not in data or 'day' not in data or 'vehicle' not in data:
+        return jsonify({'error': 'Orders list, day, and vehicle are required'}), 400
+        
+    try:
+        # Update route orders using the controller
+        controller.update_route_orders(
+            order_ids=data['orders'],
+            day=int(data['day']),
+            vehicle=int(data['vehicle'])
+        )
+        
+        # Regenerate route visualization
+        controller.regenerate_route_visualization(
+            day=int(data['day']),
+            vehicle=int(data['vehicle'])
+        )
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5096)

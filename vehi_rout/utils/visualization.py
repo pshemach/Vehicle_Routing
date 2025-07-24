@@ -105,7 +105,7 @@ def visualize_routes_per_vehicle(master_df, route_dict, day, use_distance=False)
 
             # 🔥 Check if path has enough points
             if path_cords and len(path_cords) > 2:
-                path_coordinates.extend(path_cords)
+                path_coordinates.append(path_cords)
                 print(f"Added path from {origin_code} to {dest_code} with {len(path_cords)} points")
             else:
                 print(f"Skipping path from {origin_code} to {dest_code} — insufficient points ({len(path_cords)} points)")
@@ -154,29 +154,30 @@ def visualize_routes_per_vehicle(master_df, route_dict, day, use_distance=False)
         if path_coordinates:
             # Generate a unique color for this vehicle's route
             route_color = generate_random_color()
+            for segment in path_coordinates:
 
-            # Add route path with arrows to show direction
-            folium.PolyLine(
-                locations=path_coordinates,
-                color=route_color,
-                weight=5,     # Increased weight for better visibility
-                opacity=0.9,
-                popup=f"Vehicle {vehicle_id} Route",
-                tooltip=f"Vehicle {vehicle_id}: {route_info.get('num_visits', 0)} stops, {route_info.get('route_distance' if use_distance else 'route_time', 0)} {'km' if use_distance else 'mins'}"
-            ).add_to(m)
+                # Add route path with arrows to show direction
+                folium.PolyLine(
+                    locations=segment,
+                    color=route_color,
+                    weight=5,     # Increased weight for better visibility
+                    opacity=0.9,
+                    popup=f"Vehicle {vehicle_id} Route",
+                    tooltip=f"Vehicle {vehicle_id}: {route_info.get('num_visits', 0)} stops, {route_info.get('route_distance' if use_distance else 'route_time', 0)} {'km' if use_distance else 'mins'}"
+                ).add_to(m)
 
-            # Add arrows to indicate direction
-            folium.plugins.AntPath(
-                locations=path_coordinates,
-                color=route_color,
-                weight=5,
-                opacity=0.8,
-                delay=1000,  # Animation delay
-                dash_array=[10, 20],  # Pattern of the dash
-                pulse_color='#FFFFFF'
-            ).add_to(m)
+                # Add arrows to indicate direction
+                folium.plugins.AntPath(
+                    locations=segment,
+                    color=route_color,
+                    weight=5,
+                    opacity=0.8,
+                    delay=1000,  # Animation delay
+                    dash_array=[10, 20],  # Pattern of the dash
+                    pulse_color='#FFFFFF'
+                ).add_to(m)
 
-            print(f"Plotted path for vehicle {vehicle_id} with {len(path_coordinates)} coordinates")
+                print(f"Plotted path for vehicle {vehicle_id} with {len(path_coordinates)} coordinates")
         else:
             print(f"No path coordinates available for vehicle {vehicle_id}. Route not plotted.")
 
@@ -288,7 +289,7 @@ def save_route_details_to_csv(demand_df, route_dict, day, use_distance=False, fi
 
     with open(file_path, 'w', newline='') as csvfile:
         fieldnames = ['Day', 'Vehicle', 'Stops', f'{metric_name.capitalize()} ({unit})',
-                     f'Max {metric_name.capitalize()} ({unit})', 'Within Limit','PO Value', 'Route']
+                     f'Max {metric_name.capitalize()} ({unit})', 'Within Limit','Route']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
@@ -299,7 +300,8 @@ def save_route_details_to_csv(demand_df, route_dict, day, use_distance=False, fi
             max_metric = route_info.get(f"max_{metric_name}_limit", 0)
             within_limit = route_info.get("within_limit", False)
             route_nodes = route_info.get("route_nodes", [])
-            po_value = demand_df[demand_df['CODE'].isin(route_nodes)]['SALE'].sum()
+            # po_value_df = demand_df[demand_df['CODE'].isin(route_nodes)]
+            # po_value = po_value_df['SALE'].str.replace(',', '', regex=False).astype(float).sum()
             route_str = ' -> '.join(
                         f"{code} ({demand_df.loc[demand_df['CODE'] == code, 'LOCATION'].values[0]})"
                         if code in demand_df['CODE'].values else str(code)
@@ -313,7 +315,6 @@ def save_route_details_to_csv(demand_df, route_dict, day, use_distance=False, fi
                 f'{metric_name.capitalize()} ({unit})': route_metric,
                 f'Max {metric_name.capitalize()} ({unit})': max_metric,
                 'Within Limit': 'Yes' if within_limit else 'No',
-                'PO Value':po_value,
                 'Route': route_str
             })
 

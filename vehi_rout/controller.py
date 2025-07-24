@@ -6,6 +6,7 @@ Orchestrates the entire process of solving the VRP.
 import pandas as pd
 from datetime import datetime
 import os
+import json
 
 from vehi_rout.config import (
     TOTAL_DAYS,
@@ -163,6 +164,23 @@ class VRPController:
         csv_file = f"output/csv/day_{day + 1}_routes.csv"
         save_route_details_to_csv(self.demand_df, route_dict, day, self.use_distance, file_path=csv_file)
 
+        # Save route_dict as JSON for API use
+        job_id = None
+        # Try to get job_id from environment or context if available
+        if hasattr(self, 'job_id'):
+            job_id = self.job_id
+        if not job_id:
+            # Fallback: try to extract from output path
+            import re
+            match = re.search(r'output/(.*?)/', csv_file)
+            if match:
+                job_id = match.group(1)
+            else:
+                job_id = 'default'
+        os.makedirs(f'output/{job_id}', exist_ok=True)
+        with open(f'output/{job_id}/route_dict_day_{day+1}.json', 'w') as f:
+            json.dump(route_dict, f, default=str)
+
         # Visualize routes
         if save_visualization:
             maps_dict = visualize_routes_per_vehicle(
@@ -184,83 +202,83 @@ class VRPController:
 
         return visited_nodes, route_dict
 
-    def solve_multi_day(self, total_days=None, max_nodes=None, save_visualization=False):
-        """
-        Solve the VRP for multiple days.
+    # def solve_multi_day(self, total_days=None, max_nodes=None, save_visualization=False):
+    #     """
+    #     Solve the VRP for multiple days.
 
-        Args:
-            total_days: Number of days to plan
-            max_nodes: Maximum number of nodes to visit per day
-            save_visualization: Boolean indicating whether to save visualization
+    #     Args:
+    #         total_days: Number of days to plan
+    #         max_nodes: Maximum number of nodes to visit per day
+    #         save_visualization: Boolean indicating whether to save visualization
 
-        Returns:
-            all_visited_nodes: List of sets of visited node indices for each day
-            all_route_dicts: List of dictionaries containing route information for each day
-        """
-        if self.demand_df is None or self.master_mat_df is None or self.master_gps_df is None:
-            raise ValueError("Data not loaded. Call load_data() first.")
+    #     Returns:
+    #         all_visited_nodes: List of sets of visited node indices for each day
+    #         all_route_dicts: List of dictionaries containing route information for each day
+    #     """
+    #     if self.demand_df is None or self.master_mat_df is None or self.master_gps_df is None:
+    #         raise ValueError("Data not loaded. Call load_data() first.")
 
-        # Use default total days if not specified
-        if total_days is None:
-            total_days = TOTAL_DAYS
+    #     # Use default total days if not specified
+    #     if total_days is None:
+    #         total_days = TOTAL_DAYS
 
-        # Solve multi-day VRP
-        all_visited_nodes, all_route_dicts = solve_multi_day_vrp(
-            self.master_mat_df,
-            self.demand_dict,
-            total_days,
-            self.base_penalty,
-            self.use_distance,
-            current_date=None,
-            max_nodes_per_day=max_nodes
-        )
+    #     # Solve multi-day VRP
+    #     all_visited_nodes, all_route_dicts = solve_multi_day_vrp(
+    #         self.master_mat_df,
+    #         self.demand_dict,
+    #         total_days,
+    #         self.base_penalty,
+    #         self.use_distance,
+    #         current_date=None,
+    #         max_nodes_per_day=max_nodes
+    #     )
 
-        # Create output directories
-        self._create_output_directories()
+    #     # Create output directories
+    #     self._create_output_directories()
 
-        # Create a combined CSV for all days
-        combined_csv_path = f"output/csv/all_days_routes.csv"
-        import csv
-        with open(combined_csv_path, 'w', newline='') as csvfile:
-            metric_name = "distance" if self.use_distance else "time"
-            unit = "km" if self.use_distance else "mins"
-            fieldnames = ['Day', 'Vehicle', 'Stops', f'{metric_name.capitalize()} ({unit})',
-                         f'Max {metric_name.capitalize()} ({unit})', 'Within Limit', 'Route']
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
+    #     # Create a combined CSV for all days
+    #     combined_csv_path = f"output/csv/all_days_routes.csv"
+    #     import csv
+    #     with open(combined_csv_path, 'w', newline='') as csvfile:
+    #         metric_name = "distance" if self.use_distance else "time"
+    #         unit = "km" if self.use_distance else "mins"
+    #         fieldnames = ['Day', 'Vehicle', 'Stops', f'{metric_name.capitalize()} ({unit})',
+    #                      f'Max {metric_name.capitalize()} ({unit})', 'Within Limit', 'Route']
+    #         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    #         writer.writeheader()
 
-        # Process each day
-        for day, route_dict in enumerate(all_route_dicts):
-            print(f"\n=== Day {day + 1} ===")
+    #     # Process each day
+    #     for day, route_dict in enumerate(all_route_dicts):
+    #         print(f"\n=== Day {day + 1} ===")
 
-            # Print and save summary
-            summary_file = f"output/summaries/day_{day + 1}_summary.txt"
-            print_route_summary(route_dict, self.use_distance, file_path=summary_file)
+    #         # Print and save summary
+    #         summary_file = f"output/summaries/day_{day + 1}_summary.txt"
+    #         print_route_summary(route_dict, self.use_distance, file_path=summary_file)
 
-            # Save detailed route information to CSV
-            csv_file = f"output/csv/day_{day + 1}_routes.csv"
-            save_route_details_to_csv(route_dict, day, self.use_distance, file_path=csv_file)
+    #         # Save detailed route information to CSV
+    #         csv_file = f"output/csv/day_{day + 1}_routes.csv"
+    #         save_route_details_to_csv(route_dict, day, self.use_distance, file_path=csv_file)
 
-            # Append to combined CSV
-            self._append_to_combined_csv(route_dict, day, combined_csv_path)
+    #         # Append to combined CSV
+    #         self._append_to_combined_csv(route_dict, day, combined_csv_path)
 
-            # Visualize routes
-            if save_visualization:
-                maps_dict = visualize_routes_per_vehicle(
-                    self.master_gps_df,
-                    route_dict,
-                    day,
-                    use_distance=self.use_distance
-                )
+    #         # Visualize routes
+    #         if save_visualization:
+    #             maps_dict = visualize_routes_per_vehicle(
+    #                 self.master_gps_df,
+    #                 route_dict,
+    #                 day,
+    #                 use_distance=self.use_distance
+    #             )
 
-                # Save maps to files
-                for vehicle_id, m in maps_dict.items():
-                    m.save(f"output/maps/day_{day + 1}_vehicle_{vehicle_id}_route.html")
+    #             # Save maps to files
+    #             for vehicle_id, m in maps_dict.items():
+    #                 m.save(f"output/maps/day_{day + 1}_vehicle_{vehicle_id}_route.html")
 
-        # Create a multi-day summary
-        self._save_multi_day_summary(all_route_dicts, all_visited_nodes)
+    #     # Create a multi-day summary
+    #     self._save_multi_day_summary(all_route_dicts, all_visited_nodes)
 
-        return all_visited_nodes, all_route_dicts
+    #     return all_visited_nodes, all_route_dicts
 
     def _append_to_combined_csv(self, route_dict, day, file_path):
         """
@@ -298,68 +316,68 @@ class VRPController:
                     'Route': route_nodes
                 })
 
-    def _save_multi_day_summary(self, all_route_dicts, all_visited_nodes):
-        """
-        Save a summary of the multi-day routing and create a next-day demand file.
+    # def _save_multi_day_summary(self, all_route_dicts, all_visited_nodes):
+    #     """
+    #     Save a summary of the multi-day routing and create a next-day demand file.
 
-        Args:
-            all_route_dicts: List of dictionaries containing route information for each day
-            all_visited_nodes: List of sets of visited node indices for each day
-        """
-        metric_name = "distance" if self.use_distance else "time"
-        unit = "km" if self.use_distance else "mins"
+    #     Args:
+    #         all_route_dicts: List of dictionaries containing route information for each day
+    #         all_visited_nodes: List of sets of visited node indices for each day
+    #     """
+    #     metric_name = "distance" if self.use_distance else "time"
+    #     unit = "km" if self.use_distance else "mins"
 
-        # Calculate total metrics
-        total_metric = 0
-        total_visits = 0
+    #     # Calculate total metrics
+    #     total_metric = 0
+    #     total_visits = 0
 
-        for route_dict in all_route_dicts:
-            for vehicle_id, route_info in route_dict.items():
-                total_metric += route_info.get(f"route_{metric_name}", 0)
-                total_visits += route_info.get("num_visits", 0)
+    #     for route_dict in all_route_dicts:
+    #         for vehicle_id, route_info in route_dict.items():
+    #             total_metric += route_info.get(f"route_{metric_name}", 0)
+    #             total_visits += route_info.get("num_visits", 0)
 
-        # Calculate visited and unvisited nodes
-        all_visited = set()
-        for visited in all_visited_nodes:
-            all_visited.update(visited)
+    #     # Calculate visited and unvisited nodes
+    #     all_visited = set()
+    #     for visited in all_visited_nodes:
+    #         all_visited.update(visited)
 
-        # Get all nodes from the demand data (PO file) instead of master data
-        all_po_nodes = self.get_po_node_indices()
-        unvisited = all_po_nodes - all_visited
+    #     # Get all nodes from the demand data (PO file) instead of master data
+    #     all_po_nodes = self.get_po_node_indices()
+    #     unvisited = all_po_nodes - all_visited
 
-        # Create summary lines
-        summary_lines = []
-        summary_lines.append(f"Multi-Day Routing Summary")
-        summary_lines.append(f"-" * 50)
-        summary_lines.append(f"Total days: {len(all_route_dicts)}")
-        summary_lines.append(f"Total vehicles: {len(all_route_dicts[0]) if all_route_dicts else 0}")
-        summary_lines.append(f"Total stops: {total_visits}")
-        summary_lines.append(f"Total {metric_name}: {total_metric} {unit}")
-        summary_lines.append(f"Total nodes visited: {len(all_visited)}")
-        summary_lines.append(f"Total nodes unvisited: {len(unvisited)}")
-        summary_lines.append(f"-" * 50)
+    #     # Create summary lines
+    #     summary_lines = []
+    #     summary_lines.append(f"Multi-Day Routing Summary")
+    #     summary_lines.append(f"-" * 50)
+    #     summary_lines.append(f"Total days: {len(all_route_dicts)}")
+    #     summary_lines.append(f"Total vehicles: {len(all_route_dicts[0]) if all_route_dicts else 0}")
+    #     summary_lines.append(f"Total stops: {total_visits}")
+    #     summary_lines.append(f"Total {metric_name}: {total_metric} {unit}")
+    #     summary_lines.append(f"Total nodes visited: {len(all_visited)}")
+    #     summary_lines.append(f"Total nodes unvisited: {len(unvisited)}")
+    #     summary_lines.append(f"-" * 50)
 
-        # Save to file
-        summary_file = "output/summaries/multi_day_summary.txt"
-        with open(summary_file, 'w') as f:
-            for line in summary_lines:
-                f.write(line + '\n')
+    #     # Save to file
+    #     summary_file = "output/summaries/multi_day_summary.txt"
+    #     with open(summary_file, 'w') as f:
+    #         for line in summary_lines:
+    #             f.write(line + '\n')
 
-            # Add unvisited nodes if any
-            if unvisited:
-                f.write(f"\nUnvisited nodes:\n")
-                unvisited_codes = [self.master_mat_df.index[i] for i in unvisited if i < len(self.master_mat_df.index)]
-                for i, code in enumerate(unvisited_codes):
-                    f.write(f"{code}")
-                    if (i + 1) % 10 == 0:  # 10 codes per line
-                        f.write("\n")
-                    else:
-                        f.write(", ")
+    #         # Add unvisited nodes if any
+    #         if unvisited:
+    #             f.write(f"\nUnvisited nodes:\n")
+    #             unvisited_codes = [self.master_mat_df.index[i] for i in unvisited if i < len(self.master_mat_df.index)]
+    #             for i, code in enumerate(unvisited_codes):
+    #                 f.write(f"{code}")
+    #                 if (i + 1) % 10 == 0:  # 10 codes per line
+    #                     f.write("\n")
+    #                 else:
+    #                     f.write(", ")
 
-        print(f"Multi-day summary saved to {summary_file}")
+    #     print(f"Multi-day summary saved to {summary_file}")
 
-        # Save unvisited nodes to a CSV file for next-day processing
-        self._save_unvisited_nodes_to_csv(unvisited)
+    #     # Save unvisited nodes to a CSV file for next-day processing
+    #     self._save_unvisited_nodes_to_csv(unvisited)
 
     def _create_output_directories(self):
         """
@@ -455,3 +473,235 @@ class VRPController:
         print(f"Number of vehicles: {num_vehicles}")
         print(f"Max visits per vehicle: {new_max_visits}")
         print(f"Max distance per vehicle: {new_max_distance}")
+
+    def get_route_orders(self, day, vehicle):
+        """
+        Get orders assigned to a specific route.
+
+        Args:
+            day: Day index (0-based)
+            vehicle: Vehicle index
+
+        Returns:
+            List of Order objects containing order information
+        """
+        if not hasattr(self, 'all_route_dicts') or day >= len(self.all_route_dicts):
+            return []
+            
+        route_dict = self.all_route_dicts[day]
+        if vehicle not in route_dict:
+            return []
+            
+        route = route_dict[vehicle]['route']
+        orders = []
+        
+        for node in route:
+            if node == 0:  # Skip depot
+                continue
+                
+            # Get order information from demand_df
+            order_info = self.demand_df[self.demand_df['CODE'] == str(node)].iloc[0]
+            orders.append({
+                'id': str(node),
+                'location': order_info['LOCATION'],
+                'volume': float(order_info['VOLUME']),
+                'priority': int(order_info.get('PRIORITY', 0))
+            })
+            
+        return orders
+
+    def get_available_orders(self, day):
+        """
+        Get orders that are not assigned to any route for the given day.
+
+        Args:
+            day: Day index (0-based)
+
+        Returns:
+            List of Order objects containing order information
+        """
+        if not hasattr(self, 'all_route_dicts') or day >= len(self.all_route_dicts):
+            return []
+            
+        # Get all nodes assigned to routes for this day
+        assigned_nodes = set()
+        route_dict = self.all_route_dicts[day]
+        
+        for vehicle_routes in route_dict.values():
+            assigned_nodes.update(vehicle_routes['route'])
+            
+        # Remove depot from assigned nodes
+        assigned_nodes.discard(0)
+        
+        # Get all PO nodes
+        all_po_nodes = self.get_po_node_indices()
+        
+        # Get unassigned nodes
+        unassigned_nodes = all_po_nodes - assigned_nodes
+        
+        # Convert nodes to order information
+        orders = []
+        for node in unassigned_nodes:
+            # Get order information from demand_df
+            order_info = self.demand_df[self.demand_df['CODE'] == str(node)].iloc[0]
+            orders.append({
+                'id': str(node),
+                'location': order_info['LOCATION'],
+                'volume': float(order_info['VOLUME']),
+                'priority': int(order_info.get('PRIORITY', 0))
+            })
+            
+        return orders
+
+    def add_order_to_route(self, order_id, day, vehicle):
+        """
+        Add an order to a specific route.
+
+        Args:
+            order_id: Order ID to add
+            day: Day index (0-based)
+            vehicle: Vehicle index
+        """
+        if not hasattr(self, 'all_route_dicts') or day >= len(self.all_route_dicts):
+            raise ValueError(f"Invalid day: {day}")
+            
+        route_dict = self.all_route_dicts[day]
+        if vehicle not in route_dict:
+            raise ValueError(f"Invalid vehicle: {vehicle}")
+            
+        # Convert order_id to node index
+        node = int(order_id)
+        
+        # Check if order exists
+        if not self.demand_df[self.demand_df['CODE'] == str(node)].shape[0]:
+            raise ValueError(f"Order {order_id} not found")
+            
+        # Add node to route
+        route = route_dict[vehicle]['route']
+        if node not in route:
+            # Insert before the last depot visit
+            route.insert(-1, node)
+            
+            # Update route metrics
+            self._update_route_metrics(route_dict[vehicle])
+
+    def remove_order_from_route(self, order_id, day, vehicle):
+        """
+        Remove an order from a specific route.
+
+        Args:
+            order_id: Order ID to remove
+            day: Day index (0-based)
+            vehicle: Vehicle index
+        """
+        if not hasattr(self, 'all_route_dicts') or day >= len(self.all_route_dicts):
+            raise ValueError(f"Invalid day: {day}")
+            
+        route_dict = self.all_route_dicts[day]
+        if vehicle not in route_dict:
+            raise ValueError(f"Invalid vehicle: {vehicle}")
+            
+        # Convert order_id to node index
+        node = int(order_id)
+        
+        # Remove node from route
+        route = route_dict[vehicle]['route']
+        if node in route:
+            route.remove(node)
+            
+            # Update route metrics
+            self._update_route_metrics(route_dict[vehicle])
+
+    def update_route_orders(self, order_ids, day, vehicle):
+        """
+        Update the orders in a specific route.
+
+        Args:
+            order_ids: List of order IDs for the route
+            day: Day index (0-based)
+            vehicle: Vehicle index
+        """
+        if not hasattr(self, 'all_route_dicts') or day >= len(self.all_route_dicts):
+            raise ValueError(f"Invalid day: {day}")
+            
+        route_dict = self.all_route_dicts[day]
+        if vehicle not in route_dict:
+            raise ValueError(f"Invalid vehicle: {vehicle}")
+            
+        # Convert order IDs to node indices
+        nodes = [int(order_id) for order_id in order_ids]
+        
+        # Validate all nodes exist
+        for node in nodes:
+            if not self.demand_df[self.demand_df['CODE'] == str(node)].shape[0]:
+                raise ValueError(f"Order {node} not found")
+                
+        # Update route with new nodes
+        route = route_dict[vehicle]['route']
+        route.clear()
+        route.append(0)  # Start at depot
+        route.extend(nodes)
+        route.append(0)  # End at depot
+        
+        # Update route metrics
+        self._update_route_metrics(route_dict[vehicle])
+
+    def regenerate_route_visualization(self, day, vehicle):
+        """
+        Regenerate the visualization for a specific route.
+
+        Args:
+            day: Day index (0-based)
+            vehicle: Vehicle index
+        """
+        if not hasattr(self, 'all_route_dicts') or day >= len(self.all_route_dicts):
+            raise ValueError(f"Invalid day: {day}")
+            
+        route_dict = self.all_route_dicts[day]
+        if vehicle not in route_dict:
+            raise ValueError(f"Invalid vehicle: {vehicle}")
+            
+        # Create single vehicle route dictionary
+        vehicle_route_dict = {vehicle: route_dict[vehicle]}
+        
+        # Generate and save map
+        maps_dict = visualize_routes_per_vehicle(
+            self.master_gps_df,
+            vehicle_route_dict,
+            day,
+            use_distance=self.use_distance
+        )
+        
+        # Save map to file
+        os.makedirs("output/maps", exist_ok=True)
+        for vid, m in maps_dict.items():
+            m.save(f"output/maps/day_{day + 1}_vehicle_{vid}_route.html")
+            
+        # Update route summary
+        summary_file = f"output/summaries/day_{day + 1}_summary.txt"
+        print_route_summary(route_dict, self.use_distance, file_path=summary_file)
+        
+        # Update route details CSV
+        csv_file = f"output/csv/day_{day + 1}_routes.csv"
+        save_route_details_to_csv(self.demand_df, route_dict, day, self.use_distance, file_path=csv_file)
+
+    def _update_route_metrics(self, route_info):
+        """
+        Update the metrics for a route after modification.
+
+        Args:
+            route_info: Dictionary containing route information
+        """
+        route = route_info['route']
+        
+        # Calculate total distance/time
+        total = 0
+        for i in range(len(route) - 1):
+            from_node = route[i]
+            to_node = route[i + 1]
+            total += self.master_mat_df.iloc[from_node, to_node]
+            
+        # Update route information
+        route_info['total_distance' if self.use_distance else 'total_time'] = total
+        route_info['stops'] = len(route) - 2  # Subtract depot visits
+        route_info['within_limit'] = total <= route_info['max_distance' if self.use_distance else 'max_time']

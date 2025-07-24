@@ -1,0 +1,151 @@
+﻿Order ID,Shop ID,Customer,Delivery Point,PO Value,Received Time,Status,Category
+ORD001,1005,FC FORT,"40 , York Street ,  Fort ,  Colombo  01",22339.79,6/12/2025,pending,drink
+ORD002,1017,FC STAPLES STREET,"21,  Staples  Street,  Colombo  02",17470.88,6/12/2025,pending,drink
+ORD003,1033,FC MAJESTIC CITY,"Majestic  City  ,  10 , Station Road , Colombo  04",21083.5,6/12/2025,pending,drink
+ORD004,1105,FC COLPETTY,"407 , Galle  Road , Colpetty .",13360.79,6/12/2025,pending,drink
+ORD005,1106,FC DEHIWALA,"65 A ,  Galle  Road , Dehiwala .",34830.62,6/12/2025,pending,drink
+ORD006,1107,EX THIMBIRIGASYAYA,"90 , Thimbirigasyaya   Road , Colombo 05",7393.22,6/12/2025,pending,drink
+ORD007,1108,FC KOTAHENA,"108 , George R. de Silva  Mw , Kotahena .",28849.15,6/12/2025,pending,drink
+ORD008,1109,FC PARK ROAD,"213 , Park  Road , Off Elvitigala Mw , Colombo 05",39320.49,6/12/2025,pending,drink
+ORD009,1116,FC AVISSAWELLA,"91 ,  Ratnapura  Road , Avissawella .",15044.98,6/12/2025,pending,drink
+ORD010,1130,FC MOUNT LAVINIA STC,"270 , Galle  Road , Mount Lavinia .S.T.C",40041.92,6/12/2025,pending,drink
+ORD011,1137,FC MUTUWAL,"54 /1 , Centre  Road, Mattakkuliya .",16942.98,6/12/2025,pending,drink
+ORD012,1145,FC MARADANA,"585 , Maradana  Road , Maradana .",5015.17,6/12/2025,pending,drink
+ORD013,1291,FC DICKMANS ROAD,"No. 15, Dickmans Road , Bambalapitiya.",30,6/12/2025,pending,drink
+ORD014,1292,FC GRANDPASS,"No. 130/C,  Layards Broadway,  Granpass,  Colombo  14.",4483.88,6/12/2025,pending,drink
+ORD015,1301,EX MALIGAWATTE,"301, Pradeepa Mawatha, Colombo 10",20233.51,6/12/2025,pending,drink
+ORD016,1303,EX ALEXANDRA PLACE,"75, C.W.W. Kannangara Mw. Colombo 7",3799.39,6/12/2025,pending,drink
+ORD017,1305,EX HAVELOCK ROAD,"323, Havelock Rd. Coombo 6",23443.01,6/12/2025,pending,drink
+ORD018,1308,EX BAMBALAPITIYA,"762, Galle Rd. Colombo 4",18068.87,6/12/2025,pending,drink
+ORD019,1320,EX ROYALPARK,"No.115, Lake Drive, Rajagiriya",16245.5,6/12/2025,pending,drink
+ORD020,1323,EX TRILLIUM RESIDENCE,"No. 153, Elvitigala Mawatha, Colombo 08",14640.75,6/12/2025,pending,drink
+ORD021,1327,EX SUWARAPOLA,"No. 428, Moratuwa Rd, Suwarapola, Piliyandala.",25469.18,6/12/2025,pending,drink
+ORD022,1355,EX ERIYAGAMA,"No.180, Colombo road, Eiryagama.",12923.54,6/12/2025,pending,drink
+ORD023,1364,EX DEANS ROAD,"No. 153, Deans Road,Colombo 10",8737.28,6/12/2025,pending,drink
+ORD024,1411,FC DUPLICATION,"No. 450 E, R A De Mel Mawatha, Colombo 03",17028.96,6/12/2025,pending,drink
+ORD025,1419,FC JAWATTA,"No 60, Jawatta Road, Thimbirigasyaya.",27305.85,6/12/2025,pending,drink
+ORD026,1433,FC NORRIS CANAL,"No. 25,   Norris Canal Road , Colombo 10",9796.45,6/12/2025,pending,drink
+ORD027,1446,FC WARD PLACE,"No. 48, Ward Place, Colombo-07",7261.68,6/12/2025,pending,drink
+ORD028,1471,FC COTA ROAD,"No. 260, N.M Perera Mawatha, Cota Road, Colombo 08",8635.19,6/12/2025,pending,drink
+ORD029,1484,FC MARINE CITY,"No 46, Station Road,Dehiwala.",2928.1,6/12/2025,pending,drink
+ORD030,1497,FC DEMATAGODA 02,"DEMATAGODA , Sri Lanka",29715.62,6/12/2025,pending,drink
+ORD031,1545,FC GLORIOUS RESIDENCE,"No.167 Bandaranayeka Rd,Colombo 12",33571.95,6/12/2025,pending,drink
+ORD032,1549,FC BOMIRIYA,"BOMIRIYA, Sri Lanka",21605.89,6/12/2025,pending,drink
+ORD033,1555,FC BLOEMENDHAL,"BLOEMENDHAL, Sri Lanka",11929.09,6/12/2025,pending,drink
+ORD034,1594,FC JAYA ROAD,"No.1594, Food City Jaya Road, Colombo 04",15905.08,6/12/2025,pending,drink
+ORD035,1608,FC KOLLUPITIYA 02,"No. 271/1 ,Galle Road ,Colpetty",40215.98,6/12/2025,pending,drink
+ORD036,1614,FC KOLONNAWA 02,"KOLONNAWA , Sri Lanka",7143.72,6/12/2025,pending,drink
+ORD037,1650,FC W. A. SILVA MAWATHA,"W. A. SILVA MAWATHA, Sri Lanka",35203.75,6/12/2025,pending,drink
+ORD038,1661,FC GREEN PATH,"GREEN PATH, Sri Lanka",7789.56,6/12/2025,pending,drink
+ORD039,1667,FC AVISSAWELLA 02,"AVISSAWELLA , Sri Lanka",8083.24,6/12/2025,pending,drink
+ORD040,1672,FC SLAVE ISLAND,"SLAVE ISLAND, Sri Lanka",26984.57,6/12/2025,pending,drink
+ORD041,1676,FC BAUDDHALOKA MAWATHA,"BAUDDHALOKA MAWATHA, Sri Lanka",3926,6/12/2025,pending,drink
+ORD042,1678,FC KOTHALAWALA,"KOTHALAWALA, Sri Lanka",48723.45,6/12/2025,pending,drink
+ORD043,1728,EX ASCON RESIDENCE,"No. 608-1/35, Dr. Danister de Silva Mawatha, Dematagoda.",6069.82,6/12/2025,pending,drink
+ORD044,1739,EX MAKULUDUWA,"No 16 B,Makuluduwa,Piliyandala.",7212.11,6/12/2025,pending,drink
+ORD045,1745,EX RAHULA JUNCTION,"No. 39,Perera MW,Buthgamuwa Rd,Rajagiriya",2584.34,6/12/2025,pending,drink
+ORD046,1746,EX MALIGAWATTE2,"No.227, Saddharma Mawatha, Maligawatte, Colombo 10",10981.36,6/12/2025,pending,drink
+ORD047,1759,EX MARADANA 02,"205 1/1 ,Maradana Road ,Colombo 10.",18933.61,6/12/2025,pending,drink
+ORD048,1761,EX NARAHENPITA,"No.522,Elvitigala Mawatha, Narahenpita",7143.72,6/12/2025,pending,drink
+ORD049,1762,EX NAWAGAMUWA,"No. 847 ,Avissawella Road, Nawagamuwa.",14328.64,6/12/2025,pending,drink
+ORD050,1774,EX DEHIWALA,"No.21, Hill Street, Dehiwala.",16555.58,6/12/2025,pending,drink
+ORD051,1776,EX MALIGAWATTE 03,"No. 67, Pradeepa Rd, Maligawatta , Colombo 10",1371.96,6/12/2025,pending,drink
+ORD052,1818,EX PORT AUTHORITY,"PORT AUTHORITY, Sri Lanka",38305.94,6/12/2025,pending,drink
+ORD053,1826,EX YMCA,"YMCA, Sri Lanka",17724.64,6/12/2025,pending,drink
+ORD054,1840,EX WATAREKA,"WATAREKA, Sri Lanka",34276.09,6/12/2025,pending,drink
+ORD055,1859,EX WIJERAMA MAWATHA,"WIJERAMA MAWATHA, Sri Lanka",40754.62,6/12/2025,pending,drink
+ORD056,1872,EX OVAL VIEW RESIDENCE,"OVAL VIEW RESIDENCE, Sri Lanka",8907.77,6/12/2025,pending,drink
+ORD057,1888,EX ISIPATHANA MAWATHA,"ISIPATHANA MAWATHA, Sri Lanka",2226,6/12/2025,pending,drink
+ORD058,1892,EX MABULGODA,"MABULGODA, Sri Lanka",12732.95,6/12/2025,pending,drink
+ORD059,1896,EX ORION CITY,"ORION CITY, Sri Lanka",3926,6/12/2025,pending,drink
+ORD060,1902,FC COLOMBO CITY CENTER,"No 137, Sir James Pieris Mawatha, Colombo 02",14151.35,6/12/2025,pending,drink
+ORD061,4,Borelasgamuwa SS,"Borelasgamuwa, Sri Lanka",4940.07,6/12/2025,pending,drink
+ORD062,5,Hyde Park SC,"Hyde, Sri Lanka",43344.4,6/12/2025,pending,drink
+ORD063,10,Nawinna SC,"Nawinna, Sri Lanka",2181.21,6/12/2025,pending,drink
+ORD064,108,Kottawa SS,"Kottawa, Sri Lanka",11055.14,6/12/2025,pending,drink
+ORD065,110,Malabe SS,"Malabe, Sri Lanka",14290.13,6/12/2025,pending,drink
+ORD066,112,Kohuwala SC,"Kohuwala, Sri Lanka",13621.78,6/12/2025,pending,drink
+ORD067,113,Homagama SC,"Homagama, Sri Lanka",2755.25,6/12/2025,pending,drink
+ORD068,116,Thalawathugoda SC,"Thalawathugoda, Sri Lanka",15760.93,6/12/2025,pending,drink
+ORD069,152,Athurugiriya Daily,"Athurugiriya, Sri Lanka",2009.07,6/12/2025,pending,drink
+ORD070,168,Aththiditya Daily,"Aththiditya, Sri Lanka",14701.01,6/12/2025,pending,drink
+ORD071,172,Mulleriyawa Daily,"Mulleriyawa, Sri Lanka",2453.86,6/12/2025,pending,drink
+ORD072,181,Watareka Daily,"Watareka, Sri Lanka",18683.91,6/12/2025,pending,drink
+ORD073,22,Battaramulla SC,"Battaramulla, Sri Lanka",29690.26,6/12/2025,pending,drink
+ORD074,23,Dehiwala SC,"Dehiwala, Sri Lanka",22445.63,6/12/2025,pending,drink
+ORD075,25,Wellawatte SS,"Wellawatte, Sri Lanka",30610.66,6/12/2025,pending,drink
+ORD076,76,Piliyandala SS,"Piliyandala, Sri Lanka",7727.68,6/12/2025,pending,drink
+ORD077,14001,DELKANDA,"DELKANDA, Sri Lanka",88217.37,6/12/2025,pending,drink
+ORD078,14003,ASIRI CENTRAL,"ASIRI CENTRAL, Sri Lanka",91098.08,6/12/2025,pending,drink
+ORD079,14006,KOTTAWA,"KOTTAWA, Sri Lanka",113829.69,6/12/2025,pending,drink
+ORD080,14008,NAWALA,"NAWALA, Sri Lanka",33287.19,6/12/2025,pending,drink
+ORD081,14009,MOUNT - LAVINIA,"MOUNT - LAVINIA, Sri Lanka",90386.96,6/12/2025,pending,drink
+ORD082,14010,MALABE,"MALABE, Sri Lanka",36094.12,6/12/2025,pending,drink
+ORD083,14011,CR FC,"CR FC, Sri Lanka",191304.57,6/12/2025,pending,drink
+ORD084,14012,THALAWATHUGODA,"THALAWATHUGODA, Sri Lanka",56365.58,6/12/2025,pending,drink
+ORD085,SCA2,Athurugiriya 2,"No. 175/12, Malambe Road, Athurugiriya",6508.32,6/12/2025,pending,drink
+ORD086,SCAD,Attidiya 02,"208, Aththidiya Road, Bellanthotha",43617.32,6/12/2025,pending,drink
+ORD087,SCAK,Akuregoda,"No. 244, Pothuarawa Road, Akuregoda",19209.48,6/12/2025,pending,drink
+ORD088,SCAR,Arangala,"No. 730, Malabe Road, Arangala, Athurugiriya",36393.64,6/12/2025,pending,drink
+ORD089,SCAV,Avissawella,"No.57, Kiriwandala, Avissawella",29337.62,6/12/2025,pending,drink
+ORD090,SCBI,Biyagama,"No. 306, New Kandy Road, Biyagama",22381.16,6/12/2025,pending,drink
+ORD091,SCBL,Boralasgomuwa,"No. 105/1, Kesbewa Road, Katuwala, Boralasgomuwa",23947.44,6/12/2025,pending,drink
+ORD092,SCBT,Battaramulla,"1024 and 1027, Pannipitiya Road, Battharamulla",12567.66,6/12/2025,pending,drink
+ORD093,SCCC,Crescat,"No. 89, Crescat Boulevard, Galle Road, Colombo 03",25608.24,6/12/2025,pending,drink
+ORD094,SCCM,Thalawathugoda,"No. 531, Capital Mall, Madiwela Road, Thalawathugoda",45062.98,6/12/2025,pending,drink
+ORD095,SCCR,Kotta Road,"No 103, Dr. N.M. Perera Mawatha, Colombo 08",18891.24,6/12/2025,pending,drink
+ORD096,SCDE,Dehiwala,"No. 268, Sir D.B. Jayathilake Mawatha, (Hill Street), Dehiwala",45797.64,6/12/2025,pending,drink
+ORD097,SCDP,Duplication Road,"No. 5, Lauries Place, Colombo 4 ",28644.62,6/12/2025,pending,drink
+ORD098,SCDR,Darley Road,"No. 460, T.B. Jaya Mawatha, Colombo 10.",49963.2,6/12/2025,pending,drink
+ORD099,SCED,Embuldeniya,"No. 303, Old Kottawa Road, Embuldeniya",42338.96,6/12/2025,pending,drink
+ORD100,SCET,Edmonton,"No. 25, Edmonton Road, Colombo - 5",24331.2,6/12/2025,pending,drink
+ORD101,SCGO,Godagama,"551, Highlevel Road, Homagama",28753.34,6/12/2025,pending,drink
+ORD102,SCGS,Gamsabha,"No.315,High level road,Gangodawila,Nugegoda",29730.72,6/12/2025,pending,drink
+ORD103,SCGT,Gothatuwa,"No. 215, IDH Road, Gohtatuwa",26802.34,6/12/2025,pending,drink
+ORD104,SCHD,Hokandara,"188, Hokandara Road, Thalawathugoda",20934.5,6/12/2025,pending,drink
+ORD105,SCHG,Homagama,"No. 375/10A, Highlevel Road, Makumbura, Pannipitiya",25740.3,6/12/2025,pending,drink
+ORD106,SCHR,Havelock Road,"No. 228, Havelock Road, Colombo 05",34373.3,6/12/2025,pending,drink
+ORD107,SCK3,Kottawa 3,"No. 139, Athurugiriya Road, Kottawa",22531.82,6/12/2025,pending,drink
+ORD108,SCK6,katubedda,"No. 78, Bandaranayake Mawatha, Katubedda",28296.34,6/12/2025,pending,drink
+ORD109,SCK7,Kotahena 2,"No. 141, K Cyril C Perera Mawatha, Cololmbo 13.",30291.92,6/12/2025,pending,drink
+ORD110,SCKE,Kotahena,"No. 01, Bonjeang Road, Colombo 13",45768.8,6/12/2025,pending,drink
+ORD111,SCKH,Kohuwala,"No. 135, Dutugemunu Mawatha, Kohuwala",20358.12,6/12/2025,pending,drink
+ORD112,SCKJ,Kesbewa 2,"1059, Horana Road, Kesbewa Â ",30401.22,6/12/2025,pending,drink
+ORD113,SCKL,Kalubowila,"No. 53, Hospital Road , Kalubowila, Dehiwala",43595.3,6/12/2025,pending,drink
+ORD114,SCKO,Kotte,"No. 581, Kotte Road , Pitakotte",26642.6,6/12/2025,pending,drink
+ORD115,SCKX,Kaduwela,"131/6, Hewagama, Kaduwela",38612.78,6/12/2025,pending,drink
+ORD116,SCKZ,Kesbewa,"No. 220/1, Bandaragama Road, Kasbewa",15003.42,6/12/2025,pending,drink
+ORD117,SCM2,Moratuwa Mall,"No. 340, K- Zone, Lakshapathiya, Moratuwa",20627.96,6/12/2025,pending,drink
+ORD118,SCM3,Maharagama 2,"No. 184, Dehiwala Road, Maharagama",14670.54,6/12/2025,pending,drink
+ORD119,SCMD,Marine Drive,"No. 35, Upathissa Road, Bambalapitiya, Colombo 04",31802.26,6/12/2025,pending,drink
+ORD120,SCMF,Maharagama 3,"No. 59, Piliyandala road, Maharagama",13317.96,6/12/2025,pending,drink
+ORD121,SCMG,Maharagama,"No. 226, High Level Road, Maharagama",57220.76,6/12/2025,pending,drink
+ORD122,SCML,Mount Lavinia,"No. 388/A, Galle Road, Mount Lavinia",32645.88,6/12/2025,pending,drink
+ORD123,SCMU,Mulleriyawa -Angoda,"No: 42D, Hospital Road, Angoda.",33811.98,6/12/2025,pending,drink
+ORD124,SCMW,Moratuwa 3,"No. 16, St Peters Road, Moratuwa",20419.26,6/12/2025,pending,drink
+ORD125,SCMY,Mattakuliya,"Nos. 854 Aluthmawatha Road, Mattakkuliya.",46538.54,6/12/2025,pending,drink
+ORD126,SCNG,Nugegoda 2,"No. 14, Nawala Road, Nugegoda",22309.38,6/12/2025,pending,drink
+ORD127,SCNW,Nawala,"No. 459, Nawala Road, Rajagiriya",21277.52,6/12/2025,pending,drink
+ORD128,SCPA,Piliyandala 2,"118/1 A, Maharagama road, Mavittara,Piliyandala",37414.16,6/12/2025,pending,drink
+ORD129,SCPI,Piliyandala,"242, Colombo Road, Miriswatta, Piliyandala",31870.74,6/12/2025,pending,drink
+ORD130,SCPK,Pitakotte,"No. 216 A, Thalawathugoda Road, Pitakotte",27033.14,6/12/2025,pending,drink
+ORD131,SCPN,Pannipitiya,"No. 361, Highlevel Road, Pannipitiya",21097.26,6/12/2025,pending,drink
+ORD132,SCPO,Pitakotte 2,"308, Kotte Road, Pitakotte",30086.48,6/12/2025,pending,drink
+ORD133,SCPT,Pittugala ,"No. 296, Kaduwela Road, Pittugala, Malambe ",28786.64,6/12/2025,pending,drink
+ORD134,SCPY,Kohuwala 2,"No. 71, Sunethradevi Road, Kohuwala",66518.02,6/12/2025,pending,drink
+ORD135,SCRJ,Rajagiriya 2,"No. 522, Kotte Road, Rajagiriya",35345.84,6/12/2025,pending,drink
+ORD136,SCRM,Rathmalana,"No. 413, Galle Road, Rathmalana",22640.6,6/12/2025,pending,drink
+ORD137,SCRT,Raththanapitiya,"No. 235, Horana Road, Raththanapitya, Boralasgamuwa",16674.38,6/12/2025,pending,drink
+ORD138,SCSJ,Rajagiriya,"No. 475, Sri Jayawardenapura Road, Rajagiriya",34184.06,6/12/2025,pending,drink
+ORD139,SCSL,Shangri-La Mall,"One Galle Face Mall, Colombo.",40057.22,6/12/2025,pending,drink
+ORD140,SCTB,Thimbirigasyaya,"No. 407, Thimbirigasyaya Road, Colombo 05",41445.82,6/12/2025,pending,drink
+ORD141,SCTG,Thalawathugoda 2,"No. 158, Pannipitiya Road, Thalawathugoda",36821.36,6/12/2025,pending,drink
+ORD142,SCTH,Thalahena,"No. 427, Kaduwela Road, Thalahena",34599.32,6/12/2025,pending,drink
+ORD143,SCTL,Thalawathugoda 3,"572/5, Thalawathugoda Road,Madiwela",10175.34,6/12/2025,pending,drink
+ORD144,SCTU,Thurstan,"No. 32, Kumarathunga Munidasa Mawatha, Cololmbo 3.",2688,6/12/2025,pending,drink
+ORD145,SCUP,Union Place,"No. 199, Union Place, Colombo 2",41588.5,6/12/2025,pending,drink
+ORD146,SCVJ,Vidyala Junction,"No. 4, Hokandara Road, Kalalgoda, Pannipitiya",14891.04,6/12/2025,pending,drink
+ORD147,SCWJ,Wijerama,"No. 4 & 6, Soratha Mawatha, Nugegoda",25857.08,6/12/2025,pending,drink
+ORD148,SCWP,Wellampitiya,"230, Avissawella Road, Wellampitiya.",15788.28,6/12/2025,pending,drink
+ORD149,SGRD,Delpe,"No. 324, Kadawatha Road, Delpe Junction, Mahara",41203.52,6/12/2025,pending,drink
+ORD150,SLMN,Mawanella,"185, New Kandy Road, Mawanella",5407.26,6/12/2025,pending,drink

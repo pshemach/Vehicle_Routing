@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed TMS Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .modal {
+        display: none;
+      }
+      .modal.active {
+        display: flex;
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gray-50 font-sans">
+    <!-- Header -->
+    <header
+      class="bg-indigo-700 text-white p-4 flex justify-between items-center shadow-lg"
+    >
+      <h1 class="text-2xl font-bold">TMS Dashboard</h1>
+      <nav class="space-x-2">
+        <button
+          class="tab-btn px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-800 transition"
+          data-tab="constraints"
+        >
+          Constraints
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-800 transition"
+          data-tab="routes"
+        >
+          Routes
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-800 transition"
+          data-tab="vehicles"
+        >
+          Vehicles
+        </button>
+        <button
+          class="tab-btn px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-800 transition"
+          data-tab="orders"
+        >
+          Orders
+        </button>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex flex-1 p-6 gap-6">
+      <!-- Sidebar -->
+      <aside class="w-1/3 bg-white p-6 rounded-xl shadow-lg">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Constraint Management
+          </h2>
+          <button
+            id="open-modal-btn"
+            class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+          >
+            Add Constraint
+          </button>
+        </div>
+
+        <div id="constraint-list" class="space-y-4">
+          <!-- Constraints will be injected here -->
+        </div>
+
+        <!-- Modal -->
+        <div
+          id="constraint-modal"
+          class="modal fixed inset-0 bg-black/50 items-center justify-center z-50"
+        >
+          <div
+            class="bg-white p-6 rounded-xl shadow-2xl w-11/12 md:w-2/3 lg:w-1/2 relative"
+          >
+            <h3 class="text-lg font-semibold mb-4">Add New Constraint</h3>
+            <form id="constraint-form" class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700"
+                  >Constraint Type</label
+                >
+                <select
+                  id="constraint-type"
+                  class="w-full p-2 border rounded-lg"
+                >
+                  <option value="vehicle">Vehicle</option>
+                  <option value="time">Time</option>
+                  <option value="order">Order</option>
+                  <option value="geographical">Geographical</option>
+                  <option value="customer">Customer</option>
+                </select>
+              </div>
+
+              <!-- Vehicle Fields -->
+              <div id="vehicle-fields" class="constraint-fields space-y-2">
+                <input
+                  type="number"
+                  id="vehicle-capacity"
+                  placeholder="Max Capacity (kg)"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <select id="vehicle-type" class="w-full p-2 border rounded-lg">
+                  <option value="">Vehicle Type</option>
+                  <option value="refrigerated">Refrigerated</option>
+                  <option value="standard">Standard</option>
+                </select>
+                <input
+                  type="text"
+                  id="vehicle-hours"
+                  placeholder="Operating Hours (e.g., 08:00-17:00)"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="text"
+                  id="vehicle-depot"
+                  placeholder="Depot Location"
+                  class="w-full p-2 border rounded-lg"
+                />
+              </div>
+
+              <!-- Other Constraints (Hidden by Default) -->
+              <div id="time-fields" class="constraint-fields space-y-2 hidden">
+                <input
+                  type="time"
+                  id="time-start"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="time"
+                  id="time-end"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="number"
+                  id="time-duration"
+                  placeholder="Max Route Duration (hrs)"
+                  class="w-full p-2 border rounded-lg"
+                />
+              </div>
+
+              <div id="order-fields" class="constraint-fields space-y-2 hidden">
+                <select
+                  id="order-priority"
+                  class="w-full p-2 border rounded-lg"
+                >
+                  <option value="">Priority</option>
+                  <option value="high">High</option>
+                  <option value="low">Low</option>
+                </select>
+                <input
+                  type="text"
+                  id="order-grouped"
+                  placeholder="Grouped Order IDs"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="text"
+                  id="order-incompatible"
+                  placeholder="Incompatible Orders"
+                  class="w-full p-2 border rounded-lg"
+                />
+              </div>
+
+              <div
+                id="geographical-fields"
+                class="constraint-fields space-y-2 hidden"
+              >
+                <input
+                  type="text"
+                  id="geo-nogo"
+                  placeholder="No-Go Zones"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="number"
+                  id="geo-radius"
+                  placeholder="Max Delivery Radius (km)"
+                  class="w-full p-2 border rounded-lg"
+                />
+              </div>
+
+              <div
+                id="customer-fields"
+                class="constraint-fields space-y-2 hidden"
+              >
+                <input
+                  type="time"
+                  id="customer-start"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="time"
+                  id="customer-end"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="text"
+                  id="customer-frequency"
+                  placeholder="Delivery Frequency"
+                  class="w-full p-2 border rounded-lg"
+                />
+                <input
+                  type="number"
+                  id="customer-unloading"
+                  placeholder="Unloading Time (minutes)"
+                  class="w-full p-2 border rounded-lg"
+                />
+              </div>
+
+              <div class="mt-6 flex justify-end space-x-2">
+                <button
+                  type="button"
+                  id="close-modal-btn"
+                  class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                >
+                  Add
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Dashboard Panel -->
+      <section class="flex-1 bg-white p-6 rounded-xl shadow-lg">
+        <div id="constraints" class="tab-content active">
+          <h2 class="text-xl font-semibold text-gray-800 mb-6">
+            Constraint Overview
+          </h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-indigo-50 p-4 rounded-lg">
+              <h3 class="font-medium">Total Constraints</h3>
+              <p id="constraint-count" class="text-2xl">0</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h3 class="font-medium">Active Routes</h3>
+              <p class="text-2xl">10</p>
+            </div>
+          </div>
+          <div class="mt-6">
+            <h3 class="font-medium">Route Map Preview</h3>
+            <div
+              class="h-96 bg-gray-100 rounded-lg flex items-center justify-center"
+            >
+              <p>Interactive Map Placeholder</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="routes" class="tab-content">
+          <h2 class="text-xl font-semibold text-gray-800 mb-6">
+            Route Management
+          </h2>
+          <table class="w-full table-auto border-collapse">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="p-3 text-left">Route ID</th>
+                <th class="p-3 text-left">Vehicle</th>
+                <th class="p-3 text-left">Start</th>
+                <th class="p-3 text-left">End</th>
+                <th class="p-3 text-left">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="p-3">R001</td>
+                <td class="p-3">Truck A</td>
+                <td class="p-3">08:00</td>
+                <td class="p-3">14:00</td>
+                <td class="p-3 text-green-600">On Track</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="vehicles" class="tab-content">
+          <h2 class="text-xl font-semibold text-gray-800 mb-6">
+            Vehicle Management
+          </h2>
+          <table class="w-full table-auto border-collapse">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="p-3 text-left">Vehicle ID</th>
+                <th class="p-3 text-left">Type</th>
+                <th class="p-3 text-left">Capacity</th>
+                <th class="p-3 text-left">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="p-3">V001</td>
+                <td class="p-3">Refrigerated</td>
+                <td class="p-3">5000 kg</td>
+                <td class="p-3 text-green-600">Available</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="orders" class="tab-content">
+          <h2 class="text-xl font-semibold text-gray-800 mb-6">
+            Order Management
+          </h2>
+          <table class="w-full table-auto border-collapse">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="p-3 text-left">Order ID</th>
+                <th class="p-3 text-left">Customer</th>
+                <th class="p-3 text-left">Priority</th>
+                <th class="p-3 text-left">Time Window</th>
+                <th class="p-3 text-left">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="p-3">O001</td>
+                <td class="p-3">Customer A</td>
+                <td class="p-3">High</td>
+                <td class="p-3">10:00–12:00</td>
+                <td class="p-3 text-yellow-600">Pending</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 text-center">
+      <p>© 2025 TMS Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      const modal = document.getElementById("constraint-modal");
+      const openModalBtn = document.getElementById("open-modal-btn");
+      const closeModalBtn = document.getElementById("close-modal-btn");
+      const constraintType = document.getElementById("constraint-type");
+      const constraintFields = document.querySelectorAll(".constraint-fields");
+      const constraintForm = document.getElementById("constraint-form");
+      const constraintList = document.getElementById("constraint-list");
+      const constraintCount = document.getElementById("constraint-count");
+      const tabs = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+      let constraints = [];
+
+      openModalBtn.onclick = () => {
+        modal.classList.add("active");
+        showFields(constraintType.value);
+      };
+
+      closeModalBtn.onclick = () => {
+        modal.classList.remove("active");
+        constraintForm.reset();
+        showFields("vehicle");
+      };
+
+      constraintType.onchange = (e) => showFields(e.target.value);
+
+      function showFields(type) {
+        constraintFields.forEach((f) => f.classList.add("hidden"));
+        const current = document.getElementById(`${type}-fields`);
+        if (current) current.classList.remove("hidden");
+      }
+
+      constraintForm.onsubmit = (e) => {
+        e.preventDefault();
+        const type = constraintType.value;
+        const details = {};
+        document
+          .querySelectorAll(`#${type}-fields input, #${type}-fields select`)
+          .forEach((el) => {
+            details[el.id] = el.value;
+          });
+        constraints.push({ id: constraints.length + 1, type, details });
+        updateConstraintList();
+        modal.classList.remove("active");
+        constraintForm.reset();
+        showFields("vehicle");
+      };
+
+      function updateConstraintList() {
+        constraintList.innerHTML = constraints
+          .map(
+            (c) => `
+        <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+          <h3 class="font-semibold">${c.type} Constraint</h3>
+          <pre class="text-sm text-gray-600">${JSON.stringify(
+            c.details,
+            null,
+            2
+          )}</pre>
+        </div>
+      `
+          )
+          .join("");
+        constraintCount.textContent = constraints.length;
+      }
+
+      tabs.forEach((tab) => {
+        tab.onclick = () => {
+          tabs.forEach((t) => t.classList.remove("bg-indigo-900"));
+          tab.classList.add("bg-indigo-900");
+          tabContents.forEach((content) => content.classList.remove("active"));
+          document.getElementById(tab.dataset.tab).classList.add("active");
+        };
+      });
+
+      // Initial field visibility
+      showFields("vehicle");
+    </script>
+  </body>
+</html>
