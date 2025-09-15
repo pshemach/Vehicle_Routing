@@ -11,6 +11,21 @@ import pandas as pd
 import logging
 
 from vehi_rout.controller import VRPController
+from datetime import datetime
+
+def parse_order_time_window(raw_list):
+    """
+    Converts raw JSON input with timeWindow as "HH:MM-HH:MM"
+    into a dict with minute ranges, e.g., "50021": (480, 600)
+    """
+    result = {}
+    for item in raw_list:
+        code = str(item["shopCode"])
+        start_str, end_str = item["timeWindow"].split("-")
+        start_min = int(datetime.strptime(start_str.strip(), "%H:%M").hour * 60)
+        end_min = int(datetime.strptime(end_str.strip(), "%H:%M").hour * 60)
+        result[code] = (start_min, end_min)
+    return result
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -85,6 +100,18 @@ def upload_file():
     po_filename = secure_filename(po_file.filename)
     po_path = os.path.join(job_folder, po_filename)
     po_file.save(po_path)
+    
+    if 'gps_file' in request.files:
+        gps_file = request.files['gps_file']
+        if gps_file.filename == '':
+            return jsonify({'error': 'No file selected'}), 400
+        if not allowed_file(gps_file.filename):
+            return jsonify({'error': 'File type not allowed'}), 400
+        gps_filename = secure_filename(gps_file.filename)
+        gps_path = os.path.join(job_folder, gps_filename)
+        gps_file.save(gps_path)
+    print(request.files)
+    print(request.form)
 
     use_time = request.form.get('use_time') == 'true'
     multi_day = request.form.get('multi_day') == 'true'
@@ -94,18 +121,34 @@ def upload_file():
     max_visits = [int(request.form.get(f'max_visits[{i}]', 15)) for i in range(num_vehicles)]
     max_distance = [int(request.form.get(f'max_distance[{i}]', 100)) for i in range(num_vehicles)]
 
-    controller = VRPController(use_distance=not use_time)
     matrix_path = request.form.get('matrix_path', 'data/master/osrm_distance_matrix.csv')
     gps_path = request.form.get('gps_path', 'data/master/master_gps.csv')
     
     geo_constraints = request.form.get('geo_constraints')
-    order_time_window = request.form.get('order_time_window')
+    order_time_window = request.form.get('order_time_window')   
     order_groups = request.form.get('order_groups')
     priority_orders = request.form.get('priority_orders')
     vehicle_constraints = request.form.get('vehicle_constraints')
+    predefined_routes = request.form.get('predefined_routes')
+    vehicle_routes = request.form.get('vehicle_routes')
+    
+    print(f"use_time: {use_time}")
+    print(f"order_time_window_type: {type(order_time_window)}")
+    print(f"order_time_window: {order_time_window}")
+    
+    # if len(order_time_window) > 2:
+    #     use_time = True
+    #     print(len(order_time_window))
+    #     print(f"use_time: {use_time}")
+    #     matrix_path = 'data/master/osrm_duration_matrix.csv'
+    controller = VRPController(use_distance=not use_time)
+    
+    # print(f"use_time: {use_time}")
     
     job_info = {
         'job_id': current_job_id,
+        'matrix_path': matrix_path,
+        'gps_path': gps_path,
         'po_file': po_filename,
         'use_time': use_time,
         'multi_day': multi_day,
@@ -123,19 +166,27 @@ def upload_file():
     job_info['order_groups'] = json.loads(order_groups) if order_groups else []
     job_info['priority_orders'] = json.loads(priority_orders) if priority_orders else []
     job_info['vehicle_constraints'] = json.loads(vehicle_constraints) if vehicle_constraints else []
-
-
+    job_info['predefined_routes'] = json.loads(predefined_routes) if predefined_routes else []
+    job_info['vehicle_routes'] = json.loads(vehicle_routes) if vehicle_routes else {}
+        
     try:
         controller.update_vehicle_config(
             num_vehicles=num_vehicles,
             max_visits=max_visits,
             max_distance=max_distance
         )
+        print(f"matrix_path: {matrix_path}")
+        print(f"gps_path: {gps_path}")
+        print(f"po_path: {po_path}")
         controller.load_data(
             demand_path=po_path,
             matrix_path=matrix_path,
             gps_path=gps_path
         )
+        
+        controller.vehicle_routes = job_info.get('vehicle_routes', {})
+        controller.predefined_routes = job_info.get('predefined_routes', [])
+
     except Exception as e:
         logger.error(f"Error loading data: {str(e)}")
         return jsonify({'error': f'Error loading data: {str(e)}'}), 500
@@ -166,13 +217,20 @@ def solve(job_id):
     output_folder = os.path.join(app.config['OUTPUT_FOLDER'], job_id)
     create_output_directories(output_folder)
     logger.debug(f"Created output folder: {output_folder}")
+    
+    parsed_windows = parse_order_time_window(job_info.get('order_time_window', []))
+    print(f"parsed_windows: {parsed_windows}")
 
     try:
         visited_nodes, route_dict = controller.solve_single_day(
-                day=0,
-                max_nodes=job_info['max_nodes'],
-                save_visualization=True
-            )
+            day=0,
+            save_visualization=True,
+            geo_constraints=job_info.get('geo_constraints', []),
+            order_time_window=parsed_windows,
+            order_groups=job_info.get('order_groups', []),
+            priority_orders=job_info.get('priority_orders', []),
+            vehicle_constraints=job_info.get('vehicle_constraints', [])
+        )
         logger.debug(f"Solver returned: {len(visited_nodes)} nodes, route_dict keys: {list(route_dict.keys())}")
         current_results = {
                 'job_id': job_id,

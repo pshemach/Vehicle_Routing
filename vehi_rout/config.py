@@ -20,7 +20,7 @@ MAX_DISTANCE_PER_VEHICLE = [500, 500, 500, 500, 500, 500, 500, 500]
 TIME_BASE_PENALTY = 100000
 
 # Base penalty for not visiting a node (used in distance-based routing)
-DISTANCE_BASE_PENALTY = 100000
+DISTANCE_BASE_PENALTY = 1000
 
 # Depot node ID
 DEPOT = 0
