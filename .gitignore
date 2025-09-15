@@ -171,6 +171,6 @@ cython_debug/
 .pypirc
 
 uploads
-outputs
+output
 research/data
 data/test
