@@ -198,7 +198,7 @@ endblock %} {% block content %}
       for (let i = 0; i < numVehicles; i++) {
         // Try to get previous values if fields already exist
         const existingVisits = $(`#max_visits_${i}`).val() || 12;
-        const existingDistance = $(`#max_distance_${i}`).val() || 500;
+        const existingDistance = $(`#max_distance_${i}`).val() || 1200;
         const existingRoute = $(`#vehicle_route_${i}`).val() || "";
 
         html += `
