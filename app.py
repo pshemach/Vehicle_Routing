@@ -371,6 +371,26 @@ def get_job(job_id):
         job_info = json.load(f)
 
     return jsonify(job_info)
+@app.route('/api/shop_codes/search', methods=['GET'])
+def search_shop_codes():
+    """Search for shop codes by code or location."""
+    query = request.args.get('q', '').strip().lower()
+    if not query:
+        return jsonify({'shop_codes': []})
+
+    # Example: Load shop codes from your master data (adjust as needed)
+    import pandas as pd
+    master_path = 'data/master/master_gps.csv'  # or your actual master file
+    df = pd.read_csv(master_path)
+    results = []
+    for _, row in df.iterrows():
+        if query in str(row['CODE']).lower() or query in str(row.get('LOCATION', '')).lower():
+            results.append({
+                'code': row['CODE'],
+                'location': row.get('LOCATION', ''),
+                'address': row.get('ADDRESS', '')
+            })
+    return jsonify({'shop_codes': results})
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5096)
