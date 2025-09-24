@@ -14,7 +14,7 @@ def load_daily_demand(file_name):
         df = get_str_key(df)
         if "DEMAND" not in df.columns:
             df['DEMAND'] = 1
-        df['DATE'] = pd.to_datetime(df['DATE'])
+        df['DATE'] = pd.to_datetime(df['DATE'], format='mixed', errors='coerce')
         return df
     except FileNotFoundError as e:
         print(f"Error loading daily demand file: {e}")
