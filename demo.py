@@ -12,6 +12,8 @@ import logging
 
 from vehi_rout.controller import VRPController
 from datetime import datetime
+from vehi_rout.data_model.master_data import MasterData
+from vehi_rout.utils.helper_utils import get_osrm_data
 
 def parse_order_time_window(raw_list):
     """
@@ -62,10 +64,33 @@ def copy_output_files(output_folder):
         for subdir in ['summaries', 'csv', 'maps']:
             src_dir = os.path.join('output', subdir)
             dst_dir = os.path.join(output_folder, subdir)
+            os.makedirs(dst_dir, exist_ok=True)
             if os.path.exists(src_dir):
                 for file in glob(os.path.join(src_dir, '*')):
-                    shutil.copy2(file, dst_dir)
-                    logger.debug(f"Copied {file} to {dst_dir}")
+                    try:
+                        shutil.copy2(file, dst_dir)
+                        logger.debug(f"Copied {file} to {dst_dir}")
+                    except Exception as e:
+                        logger.error(f"Failed to copy {file} to {dst_dir}: {str(e)}")
+        # Also copy any default route_dict or json files into the job csv folder so
+        # endpoints looking for route_dict_day_*.json can find them.
+        default_dir = os.path.join('output', 'default')
+        csv_dst = os.path.join(output_folder, 'csv')
+        os.makedirs(csv_dst, exist_ok=True)
+        if os.path.exists(default_dir):
+            # Prefer route_dict files, then fallback to any jsons in default
+            for file in glob(os.path.join(default_dir, 'route_dict_day_*.json')):
+                try:
+                    shutil.copy2(file, csv_dst)
+                    logger.debug(f"Copied default route dict {file} to {csv_dst}")
+                except Exception as e:
+                    logger.error(f"Failed to copy default route dict {file}: {str(e)}")
+            for file in glob(os.path.join(default_dir, '*.json')):
+                try:
+                    shutil.copy2(file, csv_dst)
+                    logger.debug(f"Copied default json {file} to {csv_dst}")
+                except Exception as e:
+                    logger.error(f"Failed to copy default json {file}: {str(e)}")
     except Exception as e:
         logger.error(f"Error copying output files: {str(e)}")
 
@@ -288,6 +313,75 @@ def results(job_id):
         csv_files=csv_files,
         map_files=map_files
     )
+
+@app.route('/update_master', methods=['POST'])
+def update_master():
+    # Save uploaded GPS CSV to a temp location and read
+    csv_file = request.files.get('gps_file')
+    if csv_file is None:
+        return jsonify({'error': 'No gps_file uploaded'}), 400
+
+    save_path = os.path.join('data', 'master', 'uploaded_master_gps.csv')
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    csv_file.save(save_path)
+    try:
+        new_master = pd.read_csv(save_path, dtype={'CODE': str})
+    except Exception as e:
+        return jsonify({'error': f'Failed to read uploaded CSV: {str(e)}'}), 400
+    # Basic validation of uploaded columns
+    required_cols = {'CODE', 'LATITUDE', 'LONGITUDE'}
+    if not required_cols.issubset(set(new_master.columns)):
+        return jsonify({'error': f'Uploaded CSV must contain columns: {sorted(list(required_cols))}'}), 400
+
+    # Load current master to compare
+    try:
+        current_master = pd.read_csv(os.path.join('data', 'master', 'master_gps.csv'), dtype={'CODE': str})
+    except Exception as e:
+        logger.error(f"Failed to read current master_gps.csv: {e}")
+        return jsonify({'error': f'Failed to read current master: {str(e)}'}), 500
+
+    # Normalize codes and create lookups
+    current_master['CODE'] = current_master['CODE'].astype(str)
+    current_lookup = current_master.set_index('CODE')[['LATITUDE', 'LONGITUDE']].to_dict('index')
+    new_master['CODE'] = new_master['CODE'].astype(str)
+    new_lookup = new_master.set_index('CODE')[['LATITUDE', 'LONGITUDE']].to_dict('index')
+
+    # Detect changed and new codes
+    changed = []
+    added = []
+    for code, coords in new_lookup.items():
+        if code not in current_lookup:
+            added.append(code)
+        else:
+            try:
+                cur_lat = float(current_lookup[code]['LATITUDE'])
+                cur_lon = float(current_lookup[code]['LONGITUDE'])
+                new_lat = float(coords['LATITUDE'])
+                new_lon = float(coords['LONGITUDE'])
+            except Exception:
+                continue
+            if abs(cur_lat - new_lat) > 1e-6 or abs(cur_lon - new_lon) > 1e-6:
+                changed.append(code)
+
+    if not changed and not added:
+        print("No changes")
+        return jsonify({'status': 'no_change', 'message': 'No new or changed codes found; master not updated.'})
+
+    # Initialize MasterData and run update
+    md = MasterData(check_df=None)
+    try:
+        result = md.update_master_with_gps_df(new_master, osrm_getter=get_osrm_data)
+    except Exception as e:
+        logger.error(f"Error updating master data: {str(e)}")
+        return jsonify({'error': f'Error updating master data: {str(e)}'}), 500
+
+    # Include detection summary in response
+    result_summary = {
+        'detected_changed': changed,
+        'detected_added': added,
+        **(result or {})
+    }
+    return jsonify({'status': 'ok', 'result': result_summary})
 
 @app.route('/file/<job_id>/<file_type>/<filename>')
 def get_file(job_id, file_type, filename):
