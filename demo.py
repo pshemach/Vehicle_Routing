@@ -316,72 +316,37 @@ def results(job_id):
 
 @app.route('/update_master', methods=['POST'])
 def update_master():
-    # Save uploaded GPS CSV to a temp location and read
+    # Save uploaded GPS CSV to a temp location
     csv_file = request.files.get('gps_file')
-    if csv_file is None:
+    if not csv_file:
         return jsonify({'error': 'No gps_file uploaded'}), 400
 
     save_path = os.path.join('data', 'master', 'uploaded_master_gps.csv')
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
     csv_file.save(save_path)
+
+    # Read and validate uploaded CSV
     try:
         new_master = pd.read_csv(save_path, dtype={'CODE': str})
     except Exception as e:
         return jsonify({'error': f'Failed to read uploaded CSV: {str(e)}'}), 400
-    # Basic validation of uploaded columns
+
     required_cols = {'CODE', 'LATITUDE', 'LONGITUDE'}
-    if not required_cols.issubset(set(new_master.columns)):
+    if not required_cols.issubset(new_master.columns):
         return jsonify({'error': f'Uploaded CSV must contain columns: {sorted(list(required_cols))}'}), 400
-
-    # Load current master to compare
-    try:
-        current_master = pd.read_csv(os.path.join('data', 'master', 'master_gps.csv'), dtype={'CODE': str})
-    except Exception as e:
-        logger.error(f"Failed to read current master_gps.csv: {e}")
-        return jsonify({'error': f'Failed to read current master: {str(e)}'}), 500
-
-    # Normalize codes and create lookups
-    current_master['CODE'] = current_master['CODE'].astype(str)
-    current_lookup = current_master.set_index('CODE')[['LATITUDE', 'LONGITUDE']].to_dict('index')
-    new_master['CODE'] = new_master['CODE'].astype(str)
-    new_lookup = new_master.set_index('CODE')[['LATITUDE', 'LONGITUDE']].to_dict('index')
-
-    # Detect changed and new codes
-    changed = []
-    added = []
-    for code, coords in new_lookup.items():
-        if code not in current_lookup:
-            added.append(code)
-        else:
-            try:
-                cur_lat = float(current_lookup[code]['LATITUDE'])
-                cur_lon = float(current_lookup[code]['LONGITUDE'])
-                new_lat = float(coords['LATITUDE'])
-                new_lon = float(coords['LONGITUDE'])
-            except Exception:
-                continue
-            if abs(cur_lat - new_lat) > 1e-6 or abs(cur_lon - new_lon) > 1e-6:
-                changed.append(code)
-
-    if not changed and not added:
-        print("No changes")
-        return jsonify({'status': 'no_change', 'message': 'No new or changed codes found; master not updated.'})
 
     # Initialize MasterData and run update
     md = MasterData(check_df=None)
     try:
         result = md.update_master_with_gps_df(new_master, osrm_getter=get_osrm_data)
     except Exception as e:
-        logger.error(f"Error updating master data: {str(e)}")
         return jsonify({'error': f'Error updating master data: {str(e)}'}), 500
 
-    # Include detection summary in response
-    result_summary = {
-        'detected_changed': changed,
-        'detected_added': added,
-        **(result or {})
-    }
-    return jsonify({'status': 'ok', 'result': result_summary})
+    # Return result
+    if not (result['changed_gps'] or result['changed_non_gps'] or result['added']):
+        return jsonify({'status': 'no_change', 'message': 'No new or changed codes found; master not updated.'})
+
+    return jsonify({'status': 'ok', 'result': result})
 
 @app.route('/file/<job_id>/<file_type>/<filename>')
 def get_file(job_id, file_type, filename):

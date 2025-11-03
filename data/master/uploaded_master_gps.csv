@@ -202,7 +202,7 @@ ADDRESS,BRAND,CODE,DISTRICT,LATITUDE,LOCATION,LONGITUDE
 "60 , Anagarika Dharmapala Mw , Matara .",Cargills,1083,Matara,5.9494158,FC MATARA,80.5447271
 "315 , Negombo  Road , Wattala .",Cargills,1084,Gampaha,7.091585,FC WATTALA,79.8884605
 "65 A ,  Galle  Road , Dehiwala .",Cargills,1106,Colombo,6.8512992,FC DEHIWALA,79.865918
-"Municipal Commercial Complex ,Old Bus Stand Site,Nagarasaba Pedesa, Ratnapura",Cargills,1104,Ratnapura,6.7055742,FC RATNAPURA,80.3847345
+"Municipal Commercial Complex, Nagarasaba Pedesa, Ratnapura",Cargills,1104,Ratnapura,6.7055742,FC RATNAPURA,80.3847345
 "407 , Galle  Road , Colpetty .",Cargills,1105,Colombo,6.9097726,FC COLPETTY,79.8501472
 "90 , Thimbirigasyaya   Road , Colombo 05",Cargills,1107,Colombo,6.8936437,EX THIMBIRIGASYAYA,79.8704269
 "No. 1,  Bus Stand Site, Matara",Cargills,1201,Matara,5.9496309,EX MATARA,80.5468529
@@ -326,7 +326,7 @@ No. 04 Pallegama Road Deniyaya.,Cargills,1385,Matara,6.3159694,EX DENIYAYA,80.51
 "No 46, Station Road,Dehiwala.",Cargills,1484,Colombo,6.8509933,FC MARINE CITY,79.8625996
 "No. 666,Trincomalee street,Matale",Cargills,1481,Matale,7.467465,FC MATALE2,80.6234161
 "No. 200/C Hospital Junction, Galagedara.",Cargills,1394,Kandy,7.3727606,EX GALAGEDARA,80.5244948
-"No 197, P.W.D.Road , Mullathiv",Cargills,1393,Matale,7.873054,EX MULLAITTIVE,80.771797
+"No 197, P.W.D.Road , Mullathiv",Cargills,1393,Mullaitivu,9.17220,EX MULLAITTIVE,80.67992
 "No 6/1/C, Owissa Road, Poojapitiya.",Cargills,1717,Kandy,7.3813156,EX POOJAPITIYA,80.5867633
 "No 106, Puttalama Road, Anamaduwa.",Cargills,1726,Puttalam,7.8768056,EX ANAMADUWA,80.0117638
 "No. 396/5, Galle Road, Maggona",Cargills,1727,Kalutara,6.5094589,EX MAGGONA,79.9819466
@@ -334,7 +334,7 @@ No. 04 Pallegama Road Deniyaya.,Cargills,1385,Matara,6.3159694,EX DENIYAYA,80.51
 "No. 10, Sawijaya Building, Dellawa Road, Galle.",Cargills,1724,Galle,6.0328948,EX NELUWA,80.2167912
 "No. 161, Negombo Road,Narammala.",Cargills,1490,Kurunegala,7.427258,FC NARAMMALA,80.2140717
 "No.55/A,Galle Road, Piyadigama, Ahangama.",Cargills,1718,Matara,5.97329,EX AHANGAMA,80.4103
-"FOOD CITY  EXPRESS –MALKADUWAWA,Molawatta, Malkaduwawa,Kurunegala.",Cargills,1735,Kurunegala,7.4778098,EX MALKADUWAWA,80.3383375
+"FOOD CITY  EXPRESS –MALKADUWAWA, Malkaduwawa,Kurunegala",Cargills,1735,Kurunegala,7.4778098,EX MALKADUWAWA,80.3383375
 "No 16 B,Makuluduwa,Piliyandala.",Cargills,1739,Colombo,6.8138371,EX MAKULUDUWA,79.9359634
 "No 53/1/1/2, Sella Road, Kataragama.",Cargills,1736,Moneragala,6.4135463,EX KATARAGAMA,81.3325679
 "No Road 01 ,Pallimulei Mannar",Cargills,1741,Mannar,8.9809743,EX MANNAR,79.9044149

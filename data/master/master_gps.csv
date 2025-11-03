@@ -202,7 +202,6 @@ SCCR,Kotta Road,"No 103, Dr. N.M. Perera Mawatha, Colombo 08",6.9108052,79.88911
 1083,FC MATARA,"60 , Anagarika Dharmapala Mw , Matara .",5.9494158,80.5447271,Cargills,Matara
 1084,FC WATTALA,"315 , Negombo  Road , Wattala .",7.091585,79.8884605,Cargills,Gampaha
 1106,FC DEHIWALA,"65 A ,  Galle  Road , Dehiwala .",6.8512992,79.865918,Cargills,Colombo
-1104,FC RATNAPURA,"Municipal Commercial Complex ,Old Bus Stand Site,Nagarasaba Pedesa, Ratnapura",6.7055742,80.3847345,Cargills,Ratnapura
 1105,FC COLPETTY,"407 , Galle  Road , Colpetty .",6.9097726,79.8501472,Cargills,Colombo
 1107,EX THIMBIRIGASYAYA,"90 , Thimbirigasyaya   Road , Colombo 05",6.8936437,79.8704269,Cargills,Colombo
 1201,EX MATARA,"No. 1,  Bus Stand Site, Matara",5.9496309,80.5468529,Cargills,Matara
@@ -326,7 +325,6 @@ SCCR,Kotta Road,"No 103, Dr. N.M. Perera Mawatha, Colombo 08",6.9108052,79.88911
 1484,FC MARINE CITY,"No 46, Station Road,Dehiwala.",6.8509933,79.8625996,Cargills,Colombo
 1481,FC MATALE2,"No. 666,Trincomalee street,Matale",7.467465,80.6234161,Cargills,Matale
 1394,EX GALAGEDARA,"No. 200/C Hospital Junction, Galagedara.",7.3727606,80.5244948,Cargills,Kandy
-1393,EX MULLAITTIVE,"No 197, P.W.D.Road , Mullathiv",7.873054,80.771797,Cargills,Matale
 1717,EX POOJAPITIYA,"No 6/1/C, Owissa Road, Poojapitiya.",7.3813156,80.5867633,Cargills,Kandy
 1726,EX ANAMADUWA,"No 106, Puttalama Road, Anamaduwa.",7.8768056,80.0117638,Cargills,Puttalam
 1727,EX MAGGONA,"No. 396/5, Galle Road, Maggona",6.5094589,79.9819466,Cargills,Kalutara
@@ -334,7 +332,6 @@ SCCR,Kotta Road,"No 103, Dr. N.M. Perera Mawatha, Colombo 08",6.9108052,79.88911
 1724,EX NELUWA,"No. 10, Sawijaya Building, Dellawa Road, Galle.",6.0328948,80.2167912,Cargills,Galle
 1490,FC NARAMMALA,"No. 161, Negombo Road,Narammala.",7.427258,80.2140717,Cargills,Kurunegala
 1718,EX AHANGAMA,"No.55/A,Galle Road, Piyadigama, Ahangama.",5.97329,80.4103,Cargills,Matara
-1735,EX MALKADUWAWA,"FOOD CITY  EXPRESS –MALKADUWAWA,Molawatta, Malkaduwawa,Kurunegala.",7.4778098,80.3383375,Cargills,Kurunegala
 1739,EX MAKULUDUWA,"No 16 B,Makuluduwa,Piliyandala.",6.8138371,79.9359634,Cargills,Colombo
 1736,EX KATARAGAMA,"No 53/1/1/2, Sella Road, Kataragama.",6.4135463,81.3325679,Cargills,Moneragala
 1741,EX MANNAR,"No Road 01 ,Pallimulei Mannar",8.9809743,79.9044149,Cargills,Mannar
@@ -758,3 +755,6 @@ Wattala,Wattala,Wattala,6.9906677,79.8931709,Laugf,Gampaha
 Wellawatta,Wellawatta,Wellawatta,6.8755308,79.8609984,Laugf,Colombo
 Werahera,Werahera,Werahera,6.8280052,79.9052768,Laugf,Colombo
 1744,EX RAJAGIRIYA FAIRWAY,"No39, Perera Mawatha , Kotuwegoda",6.9123236,79.9041156,Cargills,Colombo
+1104,FC RATNAPURA,"Municipal Commercial Complex, Nagarasaba Pedesa, Ratnapura",6.7055742,80.3847345,Cargills,Ratnapura
+1735,EX MALKADUWAWA,"FOOD CITY  EXPRESS –MALKADUWAWA, Malkaduwawa,Kurunegala",7.4778098,80.3383375,Cargills,Kurunegala
+1393,EX MULLAITTIVE,"No 197, P.W.D.Road , Mullathiv",9.1722,80.67992,Cargills,Mullaitivu
